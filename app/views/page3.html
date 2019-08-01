@@ -33,44 +33,67 @@ Start page example
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Flood Map Info
-          </h1>
-        </legend>    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.</p>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
-            Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
-          </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-        </div>
+Site Information          </h1>
+        </legend>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.</p>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-2">
-            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-          </label>
-          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
-        </div>
+          <br>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-town">
-            Town or city
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
-        </div>
+          <div class="govuk-form-group">
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-county">
-            County
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-        </div>
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Is the site under 250Sqm?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <br>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-postcode">
-            Postcode
-          </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-        </div>
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Is the site non domestic?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+      
 
       </fieldset>
       <a href="/page3" role="button" draggable="false"
@@ -84,35 +107,36 @@ Start page example
       </a>
 
 
-    </div></div>
-
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
     </div>
+
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
   </div>
-  {% endblock %}
+</div>
+{% endblock %}

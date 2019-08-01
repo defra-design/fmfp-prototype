@@ -9,7 +9,7 @@ You can change the service name by editing the file '/app/config.js'.
     module.exports = {
 
       // Service name used in header. Eg: 'Renew your passport'
-      serviceName: "Service name goes here",
+      serviceName: "FMFP Prototype Prototype Prototype",
 
     };
 

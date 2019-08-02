@@ -116,3 +116,6 @@ img{
 .app-prose-scope pre + h4 {
   @include govuk-responsive-margin(4, "top");
 }
+.govuk-panel--confirmation.grey{
+  background-color: gray; 
+}

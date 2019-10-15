@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Where shall we send the data?
+          </h1>
+        </legend>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
+          <span id="email-hint" class="govuk-hint">
+            We’ll only use this to send you a receipt
+          </span>
+          <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+        </div>
+      
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+
+   
+    </div>
+  </main>
+</div>
+
+{% endblock %}

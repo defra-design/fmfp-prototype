@@ -21,3 +21,37 @@ $govuk-assets-path: '/govuk/assets/';
   position: relative;
   top: -50px;
 }
+
+
+#map {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.mapToolBtn {
+  font-family: "GDS Transport", Arial, sans-serif;
+  border: 0;
+  padding: 8px 10px 7px;
+  background: #1d70b8;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  z-index: 9999;
+  font-size: 1rem;
+}
+.mapToolBtn.active {
+  background: #fd0;
+  color: #000;
+}
+
+#drawShapeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  font-size: 1rem;
+}
+
+#markerBtn {
+  right: 6rem;
+}

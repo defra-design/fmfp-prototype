@@ -80,16 +80,16 @@ $(document).ready(function () {
     }
   }, false);
 
-  markerBtn.addEventListener('click', function (event) {
-    if ( this.classList.contains('active') ) {
-      this.classList.remove('active')
-      markerVectorLayer.setVisible(false);
-    } else {
-      this.className += " active";
-      markerVectorLayer.setVisible(true);
-      map.removeInteraction(draw);
-    }
-  }, false);
+  // markerBtn.addEventListener('click', function (event) {
+  //   if ( this.classList.contains('active') ) {
+  //     this.classList.remove('active')
+  //     markerVectorLayer.setVisible(false);
+  //   } else {
+  //     this.className += " active";
+  //     markerVectorLayer.setVisible(true);
+  //     map.removeInteraction(draw);
+  //   }
+  // }, false);
 
 
 // DRAGGABLE MARKER

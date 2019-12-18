@@ -9,7 +9,6 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
 
-
   var source = new ol.source.Vector({wrapX: false});
   var vector = new ol.layer.Vector({
     source: source
@@ -50,20 +49,7 @@ $(document).ready(function () {
   });
   map.addLayer(markerVectorLayer);
 
-
-  var typeSelect = document.getElementById('type');
-
   var draw; // global so we can remove it later
-  // function addInteraction() {
-  //   var value = typeSelect.value;
-  //   if (value !== 'None') {
-  //     draw = new ol.interaction.Draw({
-  //       source: source,
-  //       type: 'Polygon'
-  //     });
-  //     map.addInteraction(draw);
-  //   }
-  // }
 
   function addInteraction() {
 
@@ -106,14 +92,18 @@ $(document).ready(function () {
   }, false);
 
 
+// DRAGGABLE MARKER
+  var translate1 = new ol.interaction.Translate({
+  	features: new ol.Collection([marker])
+  });
+  map.addInteraction(translate1);
+  var coordMarker1;
 
-
-
-
-
-
-
-  
-
+  map.on('pointermove', function(e) {
+    if (e.dragging) return;
+    var hit = map.hasFeatureAtPixel(map.getEventPixel(e.originalEvent));
+    map.getTargetElement().style.cursor = hit ? 'pointer' : '';
+  });
+//////////////////////
 
 })

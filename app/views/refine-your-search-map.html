@@ -26,7 +26,7 @@
           <li>move the marker <img src="/public/images/pin_sml.png" class="govuk-image" alt="Marker symbol">
  on the map to identify a specific location.
           </li>
-          <li>draw a shape on the map to identify a site boundary.
+          <li>draw a shape on the map to mark out a site boundary.
           </li>
         </ul>
 
@@ -50,8 +50,20 @@
 
 
         <div id="map" class="map">
-          <button class="mapToolBtn" id="drawShapeBtn">Draw shape</button>
+          <!-- <button class="mapToolBtn" id="drawShapeBtn">Draw shape</button> -->
           <!-- <button class="mapToolBtn" id="markerBtn">Marker</button> -->
+          <div class="govuk-form-group markerCheckboxContainer">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="shapeCheckbox" name="shapeCheckbox" type="checkbox" value="Draw shape">
+                  <label class="govuk-label govuk-checkboxes__label" for="shapeCheckbox">
+                    Draw shape
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
 
 
@@ -59,7 +71,7 @@
         <p></br></p> -->
 
         <a href="/results" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
-            Find out if you need an FRA and get maps
+            Continue
           </a>
 
       </div>

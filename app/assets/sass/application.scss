@@ -55,3 +55,12 @@ $govuk-assets-path: '/govuk/assets/';
 #markerBtn {
   right: 6rem;
 }
+
+.markerCheckboxContainer {
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+  padding-left: 14px;
+  top: 1rem;
+  right: 1rem;
+}

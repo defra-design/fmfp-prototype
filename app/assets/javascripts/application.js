@@ -61,35 +61,20 @@ $(document).ready(function () {
 
   }
 
+  var shapeCheck = document.getElementById('shapeCheckbox');
 
-  var drawShapeBtn = document.getElementById('drawShapeBtn');
-  var markerBtn = document.getElementById('markerBtn');
-
-  drawShapeBtn.addEventListener('click', function (event) {
-    if ( this.classList.contains('active') ) {
-      this.classList.remove('active')
-      map.removeInteraction(draw);
-      vector.setVisible(false);
-      markerVectorLayer.setVisible(true);
-    } else {
-      this.className += " active";
+  shapeCheck.addEventListener('click', function(event) {
+    if ( this.checked ) {
       map.removeInteraction(draw);
       addInteraction();
       vector.setVisible(true);
       markerVectorLayer.setVisible(false);
+    } else {
+      map.removeInteraction(draw);
+      vector.setVisible(false);
+      markerVectorLayer.setVisible(true);
     }
   }, false);
-
-  // markerBtn.addEventListener('click', function (event) {
-  //   if ( this.classList.contains('active') ) {
-  //     this.classList.remove('active')
-  //     markerVectorLayer.setVisible(false);
-  //   } else {
-  //     this.className += " active";
-  //     markerVectorLayer.setVisible(true);
-  //     map.removeInteraction(draw);
-  //   }
-  // }, false);
 
 
 // DRAGGABLE MARKER

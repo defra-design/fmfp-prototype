@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Contact details
+          </h1>
+        </legend>
+        
+        <div class="govuk-form-group">
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group">
+           <label class="govuk-label govuk-label--m" for="passport-number">
+              Full name
+            </label>
+            <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="email">
+              Email address
+            </label>
+            <span id="email-hint" class="govuk-hint">
+              We will email the link to the PDF of the maps
+            </span>
+            <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+          </div>
+
+        </form>
+        </div>
+
+
+         <a href="/confirmation" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+        Continue
+        </a>
+      
+      </div>
+
+  </main>
+</div>
+
+{% endblock %}

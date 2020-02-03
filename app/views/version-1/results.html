@@ -1,0 +1,161 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Flood Risk Assessment map</h1>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You must carry out a Flood Risk Assessment
+          </strong>
+        </div>
+
+        <p class="govuk-body">Developments in flood zone 3 have a high probability of flooding.</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            What are flood zones
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          <p class="govuk-body">Flood zones determine a location’s probability of flooding.</p>
+
+          <table class="govuk-table">
+            {# <caption class="govuk-table__caption">Dates and amounts</caption> #}
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Flood zone</th>
+                <th scope="col" class="govuk-table__header">Probability of flooding</th>
+                <th scope="col" class="govuk-table__header">FRA</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">1</th>
+                <td class="govuk-table__cell">Low</td>
+                <td class="govuk-table__cell">Some</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">2</th>
+                <td class="govuk-table__cell">Medium</td>
+                <td class="govuk-table__cell">Yes</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">3</th>
+                <td class="govuk-table__cell">High</td>
+                <td class="govuk-table__cell">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="govuk-body">Find out which developments need an <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications?_ga=2.259503306.1978570411.1573555009-902236253.1554453719&_gac=1.182218197.1570532269.CjwKCAjw5_DsBRBPEiwAIEDRW7EfP37Wg2AzLlBkZNTpdinb3-amc1875cjdwiLaU-qXZCN8vsz9VhoC2QUQAvD_BwE#when-you-need-an-assessment">FRA in flood zone 1</a>.</p>
+
+          <p class="govuk-body">Read more about <a href="https://www.gov.uk/guidance/flood-risk-and-coastal-change#flood-zone-and-flood-risk-tables">flood zones and the probability of flooding</a>.</p>
+
+          </div>
+        </details>
+
+        <p class="govuk-body">You will need a map product 4 for your FRA</p>
+
+
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Map products and how to get them
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          <p class="govuk-body">Map products are packages of information that you need to carry out a flood risk assessment.</p>
+          <p class="govuk-body">The map product you need for your FRA depends on:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the flood zone it is in</li>
+            <li>the size of the development</li>
+            <li>If it is behind flood defences</li>
+          </ul>
+          <p class="govuk-body">You can get the map products you need from this page:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Map product 1 - Download the map (PDF)</li>
+            <li>Map product 4 - Request a product 4</li>
+            <li>Map products 5,6,7 and 8 - Contact the Environment Agency</li>
+          </ul>
+          </div>
+        </details>
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+        Download a map product 1 (PDF)
+        </a>
+
+        <img src="/public/images/map.png" class="govuk-image" alt="Examplem map">
+        <p></br></p>
+
+        <h2 class="govuk-heading-m">Map product 4</h2>
+
+        <p class="govuk-body">To request a map product 4 you will need an email address we can send the information to.</p>
+
+        <p class="govuk-body">You will receive the map product 4 (PDF) within 2 hours.</p>
+
+        <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+        Request a Product 4
+        </a>
+
+
+        <h2 class="govuk-heading-m">Map products 5,6,7 and 8</h2>
+
+        <p class="govuk-body">To request map products 5,6,7 or 8 <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications?_ga=2.255246152.1978570411.1573555009-902236253.1554453719&_gac=1.91450728.1570532269.CjwKCAjw5_DsBRBPEiwAIEDRW7EfP37Wg2AzLlBkZNTpdinb3-amc1875cjdwiLaU-qXZCN8vsz9VhoC2QUQAvD_BwE#contact">contact the Environment Agency (EA)</a>.</p>
+
+        <p class="govuk-body">A local EA team will deal with your request. To ensure you receive the correct data you will need to provide one of the following:</p>
+
+         <ul class="govuk-list govuk-list--bullet">
+          <li>a map showing the site boundary, with either a grid reference or postcode</li>
+          <li>an aerial photo with a grid reference</li>
+          <li>a GIS (Geographical Information System) polygon file of the boundary</li>
+         </ul>
+
+         <p class="govuk-body"><a href="refine-your-search-map">Refine this search</a></p>
+
+         <p class="govuk-body"><a href="start">Search for a different location</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

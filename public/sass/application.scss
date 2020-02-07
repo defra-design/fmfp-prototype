@@ -16,3 +16,66 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.govuk-back-link {
+  position: relative;
+  top: -50px;
+}
+
+
+#map {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.mapToolBtn {
+  font-family: "GDS Transport", Arial, sans-serif;
+  border: 0;
+  padding: 8px 10px 7px;
+  background: #1d70b8;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  z-index: 9999;
+  font-size: 1rem;
+}
+.mapToolBtn.active {
+  background: #fd0;
+  color: #000;
+}
+
+#drawShapeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  font-size: 1rem;
+}
+
+#markerBtn {
+  right: 6rem;
+}
+
+.markerCheckboxContainer {
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+  padding-left: 14px;
+  top: 1rem;
+  right: 1rem;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+.blue-inset {
+  border-color: #5694ca;
+  background-color: #eef4fa;  
+}

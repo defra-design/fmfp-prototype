@@ -74,3 +74,8 @@ $govuk-assets-path: '/govuk/assets/';
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
 }
+
+.blue-inset {
+  border-color: #5694ca;
+  background-color: #eef4fa;  
+}

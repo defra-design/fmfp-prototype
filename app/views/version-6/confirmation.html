@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Application complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+
+        <p class="govuk-body">We have sent a confirmation email to {EMAIL ADDRESS} </p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p>We’re processing your request.</p>
+
+        <p>You will receive an email with a link to your flood risk assessment data (previously known as a product 4) within 2 hours.</p>
+
+        <p>If you need a product 5, 6, 7 or 8 contact the [region name e.g. West Midlands] area team at [email address of relevant C&E team].</p>
+
+        <h2 class="govuk-heading-m">Help and advice</h2>
+
+        <p>For more advice around flood risk assessments and planning permission you could contact:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your local authority, [local authority name]</li>
+          <li>the <a href="#">Environment Agency</a></li>
+        </ul>
+
+        <p><a href="results">Go back to your flood information</a></p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

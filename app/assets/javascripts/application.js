@@ -37,7 +37,7 @@ $(document).ready(function () {
   marker.setStyle(new ol.style.Style({
           image: new ol.style.Icon(({
               crossOrigin: 'anonymous',
-              src: '/public/images/pin.png'
+              src: '/public/images/iconfinder_marker.png'
           }))
       }));
 

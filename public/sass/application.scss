@@ -60,6 +60,7 @@ $govuk-assets-path: '/govuk/assets/';
   position: absolute;
   z-index: 999;
   background: #fff;
+  border: 1px solid rgba(98,106,110,.5);
   padding-left: 14px;
   top: 1rem;
   right: 1rem;
@@ -77,5 +78,22 @@ $govuk-assets-path: '/govuk/assets/';
 
 .blue-inset {
   border-color: #5694ca;
-  background-color: #eef4fa;  
+  background-color: #eef4fa;
+}
+
+
+// Map control overwrites
+// govuk-colour("dark-grey")	#626a6e
+// govuk-colour("mid-grey")	#b1b4b6
+
+.ol-control {
+  background-color: rgba(98,106,110,.5) !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.ol-control button {
+  color: #626a6e !important;
+  background-color: rgba(255,255,255,1) !important;
+  font-size: 1.5em !important;
 }

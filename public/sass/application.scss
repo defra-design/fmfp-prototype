@@ -23,9 +23,10 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 
-#map {
+.govuk-grid-column-one-half #map {
   margin-bottom: 50px;
   position: relative;
+  height: 500px;
 }
 
 .mapToolBtn {

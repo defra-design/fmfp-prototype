@@ -26,7 +26,9 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-grid-column-one-half #map {
   margin-bottom: 50px;
   position: relative;
-  height: 500px;
+  height: 400px;
+  padding-bottom: 48px;
+  border: 1px solid #b1b4b6;
 }
 
 .mapToolBtn {
@@ -57,14 +59,9 @@ $govuk-assets-path: '/govuk/assets/';
   right: 6rem;
 }
 
-.markerCheckboxContainer {
-  position: absolute;
-  z-index: 999;
-  background: #fff;
-  border: 1px solid rgba(98,106,110,.5);
-  padding-left: 14px;
-  top: 1rem;
-  right: 1rem;
+.govuk-form-group.markerRadiosContainer {
+  margin-bottom: 0;
+  padding: .25rem 1rem 0 1rem;
 }
 
 .visually-hidden {
@@ -97,4 +94,32 @@ $govuk-assets-path: '/govuk/assets/';
   color: #626a6e !important;
   background-color: rgba(255,255,255,1) !important;
   font-size: 1.5em !important;
+}
+
+
+.govuk-radios--small .govuk-radios__label {
+    margin-top: -2px;
+    padding: 13px 15px 13px 1px;
+    float: left;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+.govuk-radios--small .govuk-radios__item {
+    min-height: 0;
+    margin-bottom: 0;
+    padding-left: 34px;
+    float: left;
+}
+.govuk-radios--small .govuk-radios__input {
+    left: -10px;
+}
+.govuk-radios--small .govuk-radios__label::before {
+    top: 8px;
+    width: 24px;
+    height: 24px;
+}
+.govuk-radios--small .govuk-radios__item:after {
+    content: "";
+    display: block;
+    clear: both;
 }

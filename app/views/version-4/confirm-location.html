@@ -17,8 +17,6 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
 
 
-
-
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">Confirm your location</h1>
     </div>
@@ -26,20 +24,12 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-one-half">
 
 
-
-      <!-- <p class="govuk-body govuk-!-font-weight-bold">It’s important you check that we have the right location for you. Otherwise your flood data may not be accurate.</p> -->
-
-      <!-- <p class="govuk-body">Check the map below and move the marker to the correct location if it’s not in the right place.</p>
-
-      <p class="govuk-body">For large developments, draw a shape on the map to mark out a site boundary.</p> -->
-
-
       <h2 class="govuk-heading-m">For small or residential developments:</h2>
-     
+
       <p>Check the marker is in the right place. If it isn’t, move it to the right location </p>
       <h2 class="govuk-heading-m">For larger developments:</h2>
       <p>Draw a shape showing the boundaries of your site.</p>
-      </ul>
+
 
       <br>
 
@@ -63,9 +53,6 @@ GOV.UK Prototype Kit
       </details>
 
 
-      <!-- <span class="govuk-hint">
-        Confirm that this is where you want to search
-      </span> -->
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
@@ -82,19 +69,26 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-one-half">
 
       <div id="map" class="map">
-        <!-- <button class="mapToolBtn" id="drawShapeBtn">Draw shape</button> -->
-        <!-- <button class="mapToolBtn" id="markerBtn">Marker</button> -->
-        <div class="govuk-form-group markerCheckboxContainer">
-          <fieldset class="govuk-fieldset">
-            <div class="govuk-checkboxes govuk-checkboxes--small">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="shapeCheckbox" name="shapeCheckbox" type="checkbox" value="Draw shape">
-                <label class="govuk-label govuk-checkboxes__label" for="shapeCheckbox">
-                  Draw shape
-                </label>
+
+        <div class="govuk-form-group markerRadiosContainer">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="move-marker" name="marker-or-shape" type="radio" value="move-marker" checked>
+                  <label class="govuk-label govuk-radios__label" for="move-marker">
+                    move marker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="draw-shape" name="marker-or-shape" type="radio" value="draw-shape">
+                  <label class="govuk-label govuk-radios__label" for="draw-shape">
+                    draw shape
+                  </label>
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
         </div>
       </div>
 

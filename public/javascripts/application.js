@@ -61,21 +61,26 @@ $(document).ready(function () {
 
   }
 
-  var shapeCheck = document.getElementById('shapeCheckbox');
 
-  shapeCheck.addEventListener('click', function(event) {
-    if ( this.checked ) {
-      map.removeInteraction(draw);
-      addInteraction();
-      vector.setVisible(true);
-      markerVectorLayer.setVisible(false);
-    } else {
-      map.removeInteraction(draw);
-      vector.setVisible(false);
-      markerVectorLayer.setVisible(true);
-    }
-  }, false);
+  var radios = document.getElementsByName('marker-or-shape');
 
+  for (var i = 0, length = radios.length; i < length; i++) {
+
+    radios[i].addEventListener('click', function(event) {
+      //console.log(this.value);
+      if (this.value == 'draw-shape') {
+        map.removeInteraction(draw);
+        addInteraction();
+        vector.setVisible(true);
+        markerVectorLayer.setVisible(false);
+      } else {
+        map.removeInteraction(draw);
+        vector.setVisible(false);
+        markerVectorLayer.setVisible(true);
+      }
+    }, false);
+
+  }
 
 // DRAGGABLE MARKER
   var translate1 = new ol.interaction.Translate({

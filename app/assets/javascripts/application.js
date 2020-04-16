@@ -171,19 +171,37 @@ $(document).ready(function () {
   var radios = document.getElementsByName('marker-or-shape');
   for (var i = 0, length = radios.length; i < length; i++) {
     radios[i].addEventListener('click', function(event) {
-      //console.log(this.value);
+
+      var deleteBtn = document.getElementById("deleteShapeBtn");
+
       if (this.value == 'draw-shape') {
         addInteractions();
-
+        deleteBtn.disabled = false;
         polygonLayer.setVisible(true);
         markerLayer.setVisible(false);
-      } else {
+      } else if (this.value == 'delete-shape' &&
+        polygonSource.getFeatures().length === 1) {
+          polygonSource.removeFeature(polygonSource.getFeatures()[0]);
+      } else if (this.value === 'move-marker') {
         removeInteractions();
-
+        deleteBtn.disabled = true;
         polygonLayer.setVisible(false);
         markerLayer.setVisible(true);
       }
     }, false);
+  }
+
+  var buttons = document.getElementsByName('delete-shape');
+  if (buttons.length === 1) {
+    buttons[0].addEventListener('click', function(event) {
+      if (polygonSource.getFeatures().length === 1) {
+          polygonSource.removeFeature(polygonSource.getFeatures()[0]);
+      }
+
+      map.addInteraction(draw);
+      document.getElementById("draw-shape").focus();
+
+    });
   }
 
 // DRAGGABLE MARKER

@@ -139,3 +139,21 @@ $govuk-assets-path: '/govuk/assets/';
 .results-map-static {
   max-width: 960px;
 }
+
+
+.map-toggle {
+  color: #1d70b8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.map-container {
+  opacity: 0;
+  height: 1px;
+  overflow: hidden;
+}
+
+.map-container.open {
+  opacity: 1;
+  height: auto;
+}

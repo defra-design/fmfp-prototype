@@ -217,4 +217,15 @@ $(document).ready(function () {
   });
 //////////////////////
 
+
+
+
+
+
+
+$('.map-toggle').on('click', function(e) {
+  $('.map-container').toggleClass('open');
+});
+
+
 })

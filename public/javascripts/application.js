@@ -221,10 +221,11 @@ $(document).ready(function () {
 
 
 
-
+// EVENT HANDLER FOR CUSTOM DETAILS COMPONENT
 
 $('.map-toggle').on('click', function(e) {
-  $('.map-container').toggleClass('open');
+  e.preventDefault();
+  $(this).toggleClass('active');
 });
 
 

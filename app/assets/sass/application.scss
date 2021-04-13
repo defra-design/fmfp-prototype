@@ -29,6 +29,10 @@ $govuk-assets-path: '/govuk/assets/';
   height: 400px;
   padding-bottom: 48px;
   border: 1px solid #b1b4b6;
+
+  .ol-viewport {
+    height: calc(100% - 24px) !important;
+  }
 }
 
 .mapToolBtn {
@@ -190,6 +194,91 @@ $govuk-assets-path: '/govuk/assets/';
   opacity: 1;
   height: auto;
   margin-bottom: 20px;
+}
+
+//New stuff by Anthony
+
+.map-figure,
+.map-figcaption {
+  margin: 0;
+
+  .map {
+    width: calc(100% - 2px);
+  }
+
+}
+
+.map--result {
+  border: 1px solid #b1b4b6;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  @media (min-width:500px) {
+
+    flex-flow: row nowrap;
+
+  }
+}
+
+.map-legend {
+  background: #fff;
+
+  padding: 0 20px;
+  order: 2;
+  z-index: 1;
+
+  @media (min-width:500px) {
+    height: 100%;
+    width: 170px;
+  }
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @media (min-width:500px) {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &-item {
+    line-height: 1.1;
+    margin-bottom: 1.5em;
+    width: 50%;
+
+    @media (min-width:400px) {
+      width: 30%;
+    }
+
+    @media (min-width:500px) {
+      width: auto;
+    }
+
+  }
+
+  &-image {
+    display: block;
+    margin-bottom: 3px;
+    width: 60px;
+
+    &--block {
+
+    }
+
+    &--tall {
+      max-height: 30px;
+      width: auto;
+    }
+
+  }
+}
+
+.pdf-download {
+  text-align: right;
 }
 
 

@@ -8,6 +8,9 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
+  //MAPBOX STUFF
+
+
   var polygonStyle = new ol.style.Style({
     fill: new ol.style.Fill({
       color: 'rgba(255, 255, 255, 0.5)'
@@ -56,7 +59,7 @@ $(document).ready(function () {
     target: 'map',
     layers: [baseMapLayer, polygonLayer],
     view: new ol.View({
-      center: ol.proj.fromLonLat([0.90401, 51.80645]),
+      center: ol.proj.fromLonLat([-2.571657, 53.381048]),
       zoom: 15 //Initial Zoom Level
     }),
     interactions: ol.interaction.defaults({
@@ -68,7 +71,7 @@ $(document).ready(function () {
   // Adding a marker on the map
   var marker = new ol.Feature({
     geometry: new ol.geom.Point(
-      ol.proj.fromLonLat([0.90401, 51.80645]) // postcode CO5 7QG
+      ol.proj.fromLonLat([-2.571657, 53.381048]) // postcode CO5 7QG
     ),
   });
 
@@ -216,9 +219,6 @@ $(document).ready(function () {
     map.getTargetElement().style.cursor = hit ? 'pointer' : '';
   });
 //////////////////////
-
-
-
 
 
 // EVENT HANDLER FOR CUSTOM DETAILS COMPONENT

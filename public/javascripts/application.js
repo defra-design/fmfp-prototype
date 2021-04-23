@@ -91,17 +91,40 @@ $(document).ready(function () {
         pinchRotate: false
       })
     });
-
   }
 
 
 
   // Adding a marker on the map
-  var marker = new ol.Feature({
-    geometry: new ol.geom.Point(
-      ol.proj.fromLonLat([-2.571657, 53.381048]) // postcode CO5 7QG
-    ),
-  });
+
+  if (document.getElementById("map").classList.contains("map--fzd")){
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([-2.580372, 53.382467]) // postcode CO5 7QG
+      ),
+    });
+  } else if (document.getElementById("map").classList.contains("map--fz3")) {
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([-2.573489, 53.385511]) // postcode CO5 7QG
+      ),
+    });
+  } else if (document.getElementById("map").classList.contains("map--fz1")) {
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([-2.566257, 53.378333]) // postcode CO5 7QG
+      ),
+    });
+  } else {
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([-2.571657, 53.381048]) // postcode CO5 7QG
+      ),
+    });
+  }
+
+
+
 
   marker.setStyle(new ol.style.Style({
     image: new ol.style.Icon(({

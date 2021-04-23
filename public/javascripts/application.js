@@ -8,8 +8,6 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
-  //MAPBOX STUFF
-
 
   var polygonStyle = new ol.style.Style({
     fill: new ol.style.Fill({
@@ -55,18 +53,48 @@ $(document).ready(function () {
     source: new ol.source.OSM()
   });
 
-  var map = new ol.Map({
-    target: 'map',
-    layers: [baseMapLayer, polygonLayer],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([-2.571657, 53.381048]),
-      zoom: 15 //Initial Zoom Level
-    }),
-    interactions: ol.interaction.defaults({
-      altShiftDragRotate: false,
-      pinchRotate: false
-    })
-  });
+  // If statement that changes the map layers on the confirm page
+  // I need to look at pin location changes next.
+  if(document.getElementById("map").classList.contains("map--confirm")){
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.571657, 53.381048]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+  } else {
+    //Swaps the map to the FLood Zone Layers from Mapbox Studio
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+      new ol.layer.MapboxVector({
+        styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
+        accessToken:
+          'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
+      }) ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.571657, 53.381048]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+
+  }
+
+
 
   // Adding a marker on the map
   var marker = new ol.Feature({
@@ -78,6 +106,9 @@ $(document).ready(function () {
   marker.setStyle(new ol.style.Style({
     image: new ol.style.Icon(({
       crossOrigin: 'anonymous',
+      anchor: [0.5, 1],
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'fraction',
       src: '/public/images/iconfinder_marker.png'
     }))
   }));

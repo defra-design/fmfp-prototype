@@ -35,6 +35,11 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+#map.map--legacy {
+  background-color: #fff;
+  height: 500px;
+}
+
 .mapToolBtn {
   font-family: "GDS Transport", Arial, sans-serif;
   border: 0;

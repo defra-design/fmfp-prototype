@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find out if you need a Flood Risk Assessment (FRA) and get flood maps for a planning application
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Choose your journey</h1>
+
+        <p class="govuk-body">Choose the user journey you wish to review:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>
+            <a href="version-6/start?results=results-fz1.html&confirmation=confirmation-fz1.html">
+              Go to Start page (flood zone 1 results)
+            </a>
+          </li>
+
+          <li>
+            <a href="version-6/start?results=results-fz3.html&confirmation=confirmation-fz3.html">
+              Go to Start page (flood zone 3 results)
+            </a>
+          </li>
+
+          <li>
+            <a href="version-6/start?results=results-fzd.html&confirmation=confirmation-fzd.html">
+              Go to Start page (Benefitting from flood defences results)
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

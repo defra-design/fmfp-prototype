@@ -27,7 +27,7 @@
 
         <div class="govuk-form-group">
 
-        <form action="summary" method="post" novalidate>
+        <form action="{{ data['summary'] }}" method="post" novalidate>
 
           {{ govukInput({
             id: "full-name",

@@ -72,7 +72,64 @@ $(document).ready(function () {
         pinchRotate: false
       })
     });
-  } else {
+  } else if (document.getElementById("map").classList.contains("map--fz1")) {
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+      new ol.layer.MapboxVector({
+        styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
+        accessToken:
+          'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
+      }) ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+  }
+  else if (document.getElementById("map").classList.contains("map--fz3")) {
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+      new ol.layer.MapboxVector({
+        styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
+        accessToken:
+          'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
+      }) ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.570489, 53.385511]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+  }
+  else if (document.getElementById("map").classList.contains("map--fzd")) {
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+      new ol.layer.MapboxVector({
+        styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
+        accessToken:
+          'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
+      }) ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.576372, 53.382467]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+  }
+  else {
     //Swaps the map to the FLood Zone Layers from Mapbox Studio
     var map = new ol.Map({
       target: 'map',

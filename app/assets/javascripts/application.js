@@ -19,9 +19,44 @@ $(document).ready(function () {
       'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
   });
 
+  var polygonStyle = new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: 'rgba(255, 255, 255, 0.5)'
+    }),
+    stroke: new ol.style.Stroke({
+      color: '#B10E1E',
+      width: 3
+    }),
+    image: new ol.style.Icon({
+      opacity: 1,
+      size: [32, 32],
+      scale: 0.5,
+      src: 'public/images/map-draw-cursor-2x.png'
+    })
+  });
+
+  var polygonVertexStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+      opacity: 1,
+      size: [32, 32],
+      scale: 0.5,
+      src: 'public/images/map-draw-cursor-2x.png'
+    }),
+    // Return the coordinates of the first ring of the polygon
+    geometry: function (feature) {
+      if (feature.getGeometry().getType() === 'Polygon') {
+        var coordinates = feature.getGeometry().getCoordinates()[0]
+        return new ol.geom.MultiPoint(coordinates)
+      } else {
+        return null
+      }
+    }
+  });
+
   var polygonSource = new ol.source.Vector({wrapX: false});
   var polygonLayer = new ol.layer.Vector({
-    source: polygonSource
+    source: polygonSource,
+    style: [polygonStyle, polygonVertexStyle]
   });
 
   // If statement that changes the map layers on the confirm page
@@ -29,10 +64,11 @@ $(document).ready(function () {
   if(document.getElementById("map").classList.contains("map--confirm")){
     var map = new ol.Map({
       target: 'map',
-      layers: [ baseMapLayer ],
+      layers: [ baseMapLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.571657, 53.381048]),
-        zoom: 15 //Initial Zoom Level
+        zoom: 15, //Initial Zoom Level
+        maxZoom: 17
       }),
       interactions: ol.interaction.defaults({
         altShiftDragRotate: false,
@@ -42,7 +78,7 @@ $(document).ready(function () {
   } else if (document.getElementById("map").classList.contains("map--fz1")) {
     var map = new ol.Map({
       target: 'map',
-      layers: [ mapboxLayer ],
+      layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.564057, 53.378333]),
         zoom: 15 //Initial Zoom Level
@@ -56,7 +92,7 @@ $(document).ready(function () {
   else if (document.getElementById("map").classList.contains("map--fz3")) {
     var map = new ol.Map({
       target: 'map',
-      layers: [ mapboxLayer ],
+      layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.570489, 53.385511]),
         zoom: 15 //Initial Zoom Level
@@ -70,7 +106,7 @@ $(document).ready(function () {
   else if (document.getElementById("map").classList.contains("map--fzd")) {
     var map = new ol.Map({
       target: 'map',
-      layers: [ mapboxLayer ],
+      layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.576372, 53.382467]),
         zoom: 15 //Initial Zoom Level
@@ -85,7 +121,7 @@ $(document).ready(function () {
     //Swaps the map to the FLood Zone Layers from Mapbox Studio
     var map = new ol.Map({
       target: 'map',
-      layers: [ mapboxLayer ],
+      layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.571657, 53.381048]),
         zoom: 15 //Initial Zoom Level
@@ -97,32 +133,30 @@ $(document).ready(function () {
     });
   }
 
-
-
   // Adding a marker on the map
 
   if (document.getElementById("map").classList.contains("map--fzd")){
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.580372, 53.382467]) // postcode CO5 7QG
+        ol.proj.fromLonLat([-2.580372, 53.382467])
       ),
     });
   } else if (document.getElementById("map").classList.contains("map--fz3")) {
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.573489, 53.385511]) // postcode CO5 7QG
+        ol.proj.fromLonLat([-2.573489, 53.385511])
       ),
     });
   } else if (document.getElementById("map").classList.contains("map--fz1")) {
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.566257, 53.378333]) // postcode CO5 7QG
+        ol.proj.fromLonLat([-2.566257, 53.378333])
       ),
     });
   } else {
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.571657, 53.381048]) // postcode CO5 7QG
+        ol.proj.fromLonLat([-2.571657, 53.381048])
       ),
     });
   }
@@ -155,9 +189,6 @@ $(document).ready(function () {
   })
 
   /////// POLYGON STUF ///////
-
-
-
 
 
   // Modify polygon drawing style
@@ -205,22 +236,23 @@ $(document).ready(function () {
     style: drawStyle
   });
 
-  // This defintely seems to be causing an issue with ending the drawing
-  // draw.on('drawend', function (e) {
-  //   var coordinates = e.feature.getGeometry().getCoordinates()[0]
-  //   if (coordinates.length >= 4) {
-  //     setTimeout(function () {
-  //       map.removeInteraction(draw)
-  //     }, 500);
-  //   }
-  // });
+  draw.on('drawend', function (e) {
+    var coordinates = e.feature.getGeometry().getCoordinates()[0]
+    if (coordinates.length >= 4) {
+      setTimeout(function () {
+        map.removeInteraction(draw)
+      }, 500);
+    }
+  });
 
   var snap = new ol.interaction.Snap({
     source: polygonSource
   });
 
   function addInteractions() {
-    map.addInteraction(draw);
+    if (polygonSource.getFeatures().length === 0) {
+      map.addInteraction(draw);
+    }
     map.addInteraction(modify);
     map.addInteraction(snap);
   }

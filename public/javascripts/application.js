@@ -59,6 +59,8 @@ $(document).ready(function () {
     style: [polygonStyle, polygonVertexStyle]
   });
 
+  
+
   // If statement that changes the map layers on the confirm page
   // I need to look at pin location changes next.
   if(document.getElementById("map").classList.contains("map--confirm")){
@@ -313,12 +315,14 @@ $(document).ready(function () {
 //////////////////////
 
 
-// EVENT HANDLER FOR CUSTOM DETAILS COMPONENT
+  // EVENT HANDLER FOR CUSTOM DETAILS COMPONENT
+  $('.map-toggle').on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+  });
 
-$('.map-toggle').on('click', function(e) {
-  e.preventDefault();
-  $(this).toggleClass('active');
-});
+
+
 
 
 })

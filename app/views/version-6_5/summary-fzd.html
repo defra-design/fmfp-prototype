@@ -1,0 +1,114 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'contact'
+  }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your details before requesting your data
+        </h1>
+
+        <p>After you have submitted your request you will not be able to change it. Make sure the site location is accurate.</p>
+
+                <p>You should receive your data in 20 working days.</p>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: data['full-name']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "contact",
+                    text: "Change",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                text: data['email']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "contact",
+                    text: "Change",
+                    visuallyHiddenText: "Item label"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Location"
+              },
+              value: {
+                html: '<img src="/public/images/fzd-summary-map.png" alt="An image comfirming the location of your site">'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "confirm-location",
+                    text: "Change",
+                    visuallyHiddenText: "location"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Flood Zone"
+              },
+              value: {
+                text: "Area benefitting from flood defences"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukWarningText({
+          text: "For developments larger than a single property you should draw a shape showing the boundary of your site to get accurate information.",
+          iconFallbackText: "Fallback text"
+        }) }}
+
+
+
+        <a href="{{ data['confirmation'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 " data-module="govuk-button">
+          Request your flood risk assessment data
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

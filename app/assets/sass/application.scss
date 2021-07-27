@@ -296,7 +296,35 @@ $govuk-assets-path: '/govuk/assets/';
 
 
 .summary-image {
-  max-width: 100%;
+    max-width: 80%;
+  @media (min-width:641px) {
+    max-width: 100%;
+  }
+}
+
+.govuk-summary-list__row--location {
+
+  @media (min-width:641px) {
+
+  }
+
+  .govuk-summary-list__key {
+    @media (min-width:641px) {
+
+    }
+  }
+  .govuk-summary-list__value {
+    @media (min-width:641px) {
+
+    }
+  }
+  .govuk-summary-list__actions {
+    @media (min-width:641px) {
+      
+    }
+  }
+
+
 }
 
 

@@ -28,69 +28,58 @@
 
         <p>You should receive your data in 20 working days.</p>
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Full name"
-              },
-              value: {
-                text: data['full-name']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "contact",
-                    text: "Change",
-                    visuallyHiddenText: "full name"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Email address"
-              },
-              value: {
-                text: data['email']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "contact",
-                    text: "Change",
-                    visuallyHiddenText: "Item label"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Location"
-              },
-              value: {
-                html: '<img class="summary-image" src="/public/images/fz1-summary-map.png" alt="An image comfirming the location of your site, which you entered as [Location searched for]">'
-              },
-              actions: {
-                items: [
-                  {
-                    href: "confirm-location",
-                    text: "Change",
-                    visuallyHiddenText: "location"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Flood Zone"
-              },
-              value: {
-                text: "1"
-              }
-            }
-          ]
-        }) }}
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['full-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--location">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <span class="govuk-visually-hidden">{{ data['location-postcode'] }}</span>
+              <img class="summary-image" src="/public/images/fz1-summary-map.png" alt="An image comfirming the location of your site">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="confirm-location">
+                Change<span class="govuk-visually-hidden"> location</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Flood Zone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
 
         {{ govukWarningText({
           text: "For developments larger than a single property you should draw a shape showing the boundary of your site to get accurate information.",

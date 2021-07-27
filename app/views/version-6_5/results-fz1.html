@@ -50,7 +50,7 @@
             A map showing the flood risk for the location you have provided
           </figcaption>
 
-          <div id="map" class="map map--fz1 map--result govuk-!-margin-bottom-8">
+          <div id="map" class="map map--fz1 map--result">
 
             <div class="map-legend">
 
@@ -90,6 +90,22 @@
               </ul>
             </div>
 
+          </div>
+
+          <div class="govuk-form-group govuk-!-margin-top-3 govuk-!-margin-bottom-8">
+            <fieldset class="govuk-fieldset" aria-describedby="hide-layer-legend">
+              <legend id="hide-layer-legend" class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
+                Hide flood zones on the map
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="hide-zones" name="hide-zones" type="checkbox" value="hide-zone">
+                  <label class="govuk-label govuk-checkboxes__label" for="hide-zones">
+                    Hide flood zones on the map
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
         </figure>

@@ -59,7 +59,7 @@ $(document).ready(function () {
     style: [polygonStyle, polygonVertexStyle]
   });
 
-  
+
 
   // If statement that changes the map layers on the confirm page
   // I need to look at pin location changes next.
@@ -190,8 +190,11 @@ $(document).ready(function () {
     }
   })
 
-  /////// POLYGON STUF ///////
 
+
+
+
+  /////// POLYGON STUF ///////
 
   // Modify polygon drawing style
   var modifyStyle = new ol.style.Style({

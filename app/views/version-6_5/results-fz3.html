@@ -102,9 +102,9 @@
             <legend id="hide-layer-legend" class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
               Hide flood zones on the map
             </legend>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="hide-zones" name="hide-zones" type="checkbox" value="hide-zone">
+                <input class="govuk-checkboxes__input" id="hide-zones" name="hide-zones" type="checkbox" value="hide-zones" onclick="hideZones()">
                 <label class="govuk-label govuk-checkboxes__label" for="hide-zones">
                   Hide flood zones on the map
                 </label>
@@ -112,6 +112,16 @@
             </div>
           </fieldset>
         </div>
+
+        <script type="text/javascript">
+          function hideZones () {
+            if (document.getElementById('hide-zones').checked) {
+              alert("Hide the flood zones");
+            } else {
+              alert("Show the flood zones");
+            }
+          }
+        </script>
 
       </figure>
 

@@ -104,9 +104,9 @@
             </legend>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="hide-zones" name="hide-zones" type="checkbox" value="hide-zones" onclick="hideZones()">
+                <input class="govuk-checkboxes__input" id="show-zones" name="show-zones" type="checkbox" checked value="show-zones" onclick="showZones()">
                 <label class="govuk-label govuk-checkboxes__label" for="hide-zones">
-                  Hide flood zones on the map
+                  Show flood zones
                 </label>
               </div>
             </div>
@@ -114,11 +114,11 @@
         </div>
 
         <script type="text/javascript">
-          function hideZones () {
-            if (document.getElementById('hide-zones').checked) {
-              alert("Hide the flood zones");
-            } else {
+          function showZones () {
+            if (document.getElementById('show-zones').checked) {
               alert("Show the flood zones");
+            } else {
+              alert("Hide the flood zones");
             }
           }
         </script>

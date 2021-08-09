@@ -40,6 +40,20 @@ $govuk-assets-path: '/govuk/assets/';
   height: 500px;
 }
 
+.ol-full-screen {
+  button, button.ol-full-screen-false {
+    background-color: #fff;
+    color: #626a6e !important;
+    font-family: "GDS Transport", arial, sans-serif;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    height: auto;
+    line-height: 1;
+    padding: 0.4em;
+    width: auto !important;
+  }
+}
+
 .mapToolBtn {
   font-family: "GDS Transport", Arial, sans-serif;
   border: 0;

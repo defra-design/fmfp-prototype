@@ -80,6 +80,11 @@ $(document).ready(function () {
   } else if (document.getElementById("map").classList.contains("map--fz1")) {
     var map = new ol.Map({
       target: 'map',
+      controls: ol.control.defaults().extend([
+        new ol.control.FullScreen({
+          label: 'Full screen \u2922'
+        })
+      ]),
       layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.564057, 53.378333]),
@@ -94,6 +99,11 @@ $(document).ready(function () {
   else if (document.getElementById("map").classList.contains("map--fz3")) {
     var map = new ol.Map({
       target: 'map',
+      controls: ol.control.defaults().extend([
+        new ol.control.FullScreen({
+          label: 'Full screen \u2922'
+        })
+      ]),
       layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.570489, 53.385511]),
@@ -108,6 +118,11 @@ $(document).ready(function () {
   else if (document.getElementById("map").classList.contains("map--fzd")) {
     var map = new ol.Map({
       target: 'map',
+      controls: ol.control.defaults().extend([
+        new ol.control.FullScreen({
+          label: 'Full screen \u2922'
+        })
+      ]),
       layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
         center: ol.proj.fromLonLat([-2.576372, 53.382467]),

@@ -52,6 +52,7 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
+
     {{ govukFooter({
       meta: {
         items: [
@@ -79,9 +80,11 @@
             href: "/prototype-admin/clear-data",
             text: "[[ Clear data ]]"
           }
-        ]
+        ],
+        html: '<p class="govuk-body-s" style="max-width: 70ch;">© Crown copyright and database rights 2021 OS 100024198. Use of the address and mapping data is subject to the terms and conditions.</p>' 
       }
     }) }}
+
   {% endblock %}
 {% endif %}
 

@@ -208,6 +208,57 @@
 
     </div>
 
+    <div class="dialog" id="report" aria-hidden="true">
+      <div class="dialog-holder" aria-labelledby="dialog-title" aria-describedby="dialog-content" role="alertdialog">
+        <div role="document" tabindex="0">
+          <h2 id="dialog-title" class="govuk-heading-l govuk-!-margin-bottom-3">Download report</h2>
+          <p class="govuk-!-margin-bottom-2" id="dialog-content">To download your report:</p>
+          <ul class="govuk-list govuk-list--number">
+            <li>
+              Put anything in the 'Your reference' box that will help you identify the report in the future.
+            </li>
+            <li>
+              Choose the scale of map that you need
+            </li>
+            <li>
+              Click Download
+            </li>
+          </ul>
+          <form class="form" method="POST" action="pdf">
+            <input name="id" type="hidden">
+            <input name="zone" type="hidden" value="FZ1">
+            <input name="polygon" type="hidden" value="">
+            <input name="center" type="hidden" value="[362105,387218]">
+
+            <div class="govuk-form-group govuk-!-margin-bottom-3">
+              <h3 class="govuk-label-wrapper"><label class="govuk-label" for="reference">Your reference</label></h3>
+              <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="scale">Scale</label>
+              <select class="govuk-select" id="scale" name="scale">
+                <option value="2500">1:2500</option>
+                <option value="10000">1:10000</option>
+                <option value="25000">1:25000</option>
+                <option value="50000">1:50000</option>
+              </select>
+            </div>
+
+            <div class="dialog-actions govuk-button-group govuk-!-margin-bottom-0">
+              <button class="govuk-button button" type="submit">Download</button>
+              <a class="dialog-cancel govuk-link" href="#">Cancel</a>
+            </div>
+
+            <button class="dialog-close" aria-label="close">
+              Close<span class="govuk-visually-hidden"> dialog</span>
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
 </div>
 
 {% endblock %}

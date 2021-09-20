@@ -339,8 +339,21 @@ $(document).ready(function () {
     $(this).toggleClass('active');
   });
 
+  // STUFF FOR THE MODAL //
 
+  $('.govuk-button--pdf-download').on('click', function(e) {
+    e.preventDefault();
+    $('.dialog').toggleClass('is-visible');
+  });
 
+  $('.dialog-cancel').on('click', function(e) {
+    e.preventDefault();
+    $('.dialog').toggleClass('is-visible');
+  });
 
+  $('.dialog-close').on('click', function(e) {
+    e.preventDefault();
+    $('.dialog').toggleClass('is-visible');
+  });
 
 })

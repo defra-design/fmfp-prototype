@@ -336,7 +336,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 
 .summary-image {
-    max-width: 80%;
+  max-width: 80%;
   @media (min-width:641px) {
     max-width: 100%;
   }
@@ -347,7 +347,7 @@ $govuk-assets-path: '/govuk/assets/';
   bottom: 0;
   height: 100%;
   left: 0;
-  padding: 15px;
+  padding: 0;
   position: fixed;
   right: 0;
   text-align: center;
@@ -370,14 +370,19 @@ $govuk-assets-path: '/govuk/assets/';
 
   &-holder {
     background-color: #fff;
-    border: 10px solid #fff;
     display: inline-block;
     margin: auto;
     max-width: 530px;
-    padding: 1em 1.5em;
+    padding: 1.5em 2em;
     position: relative;
     text-align: left;
     vertical-align: middle;
+    width: 80%;
+
+    @media (max-width:400px) {
+      padding: 1em;
+    }
+
   }
 
   &-close {

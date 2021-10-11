@@ -24,14 +24,23 @@ $govuk-assets-path: '/govuk/assets/';
 
 
 .govuk-grid-column-one-half #map {
-  margin-bottom: 50px;
+  margin-bottom: 0;
+
   position: relative;
   height: 400px;
   padding-bottom: 48px;
   border: 1px solid #b1b4b6;
 
+  @media (max-width:400px) {
+    margin-top: 0;
+  }
+
   .ol-viewport {
     height: calc(100% - 24px) !important;
+
+    @media (max-width:400px) {
+      height: calc(100% - 110px) !important;
+    }
   }
 }
 

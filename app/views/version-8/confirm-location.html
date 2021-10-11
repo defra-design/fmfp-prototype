@@ -15,16 +15,11 @@
 
   <div class="govuk-grid-row">
 
+    <div class="govuk-grid-column-one-half">
 
-    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         Confirm the location
       </h1>
-    </div>
-
-    <div class="govuk-grid-column-one-half">
-
-
 
       <h2 class="govuk-heading-m">
         For developments larger than a single residential property
@@ -60,19 +55,6 @@
       <p>
         Check the marker is on your property. If it isn’t, move it to the right location.
       </p>
-
-
-      <div class="govuk-warning-text govuk-!-margin-top-7">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          Check your location is correct before continuing.
-        </strong>
-      </div>
-
-      <a id="continue-button" href="{{ data['results'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
-        Continue
-      </a>
 
     </div>
 
@@ -132,10 +114,26 @@
 
       </div>
 
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-warning-text govuk-!-margin-top-7">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Check your location is correct before continuing.
+        </strong>
+      </div>
+
+      <a id="continue-button" href="{{ data['results'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+        Continue
+      </a>
 
     </div>
 
   </div>
+
 
 </div>
 

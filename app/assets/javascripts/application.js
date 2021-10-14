@@ -356,6 +356,13 @@ $(document).ready(function () {
     $('.dialog').toggleClass('is-visible');
   });
 
+  $(document).keydown(function(event) {
+  if (event.keyCode == 27) {
+    $('.dialog').toggleClass('is-visible');
+  }
+  
+});
+
   // add all the elements inside modal which you want to make focusable
   const  focusableElements =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';

@@ -358,7 +358,7 @@ $(document).ready(function () {
   });
 
   $(document).keydown(function(event) {
-  if (event.keyCode == 27) {
+  if ((event.keyCode == 27) && $('.dialog').hasClass('is-visible')) {
     $('.dialog').toggleClass('is-visible');
   }
 
@@ -366,7 +366,7 @@ $(document).ready(function () {
 
   // add all the elements inside modal which you want to make focusable
   const  focusableElements =
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      'button, [href], input, select, [tabindex]:not([tabindex="-1"])';
   const modal = document.querySelector('#dialog-main'); // select the modal by it's id
 
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal

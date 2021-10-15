@@ -354,6 +354,8 @@ $govuk-assets-path: '/govuk/assets/';
 .dialog-holder {
   &:focus {
     outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
   }
 }
 
@@ -403,12 +405,11 @@ $govuk-assets-path: '/govuk/assets/';
   &-close {
     display: block;
     margin: auto;
-
+  padding: 4px 4px;
     position: absolute;
     top: 5px;
     right: 5px;
     width: auto;
-
   }
 }
 

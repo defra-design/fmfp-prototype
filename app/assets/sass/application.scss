@@ -351,6 +351,14 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.dialog-holder {
+  &:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
+  }
+}
+
 .dialog {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
@@ -396,15 +404,8 @@ $govuk-assets-path: '/govuk/assets/';
 
   &-close {
     display: block;
-    background-color: #eee;
-    border: 1px solid #eee;
-    overflow: hidden;
-    text-align: center;
-    border: 0 none;
-    cursor: pointer;
-    height: 22px;
     margin: auto;
-    padding: 0 0.5em;
+  padding: 4px 4px;
     position: absolute;
     top: 5px;
     right: 5px;

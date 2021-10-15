@@ -350,16 +350,19 @@ $(document).ready(function () {
   $('.dialog-cancel').on('click', function(e) {
     e.preventDefault();
     $('.dialog').toggleClass('is-visible');
+    $('.pdf-download').find('.govuk-button--pdf-download').focus();
   });
 
   $('.dialog-close').on('click', function(e) {
     e.preventDefault();
     $('.dialog').toggleClass('is-visible');
+    $('.pdf-download').find('.govuk-button--pdf-download').focus();
   });
 
   $(document).keydown(function(event) {
   if ((event.keyCode == 27) && $('.dialog').hasClass('is-visible')) {
     $('.dialog').toggleClass('is-visible');
+    $('.pdf-download').find('.govuk-button--pdf-download').focus();
   }
 
 });

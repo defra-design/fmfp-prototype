@@ -19,13 +19,15 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-back-link {
   position: relative;
-  top: -50px;
+  top: -30px;
+  @media (min-width:769px) {
+    top: -50px;
+  }
 }
 
 
 .govuk-grid-column-one-half #map {
   margin-bottom: 0;
-
   position: relative;
   height: 400px;
   padding-bottom: 48px;
@@ -352,6 +354,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .dialog-holder {
+  border: 2px solid #000;
   &:focus {
     outline: 3px solid #ffdd00;
     outline-offset: 0;

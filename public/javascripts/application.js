@@ -344,7 +344,7 @@ $(document).ready(function () {
   $('.govuk-button--pdf-download').on('click', function(e) {
     e.preventDefault();
     $('.dialog').toggleClass('is-visible');
-    $('.dialog').find('#dialog-main').focus();
+    $('.dialog').find('#reference').focus();
     $('body').addClass('modal-open');
   });
 

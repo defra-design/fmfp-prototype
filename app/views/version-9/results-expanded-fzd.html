@@ -1,0 +1,136 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Your results explained - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your results explained</h1>
+
+      <p class="govuk-body">Your development is in flood zone 3. It is also in an area that has some protection from flood defences.</p>
+
+      <p class="govuk-body">Without the local flood defences, this area would be at high risk of flooding.</p>
+
+      <p class="govuk-body">You'll need to do a flood risk assessment as part of your planning application.</p>
+
+
+      <!-- <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            See these results on a map
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <!-- <div id="map" class="map"></div> -->
+        <!-- </div>
+      </details> -->
+
+
+      <a href="#" class="map-toggle">see these results on a map</a>
+      <div class="map-container">
+      <div id="map" class="map"></div>
+      </div>
+
+
+      <h2 class="govuk-heading-m">Next steps</h2>
+
+
+      <p class="govuk-body">You should:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>speak to your local authority to find out more about their planning requirements - your local authority is <strong>Colchester Borough Council</strong></li>
+        <li>work with a flood risk consultant to get a flood risk assessment</li>
+      </ol>
+
+
+      <h2 class="govuk-heading-m">
+        Flood zones explained
+      </h2>
+
+      <p class="govuk-body">
+        Flood zones are based on how likely it is that a location will flood from rivers and the sea.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 1
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a low probability of flooding, some locations will need a flood risk assessment. Find out more about <a
+            href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications?_ga=2.259503306.1978570411.1573555009-902236253.1554453719&_gac=1.182218197.1570532269.CjwKCAjw5_DsBRBPEiwAIEDRW7EfP37Wg2AzLlBkZNTpdinb3-amc1875cjdwiLaU-qXZCN8vsz9VhoC2QUQAvD_BwE#when-you-need-an-assessment">which developments need a flood risk assessment in flood zone 1</a>.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 2
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a medium probability of flooding and will need a flood risk assessment.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 3
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a high probability of flooding and will need a flood risk assessment.
+      </p>
+
+      <!-- <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You must carry out a flood risk assessment
+        </strong>
+      </div> -->
+
+      <h2 class="govuk-heading-m">
+        Getting a flood risk assessment
+      </h2>
+
+      <p class="govuk-body">
+        You can use this service to request flood risk data that can be used as part of a flood risk assessment. However, some developments are more complex than others, and this data isn’t always enough to allow you to produce a flood risk assessment.
+      </p>
+
+      <div class="govuk-inset-text">
+        We recommend that you work with a flood risk consultant to get your flood risk assessment.
+      </div>
+
+      <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Request your flood risk assessment data
+      </a>
+
+      <h2 class="govuk-heading-m">Get help</h2>
+
+      <p class="govuk-body">For more advice around flood risk assessments and planning permission you could:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>contact your local authority, <strong>Colchester Borough Council</strong></li>
+        <li>read <a href="https://www.gov.uk/planning-permission-england-wales">guidance on planning permission</a></li>
+        <li>contact the <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#contact">Environment Agency</a></li>
+      </ul>
+
+
+
+      <h2 class="govuk-heading-m">More flood information</h2>
+
+      <p class="govuk-body"><a href="https://flood-warning-information.service.gov.uk/long-term-flood-risk/map?easting=378284&northing=392724">Check the long term flood risk for this area</a>, for information about the possible causes of flooding.</p>
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

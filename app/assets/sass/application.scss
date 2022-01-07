@@ -15,7 +15,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you.
 
 .govuk-back-link {
   position: relative;
@@ -24,7 +24,6 @@ $govuk-assets-path: '/govuk/assets/';
     top: -50px;
   }
 }
-
 
 .govuk-grid-column-one-half #map {
   margin-bottom: 0;

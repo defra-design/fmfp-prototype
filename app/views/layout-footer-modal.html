@@ -1,0 +1,162 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {# include "includes/cookie-banner.html" #}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "cookies",
+            text: "Cookies"
+          },
+          {
+            href: "privacy-notice",
+            text: "Privacy notice"
+          },
+          {
+            href: "terms-conditions",
+            text: "Terms and conditions"
+          },
+          {
+            href: "accessibility",
+            text: "Accessibility statement"
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "[[ Clear data ]]"
+          }
+        ],
+        html: '<p class="govuk-body-s">Built by the <a href="https://www.gov.uk/government/organisations/environment-agency">Environment Agency</a></p><p class="govuk-body-s" style="max-width: 70ch;">© Crown copyright and database rights 2021 <a href = "https://www.ordnancesurvey.co.uk/">OS</a> 100024198. Use of the address and mapping data is subject to the <a href="os-terms">terms and conditions</a>.</p>'
+      }
+    }) }}
+
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+
+{% block modal %}
+  {% include "includes/modal.html" %}
+  <!-- The modal for P1 download -->
+
+  <div class="dialog" id="report" aria-hidden="true" aria-modal="true">
+
+    <div class="dialog-holder" id="dialog-main" aria-labelledby="dialog-title" aria-describedby="dialog-content" role="dialog"  tabindex="0">
+
+      <div role="document" class="dialgog-text-container">
+
+        <h2 id="dialog-title" class="govuk-heading-l govuk-!-margin-bottom-1 govuk-!-padding-top-0">
+          Download report
+        </h2>
+
+        <button class="dialog-close govuk-button govuk-button--secondary govuk-!-font-size-14" aria-label="Close this dialog">
+          Close<span class="govuk-visually-hidden"> this dialog</span>
+        </button>
+
+        <p class="govuk-!-margin-bottom-5" id="dialog-content">
+          To download your report: enter a reference name, select a scale, then click download.
+        </p>
+
+        <form class="form" method="POST" action="pdf">
+          <input name="id" type="hidden">
+          <input name="zone" type="hidden" value="FZ1">
+          <input name="polygon" type="hidden" value="">
+          <input name="center" type="hidden" value="[362105,387218]">
+
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper">
+              <label class="govuk-label--m" for="reference">
+                Your reference
+              </label>
+              <span class="govuk-hint govuk-hint--block">
+               This is chosen by you to help you find the report later
+              </span>
+            </h3>
+            <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label--m" for="scale">
+              Scale
+            </label>
+            <span class="govuk-hint govuk-hint--block">
+             Select the scale of the map shown in the report
+            </span>
+            <select class="govuk-select" id="scale" name="scale">
+              <option value="2500">1:2500</option>
+              <option value="10000">1:10000</option>
+              <option value="25000">1:25000</option>
+              <option value="50000">1:50000</option>
+            </select>
+          </div>
+
+          <div class="dialog-actions govuk-button-group govuk-!-margin-bottom-0">
+            <button class="govuk-button button" type="submit">Download report</button>
+            <a class="dialog-cancel govuk-link" href="#">Cancel</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of the the modal for P1 download -->
+{% endblock %}
+
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

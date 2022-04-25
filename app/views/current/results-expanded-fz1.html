@@ -1,0 +1,156 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Your results explained - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Your results explained
+      </h1>
+
+      <p class="govuk-body">
+        Because your selected location is in flood zone 1, it has a low probability of flooding.
+      </p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            See these results on a map
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <img src="/public/images/p1-floodzones_v2.png" class="govuk-image results-map-static" alt="Example map">
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">
+        Map data
+      </h2>
+
+      <p class="govuk-body">The flood map for planning shows river and sea flooding data only. It doesn’t include other sources of flooding. It is for use in development planning and flood risk assessments.</p>
+
+      <p class="govuk-body">The data in the map relates to the selected location and is not specific to any property within it. The map is updated regularly and is correct at the time of printing. </p>
+
+      <h2 class="govuk-heading-m">
+        When you need a flood risk assessment
+      </h2>
+
+      <p class="govuk-body">
+        You'll only need to do a flood risk assessment as part of your planning application if your development is <span class="govuk-!-font-weight-bold">any of the following:</span>
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          bigger than 1 hectare (ha)
+        </li>
+        <li>
+          in an area with critical drainage problems as notified by the Environment Agency
+        </li>
+        <li>
+          a change of use in development type to a more vulnerable category (for example from commercial to residential) <span class="govuk-!-font-weight-bold">and</span> in an area that could be affected by sources of flooding other than rivers and the sea (such as surface water or reservoirs)
+        </li>
+        <!-- <li>
+          a change of use in development type to a more vulnerable category (for example from commercial to residential) <span class="govuk-!-font-weight-bold">and</span> in an area that could be affected by sources of flooding other than rivers and the sea
+        </li> -->
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Next steps
+      </h2>
+
+      <p class="govuk-body">
+        If you think your development needs a flood risk assessment, you should speak to a flood risk consultant to do this.
+      </p>
+
+      <p class="govuk-body">
+        If you don’t think your development needs a flood risk assessment, you should download  <a href="results-fz1">your flood map for planning that shows your flood zone</a> and include it in your planning application.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Flood zones explained
+      </h2>
+
+      <p class="govuk-body">
+        Flood zones are based on how likely it is that a location will flood from rivers and the sea.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 1
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a low probability of flooding, some locations will need a flood risk assessment. Find out more about <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications?_ga=2.259503306.1978570411.1573555009-902236253.1554453719&_gac=1.182218197.1570532269.CjwKCAjw5_DsBRBPEiwAIEDRW7EfP37Wg2AzLlBkZNTpdinb3-amc1875cjdwiLaU-qXZCN8vsz9VhoC2QUQAvD_BwE#when-you-need-an-assessment">which developments need a flood risk assessment in flood zone 1</a>.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 2
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a medium probability of flooding and will need a flood risk assessment.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Flood zone 3
+      </h3>
+
+      <p class="govuk-body">
+        Locations have a high probability of flooding and will need a flood risk assessment.
+      </p>
+
+      <!-- <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You must carry out a flood risk assessment
+        </strong>
+      </div> -->
+
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+
+      <p class="govuk-body">
+        For more advice around flood risk assessments and planning permission you could:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          contact your local authority, <strong>Colchester Borough Council</strong>
+        </li>
+        <li>
+          read <a href="https://www.gov.uk/planning-permission-england-wales">guidance on planning permission</a>
+        </li>
+        <li>
+          <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#contact">contact the Environment Agency</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        More flood information
+      </h2>
+
+      <p class="govuk-body">
+        <a href="https://flood-warning-information.service.gov.uk/long-term-flood-risk/map?easting=378284&northing=392724">Check the long term flood risk for this area</a>, for information about the possible causes of flooding.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -46,9 +46,32 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+
+
 #map.map--legacy {
   background-color: #fff;
   height: 500px;
+}
+
+#map.map--justboundary {
+  width: 100%;
+
+  figure {
+    border: 1px solid #ccc;
+  }
+}
+
+.map-figure--justboundary {
+
+  border: 1px solid #ccc;
+
+  #map {
+    width: 100%;
+  }
+
+  .ol-viewport {
+    height: calc(100% - 72px) !important;
+  }
 }
 
 .ol-full-screen {

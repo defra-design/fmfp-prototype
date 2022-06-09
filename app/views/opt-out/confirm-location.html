@@ -16,20 +16,24 @@
 
   <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Draw the boundary of your site
+        Confirm the location
       </h1>
     </div>
 
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-half">
 
       <p class="govuk-body">
         Your search for 'WA4 1HT' has been placed in Warrington, North West, England.
       </p>
 
+      <h2 class="govuk-heading-m">
+        For developments larger than a single residential property
+      </h2>
+
       <p class="govuk-body">
-        To make sure we provide you with accurate information you need to draw the boundary of your site on the map below.
+        To get accurate information you should draw the boundary of your site.
       </p>
 
       <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
@@ -51,17 +55,25 @@
         </div>
       </details>
 
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">
+        For single residential properties and extensions
+      </h2>
+
+      <p class="govuk-body">
+        Check the marker is on your property. If it isn’t, move it to the right location.
+      </p>
+
     </div>
 
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-half">
 
-      <figure class="map-figure map-figure--justboundary" role="application">
+      <figure class="map-figure" role="application">
 
         <figcaption class="map-figcaption govuk-visually-hidden">
           An interactive map tool to allow you to accurately locate the site you require
         </figcaption>
 
-        <div id="map" class="map map--confirm map--justboundary">
+        <div id="map" class="map map--confirm">
 
           <noscript>
             <h2 class="govuk-heading-m">
@@ -93,7 +105,12 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                 <div class="govuk-radios govuk-radios--inline govuk-radios--small">
-
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="move-marker" name="marker-or-shape" type="radio" value="move-marker" checked>
+                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="move-marker">
+                      Move marker
+                    </label>
+                  </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="draw-shape" name="marker-or-shape" type="radio" value="draw-shape">
                     <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="draw-shape">
@@ -114,7 +131,7 @@
 
     </div>
 
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       <div class="govuk-warning-text govuk-!-margin-top-7">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>

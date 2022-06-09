@@ -170,6 +170,12 @@ $(document).ready(function () {
         ol.proj.fromLonLat([-2.566257, 53.378333])
       ),
     });
+  } else if (document.getElementById("map").classList.contains("map--justboundary")) {
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([-1.566257, 53.378333])
+      ),
+    });
   } else {
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(

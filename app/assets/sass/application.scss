@@ -25,6 +25,10 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.current-version {
+  text-transform: uppercase;
+}
+
 
 .govuk-grid-column-one-half #map {
   margin-bottom: 0;

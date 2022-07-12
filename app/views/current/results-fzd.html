@@ -24,6 +24,10 @@
           Flood risk information for this location
         </h1>
 
+        <p class="govuk-body">
+          Your selected location is in flood zone 3. It is also in an area benefiting from flood defences.
+        </p>
+
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
@@ -33,10 +37,6 @@
         </div>
 
         <p class="govuk-body">
-          Your selected location is in flood zone 3. It is also in an area benefiting from flood defences.
-        </p>
-
-        <p class="govuk-body">
           <a href="results-expanded-fzd">More information about your results</a>.
         </p>
 
@@ -44,13 +44,7 @@
 
       <div class="govuk-grid-column-full">
 
-        <figure class="map-figure govuk-!-margin-bottom-7" role="application">
-
-          <div class="pdf-download">
-            <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-button--pdf-download" data-module="govuk-button">
-              Download printable map (PDF)
-            </button>
-          </div>
+        <figure class="map-figure govuk-!-margin-top-4 govuk-!-margin-bottom-3" role="application">
 
           <figcaption class="map-figcaption govuk-visually-hidden">
             A map showing the flood risk for the location you have provided
@@ -125,37 +119,84 @@
 
           </div>
 
-          <!-- <div class="govuk-form-group govuk-!-margin-top-3 govuk-!-margin-bottom-8">
-            <fieldset class="govuk-fieldset" aria-describedby="hide-layer-legend">
-              <legend id="hide-layer-legend" class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
-                Hide flood zones on the map
-              </legend>
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="show-zones" name="show-zones" type="checkbox" checked value="show-zones" onclick="showZones()">
-                  <label class="govuk-label govuk-checkboxes__label" for="hide-zones">
-                    Show flood zones
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <script type="text/javascript">
-            function showZones () {
-              if (document.getElementById('show-zones').checked) {
-                alert("Show the flood zones");
-              } else {
-                alert("Hide the flood zones");
-              }
-            }
-          </script> -->
-
         </figure>
 
       </div>
 
       <div class="govuk-grid-column-two-thirds">
+
+        <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Report options (select scale, add reference number)
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <form class="form" method="POST" action="pdf">
+              <input name="id" type="hidden">
+              <input name="zone" type="hidden" value="FZ1">
+              <input name="polygon" type="hidden" value="">
+              <input name="center" type="hidden" value="[362105,387218]">
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="reference">
+                    Add a reference
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Optional. Chose a reference to be added to the report to help you find it
+                  </span>
+                </h3>
+                <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+              </div>
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="scale">
+                    Scale
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Select the scale of the map shown in the report
+                  </span>
+                </h3>
+                <select class="govuk-select" id="scale" name="scale">
+                  <option value="2500">1:2500</option>
+                  <option value="10000">1:10000</option>
+                  <option value="25000">1:25000</option>
+                  <option value="50000">1:50000</option>
+                </select>
+              </div>
+          </div>
+        </details>
+
+        <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Download a copy of these results in a report (PDF)
+        </button>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">
+          What to do next
+        </h2>
+
+        <p class="govuk-body">
+          As your site is in flood zone 3 in an area benefitting from flood defences you need to carry out a flood risk assessment as part of your planning application. You should:
+        </p>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>
+            Speak to your local authority to find out more about their planning requirements - your local authority is <strong>Warrington</strong>.
+          </li>
+          <li>
+            Work with a flood risk consultant to get a flood risk assessment.
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          You can request flood risk data using this to service as part of the assessment.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          How to request flood risk assessment data
+        </h2>
 
         <p class="govuk-body">
           To request flood risk assessment data (also known as a <span class="govuk-!-font-weight-bold">product 4</span>) you’ll need an email address we can send the information to.
@@ -228,7 +269,7 @@
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="confirm-location">Reposition the marker or change boundary</a>
+            <a href="confirm-location">Redraw your boundary</a>
           </li>
           <li>
             <a href="location">Search for a different location</a>

@@ -1,5 +1,5 @@
 
-{% extends "layout-footer-modal.html" %}
+{% extends "layout-footer.html" %}
 
 {% block pageTitle %}
   Flood risk information for this location - GOV.UK
@@ -24,39 +24,33 @@
           Flood risk information for this location
         </h1>
 
+        <p class="govuk-body">
+          Your selected location is in flood zone 2. This means it has a medium probability of flooding.
+        </p>
+
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            You will need to carry out a flood risk assessment for your planning application.
+            You must carry out a flood risk assessment for your planning application.
           </strong>
         </div>
 
         <p class="govuk-body">
-          Your selected location is in flood zone 3. This means it has a high probability of flooding.
-        </p>
-
-        <p class="govuk-body">
-          <a href="results-expanded-fz3-no">More information about your results</a>.
+          <a href="results-expanded-fz2-no">More information about your results</a>.
         </p>
 
       </div>
 
       <div class="govuk-grid-column-full">
 
-        <figure class="map-figure govuk-!-margin-bottom-7" role="application">
-
-          <div class="pdf-download">
-            <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-button--pdf-download" data-module="govuk-button">
-              Download printable map (PDF)
-            </button>
-          </div>
+        <figure class="map-figure govuk-!-margin-bottom-3" role="application">
 
           <figcaption class="map-figcaption govuk-visually-hidden">
             A map showing the flood risk for the location you have provided
           </figcaption>
 
-          <div id="map" class="map map--fz3 map--result">
+          <div id="map" class="map map--fz2 map--result">
 
             <noscript>
               <h2 class="govuk-heading-m">
@@ -125,48 +119,104 @@
 
           </div>
 
-          <!-- <div class="govuk-form-group govuk-!-margin-top-3 govuk-!-margin-bottom-8">
-            <fieldset class="govuk-fieldset" aria-describedby="hide-layer-legend">
-              <legend id="hide-layer-legend" class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
-                Hide flood zones on the map
-              </legend>
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="show-zones" name="show-zones" type="checkbox" checked value="show-zones" onclick="showZones()">
-                  <label class="govuk-label govuk-checkboxes__label" for="hide-zones">
-                    Show flood zones
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <script type="text/javascript">
-            function showZones () {
-              if (document.getElementById('show-zones').checked) {
-                alert("Show the flood zones");
-              } else {
-                alert("Hide the flood zones");
-              }
-            }
-          </script> -->
-
         </figure>
 
       </div>
 
       <div class="govuk-grid-column-two-thirds">
 
+        <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Report options (select scale, add reference number)
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <form class="form" method="POST" action="pdf">
+              <input name="id" type="hidden">
+              <input name="zone" type="hidden" value="FZ1">
+              <input name="polygon" type="hidden" value="">
+              <input name="center" type="hidden" value="[362105,387218]">
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="reference">
+                    Add a reference
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Optional. Chose a reference to be added to the report to help you find it
+                  </span>
+                </h3>
+                <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+              </div>
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="scale">
+                    Scale
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Select the scale of the map shown in the report
+                  </span>
+                </h3>
+                <select class="govuk-select" id="scale" name="scale">
+                  <option value="2500">1:2500</option>
+                  <option value="10000">1:10000</option>
+                  <option value="25000">1:25000</option>
+                  <option value="50000">1:50000</option>
+                </select>
+              </div>
+          </div>
+        </details>
+
+        <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Download a copy of these results in a report (PDF)
+        </button>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">
+          What to do next
+        </h2>
+
         <p class="govuk-body">
-          To request flood risk assessment data (also known as a <span class="govuk-!-font-weight-bold">product 4</span>) you’ll need an email address we can send the information to.
+          As your site is in flood zone 2 you need to carry out a flood risk assessment as part of your planning application. You should:
         </p>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>
+            Speak to your local authority to find out more about their planning requirements - your local authority is <strong>Warrington</strong>.
+          </li>
+          <li>
+            Work with a flood risk consultant to get a flood risk assessment.
+          </li>
+        </ul>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">
+          How to request flood risk assessment data
+        </h2>
+
+        <p class="govuk-body">
+          To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
+        <p>
+
+          <p class="govuk-body">
+            Your email should say that you are requesting flood risk assessment data (also known as a product 4) and include:
+          <p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              the address
+            </li>
+            <li>
+              a map showing the site boundary
+            </li>
+          </ul>
 
         <p class="govuk-body">
           You should recieve your data within 20 working days.
         </p>
 
         <p class="govuk-body">
-          Depending on the information that's available, your flood risk assessment data will include:
+          Depending on the information that's available, your flood risk assessment data could include:
         <p>
 
         <ul class="govuk-list govuk-list--bullet">
@@ -196,27 +246,9 @@
           We recommend that you check the relevant local planning authority's strategic flood risk assessment (SFRA) as part of your work to prepare a flood risk assessment.
         <p>
 
-        <h2 class="govuk-heading-m">
-          Request flood risk assessment data
-        </h2>
-
-        <p class="govuk-body">
-          To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
-        <p>
-
-        <p class="govuk-body">
-          Your email should say that you are requesting flood risk assessment data (also known as a product 4) and include:
-        <p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            the address
-          </li>
-          <li>
-            a map showing the site boundary
-          </li>
-        </ul>
-
+        <!-- <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-9" data-module="govuk-button">
+          Request your flood risk assessment data
+        </a> -->
 
         <!-- <h2 class="govuk-heading-m">More detailed flood risk assessments</h2>
         <p>Some developments need a more detailed flood risk assessment (previously known as a product 5, 6, 7 or 8).</p> -->

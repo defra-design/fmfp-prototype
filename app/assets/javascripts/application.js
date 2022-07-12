@@ -96,6 +96,25 @@ $(document).ready(function () {
       })
     });
   }
+  else if (document.getElementById("map").classList.contains("map--fz2")) {
+    var map = new ol.Map({
+      target: 'map',
+      // controls: ol.control.defaults().extend([
+      //   new ol.control.FullScreen({
+      //     label: 'Full screen \u2922'
+      //   })
+      // ]),
+      layers: [ mapboxLayer, polygonLayer ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-2.570489, 53.381511]),
+        zoom: 15 //Initial Zoom Level
+      }),
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        pinchRotate: false
+      })
+    });
+  }
   else if (document.getElementById("map").classList.contains("map--fz3")) {
     var map = new ol.Map({
       target: 'map',

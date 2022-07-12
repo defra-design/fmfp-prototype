@@ -1,5 +1,5 @@
 
-{% extends "layout-footer-modal.html" %}
+{% extends "layout-footer.html" %}
 
 {% block pageTitle %}
   Flood risk information for this location - GOV.UK
@@ -24,16 +24,8 @@
           Flood risk information for this location
         </h1>
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You may need to carry out a flood risk assessment for your planning application.
-          </strong>
-        </div>
-
         <p class="govuk-body">
-          Your selected location is in flood zone 1. This means it has a low probability of flooding from rivers and the sea.
+          Your site is in flood zone 1. This means it has a low probability of flooding from rivers and the sea.
         </p>
 
         <p class="govuk-body">
@@ -45,12 +37,6 @@
       <div class="govuk-grid-column-full">
 
         <figure class="map-figure govuk-!-margin-bottom-7" role="application">
-
-          <div class="pdf-download">
-            <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-button--pdf-download" data-module="govuk-button" data-target="#report" data-target="modal">
-              Download printable map (PDF)
-            </button>
-          </div>
 
           <figcaption class="map-figcaption govuk-visually-hidden">
             A map showing the flood risk for the location you have provided
@@ -131,13 +117,85 @@
 
       <div class="govuk-grid-column-two-thirds">
 
+        <h2 class="govuk-heading-m">
+          What to do next
+        </h2>
+
+        <p class="govuk-body">
+          You may still need to request a flood risk assessment for your planning application but for most cases including a copy of these results (sometimes know as a Prodct 1) will be enough.
+        <p>
+
+        <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Report options (select scale, add reference number)
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <form class="form" method="POST" action="pdf">
+              <input name="id" type="hidden">
+              <input name="zone" type="hidden" value="FZ1">
+              <input name="polygon" type="hidden" value="">
+              <input name="center" type="hidden" value="[362105,387218]">
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="reference">
+                    Add a reference
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Optional. Chose a reference to be added to the report to help you find it
+                  </span>
+                </h3>
+                <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+              </div>
+
+              <div class="govuk-form-group">
+                <h3 class="govuk-label-wrapper">
+                  <label class="govuk-label--m" for="scale">
+                    Scale
+                  </label>
+                  <span class="govuk-hint govuk-hint--block">
+                   Select the scale of the map shown in the report
+                  </span>
+                </h3>
+                <select class="govuk-select" id="scale" name="scale">
+                  <option value="2500">1:2500</option>
+                  <option value="10000">1:10000</option>
+                  <option value="25000">1:25000</option>
+                  <option value="50000">1:50000</option>
+                </select>
+              </div>
+          </div>
+        </details>
+
+        <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Download a copy of these results (PDF)
+        </button>
+
+        <!-- <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Your development may still be at risk of flooding. <a href="https://www.gov.uk/check-long-term-flood-risk" class="govuk-link">Check you long term flood risk</a>.
+          </strong>
+        </div> -->
+
+        <p class="govuk-body">
+          Be aware that there are certain types of development that will require you to request a flood risk assessment to be included as part of your planning application.
+        <p>
+
+        <h2 class="govuk-heading-m">
+          When a flood risk assessment is needed as part of your planning application
+        </h2>
+
         <p class="govuk-body">
           You will need to do a flood risk assessment if your site is <span class="govuk-!-font-weight-bold">any of the following:</span>
         </p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            bigger than 1 hectare (ha)
+            bigger than 1 hectare (A hectare (ha) is about 2.47 acres)
           </li>
           <li>
             in an area with critical drainage problems as notified by the Environment Agency
@@ -151,7 +209,7 @@
         </ul>
 
         <p class="govuk-body">
-          If your development <span class="govuk-!-font-weight-bold">does not</span> fall into any of these categories, you only need to download the flood map for planning on this page (located above the map) showing your flood zone to include in your planning application.
+          If your development <span class="govuk-!-font-weight-bold">does not</span> fall into any of these categories, you only need to download a copy of the results from this page (sometimes know as a Product 1) to include as part of your planning application.
         </p>
 
 
@@ -159,7 +217,7 @@
         <div class="govuk-inset-text">
 
           <p class="govuk-body">
-            You should also <a href="https://flood-warning-information.service.gov.uk/long-term-flood-risk/map?easting=362574&northing=386979&amp;map=SurfaceWater">check the risk from surface water and other sources of flooding</a> when doing a flood risk assessment.
+            Your site may still be at risk of flooding. You should also <a href="https://flood-warning-information.service.gov.uk/long-term-flood-risk/map?easting=362574&northing=386979&amp;map=SurfaceWater">check the risk from surface water and other sources of flooding</a>.
           </p>
 
         </div>
@@ -169,11 +227,11 @@
         <p>
 
         <h2 class="govuk-heading-m">
-          Request flood risk assessment data
+          How to request flood risk assessment data
         </h2>
 
         <p class="govuk-body">
-          To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
+          If you need to request a flood risk assessment for this site contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
         <p>
 
         <p class="govuk-body">
@@ -220,7 +278,7 @@
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="confirm-location">Reposition the marker or change boundary</a>
+            <a href="confirm-location">Redraw your boundary</a>
           </li>
           <li>
             <a href="location">Search for a different location</a>

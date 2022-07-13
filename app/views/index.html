@@ -22,7 +22,7 @@ Flood map for planning
     </h2>
 
     <p class="govuk-body">
-      Moving towards asking users specifically for a site boundary, and removing the option to remove the option for a marker.
+      Asking users specifically for a site boundary, and removing the option to remove the option for a marker. Redesigning the results page to provide a clearer download of the P1 journey (by moving the button), clearer instructions for FZ1 results.
     <p>
 
     <h3 class="govuk-heading-m">
@@ -78,7 +78,7 @@ Flood map for planning
     </p>
 
     <p>
-      <a href="current/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Flood zone benefitting from defences - <strong>IN</strong></a>
+      <a href="current/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Flood zone benefitting from defences - opted <strong>IN</strong></a>
     </p>
 
     {# Size modifiers: xl, l, m #}
@@ -92,44 +92,68 @@ Flood map for planning
       Including changes that try to reduce the number of request being received post launch of the new service.
     <p>
 
-    <h3 class="govuk-heading-m">
-      Changes
-    </h3>
+    <!-- <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        Added user journey for the new opt out of automatic reporting for regions.
-      </li>
-      <li>
-        Added the information returned by OS Places API to make it clearer why the pin is located where it is - or why a location triggers the only England page.
-      </li>
-      <li>
-        Added content changes on the flood zone 1 confirmation page to indicate that an additional email will be sent if the requested report is not available. Content in 'What happens next' subheading has also been restructured.
-      </li>
-      <li>
-        Added bullet point to start page list stating that the service can be used to dowload a P1
-      </li>
-    </ul>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
 
-    <p>
-      <strong>NEW:</strong> <a href="opt-out/start?results=results-fz1-no.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Region opted out of automatic reporting. Go to Start page (flood zone 1 results)</a>
-    </p>
+      </div>
+    </details> -->
 
-    <p>
-      <strong>NEW:</strong> <a href="opt-out/start?results=results-fz3-no.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Region opted out of automatic reporting. Go to Start page (flood zone 3 results)</a>
-    </p>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Version details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
 
-    <p>
-      <a href="opt-out/start?results=results-fz1.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Go to Start page (flood zone 1 results)</a>
-    </p>
+        <h3 class="govuk-heading-m">
+          Changes
+        </h3>
 
-    <p>
-      <a href="opt-out/start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a>
-    </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Added user journey for the new opt out of automatic reporting for regions.
+          </li>
+          <li>
+            Added the information returned by OS Places API to make it clearer why the pin is located where it is - or why a location triggers the only England page.
+          </li>
+          <li>
+            Added content changes on the flood zone 1 confirmation page to indicate that an additional email will be sent if the requested report is not available. Content in 'What happens next' subheading has also been restructured.
+          </li>
+          <li>
+            Added bullet point to start page list stating that the service can be used to dowload a P1
+          </li>
+        </ul>
 
-    <p>
-      <a href="opt-out/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a>
-    </p>
+        <p>
+          <strong>NEW:</strong> <a href="opt-out/start?results=results-fz1-no.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Region opted out of automatic reporting. Go to Start page (flood zone 1 results)</a>
+        </p>
+
+        <p>
+          <strong>NEW:</strong> <a href="opt-out/start?results=results-fz3-no.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Region opted out of automatic reporting. Go to Start page (flood zone 3 results)</a>
+        </p>
+
+        <p>
+          <a href="opt-out/start?results=results-fz1.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Go to Start page (flood zone 1 results)</a>
+        </p>
+
+        <p>
+          <a href="opt-out/start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a>
+        </p>
+
+        <p>
+          <a href="opt-out/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a>
+        </p>
+
+      </div>
+    </details>
+
+
 
     {# Size modifiers: xl, l, m #}
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -145,15 +169,24 @@ Flood map for planning
       This iteration covered mostly tweaks to accessibilty and content as per audits and SME feedback.
     <p>
 
-    <h3 class="govuk-heading-m">
-      Start
-    </h3>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Version details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-m">
+            Start
+          </h3>
 
-    <p><a href="version-9/start?results=results-fz1.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Go to Start page (flood zone 1 results)</a></p>
+          <p><a href="version-9/start?results=results-fz1.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Go to Start page (flood zone 1 results)</a></p>
 
-    <p><a href="version-9/start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a></p>
+          <p><a href="version-9/start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a></p>
 
-    <p><a href="version-9/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a></p>
+          <p><a href="version-9/start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a></p>
+        </div>
+      </details>
 
   </div>
 

@@ -307,6 +307,12 @@ $(document).ready(function () {
     map.removeInteraction(modify);
     map.removeInteraction(snap);
   }
+  // Changes to make the polygon available
+  addInteractions()
+  document.getElementById("deleteShapeBtn").disabled = false
+  polygonLayer.setVisible(true)
+  markerLayer.setVisible(false)
+  // End of changes to make the polygon available
 
   var radios = document.getElementsByName('marker-or-shape');
   for (var i = 0, length = radios.length; i < length; i++) {

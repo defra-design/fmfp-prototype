@@ -87,7 +87,7 @@ $(document).ready(function () {
       // ]),
       layers: [ mapboxLayer, polygonLayer ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
+        center: ol.proj.fromLonLat([-2.567557, 53.376933]),
         zoom: 15 //Initial Zoom Level
       }),
       interactions: ol.interaction.defaults({
@@ -186,7 +186,7 @@ $(document).ready(function () {
   } else if (document.getElementById("map").classList.contains("map--fz1")) {
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.566257, 53.378333])
+        ol.proj.fromLonLat([-2.569857, 53.376563])
       ),
     });
   } else if (document.getElementById("map").classList.contains("map--justboundary")) {
@@ -209,7 +209,7 @@ $(document).ready(function () {
       anchor: [0.5, 1],
       anchorXUnits: 'fraction',
       anchorYUnits: 'fraction',
-      src: '/public/images/iconfinder_marker.png'
+      src: '/public/images/park.png'
     }))
   }));
 

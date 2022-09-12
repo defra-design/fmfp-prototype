@@ -234,10 +234,12 @@ $(document).ready(function () {
     map.removeInteraction(snap);
   }
   // Changes to make the polygon available
-  addInteractions()
-  document.getElementById("deleteShapeBtn").disabled = false
-  polygonLayer.setVisible(true)
-  markerLayer.setVisible(false)
+  if (document.getElementById("map").classList.contains("map--justboundary")) {
+    addInteractions()
+    document.getElementById("deleteShapeBtn").disabled = false
+    polygonLayer.setVisible(true)
+    markerLayer.setVisible(false)
+  }
   // End of changes to make the polygon available
 
   var radios = document.getElementsByName('marker-or-shape');

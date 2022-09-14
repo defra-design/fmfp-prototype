@@ -144,18 +144,11 @@ $(document).ready(function () {
   })
 
   function addInteractions () {
-    if (polygonSource.getFeatures().length === 0) {
-      map.addInteraction(draw)
-    }
+    map.addInteraction(draw)
     map.addInteraction(modify)
     map.addInteraction(snap)
   }
 
-  function removeInteractions () {
-    map.removeInteraction(draw)
-    map.removeInteraction(modify)
-    map.removeInteraction(snap)
-  }
   // Changes to make the polygon available
   if (document.getElementById('map').classList.contains('map--justboundary')) {
     addInteractions()
@@ -164,33 +157,12 @@ $(document).ready(function () {
   }
   // End of changes to make the polygon available
 
-  const radios = document.getElementsByName('marker-or-shape')
-  for (let i = 0, length = radios.length; i < length; i++) {
-    radios[i].addEventListener('click', function (event) {
-      const deleteBtn = document.getElementById('deleteShapeBtn')
-
-      if (this.value === 'draw-shape') {
-        addInteractions()
-        deleteBtn.disabled = false
-        polygonLayer.setVisible(true)
-      } else if (this.value === 'delete-shape' &&
-        polygonSource.getFeatures().length === 1) {
-        polygonSource.removeFeature(polygonSource.getFeatures()[0])
-      } else if (this.value === 'move-marker') {
-        removeInteractions()
-        deleteBtn.disabled = true
-        polygonLayer.setVisible(false)
-      }
-    }, false)
-  }
-
   const buttons = document.getElementsByName('delete-shape')
   if (buttons.length === 1) {
     buttons[0].addEventListener('click', function (event) {
       if (polygonSource.getFeatures().length === 1) {
         polygonSource.removeFeature(polygonSource.getFeatures()[0])
       }
-
       map.addInteraction(draw)
       document.getElementById('draw-shape').focus()
     })
@@ -201,6 +173,4 @@ $(document).ready(function () {
     e.preventDefault()
     $(this).toggleClass('active')
   })
-
-  // Add a polygon to the map
 })

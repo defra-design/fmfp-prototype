@@ -59,99 +59,31 @@ $(document).ready(function () {
     style: [polygonStyle, polygonVertexStyle]
   })
 
+  let layers
+  let center
   // If statement that changes the map layers on the confirm page
   // I need to look at pin location changes next.
-  if (document.getElementById('map').classList.contains('map--confirm')) {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [baseMapLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.571657, 53.381048]),
-        zoom: 15, // Initial Zoom Level
-        maxZoom: 17
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
-  } else if (document.getElementById('map').classList.contains('map--fz1')) {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [mapboxLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 // Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
-  } else if (document.getElementById('map').classList.contains('map--fz2')) {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [mapboxLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 // Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
-  } else if (document.getElementById('map').classList.contains('map--fz3')) {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [mapboxLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 // Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
-  } else if (document.getElementById('map').classList.contains('map--fzd')) {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [mapboxLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 // Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
+  const classList = document.getElementById('map').classList
+  if (classList.contains('map--confirm')) {
+    layers = [baseMapLayer, polygonLayer]
+    center = ol.proj.fromLonLat([-2.564057, 53.378333])
   } else {
-    // Swaps the map to the FLood Zone Layers from Mapbox Studio
-    var map = new ol.Map({
-      target: 'map',
-      layers: [mapboxLayer, polygonLayer],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 // Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    })
+    layers = [mapboxLayer, polygonLayer]
+    center = ol.proj.fromLonLat([-2.564057, 53.378333])
   }
-
-  // Click handler for pointer
-  map.on('singleclick', function (e) {
-    if (markerLayer.getVisible() === true) {
-      const point = markerSource.getFeatures()[0]
-      point.getGeometry().setCoordinates([e.coordinate[0], e.coordinate[1]])
-    }
+  // Swaps the map to the FLood Zone Layers from Mapbox Studio
+  const map = new ol.Map({
+    target: 'map',
+    layers,
+    view: new ol.View({
+      center,
+      zoom: 15 // Initial Zoom Level
+    }),
+    interactions: ol.interaction.defaults({
+      altShiftDragRotate: false,
+      pinchRotate: false
+    })
   })
-
-  /// //// POLYGON STUF ///////
 
   // Modify polygon drawing style
   const modifyStyle = new ol.style.Style({
@@ -225,12 +157,11 @@ $(document).ready(function () {
     map.removeInteraction(snap)
   }
   // Changes to make the polygon available
-  //  if (document.getElementById("map").classList.contains("map--justboundary")) {
-  addInteractions()
-  document.getElementById('deleteShapeBtn').disabled = false
-  polygonLayer.setVisible(true)
-  markerLayer.setVisible(false)
-  //  }
+  if (document.getElementById('map').classList.contains('map--justboundary')) {
+    addInteractions()
+    document.getElementById('deleteShapeBtn').disabled = false
+    polygonLayer.setVisible(true)
+  }
   // End of changes to make the polygon available
 
   const radios = document.getElementsByName('marker-or-shape')
@@ -238,19 +169,17 @@ $(document).ready(function () {
     radios[i].addEventListener('click', function (event) {
       const deleteBtn = document.getElementById('deleteShapeBtn')
 
-      if (this.value == 'draw-shape') {
+      if (this.value === 'draw-shape') {
         addInteractions()
         deleteBtn.disabled = false
         polygonLayer.setVisible(true)
-        markerLayer.setVisible(false)
-      } else if (this.value == 'delete-shape' &&
+      } else if (this.value === 'delete-shape' &&
         polygonSource.getFeatures().length === 1) {
         polygonSource.removeFeature(polygonSource.getFeatures()[0])
       } else if (this.value === 'move-marker') {
         removeInteractions()
         deleteBtn.disabled = true
         polygonLayer.setVisible(false)
-        markerLayer.setVisible(true)
       }
     }, false)
   }

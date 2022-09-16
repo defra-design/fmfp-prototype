@@ -13,6 +13,7 @@ $(document).ready(function () {
   })
 
   const mapboxLayer = new ol.layer.MapboxVector({
+    zIndex: 0,
     styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
     accessToken:
       'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA'
@@ -53,7 +54,34 @@ $(document).ready(function () {
     }
   })
 
-  const polygonSource = new ol.source.Vector({ wrapX: false })
+  const polygonToRender = new ol.geom.Polygon([[
+    [
+      -285708.05879200564,
+      7052965.990315725
+    ],
+    [
+      -285736.6903271094,
+      7052822.832640206
+    ],
+    [
+      -285556.3115685791,
+      7052822.832640206
+    ],
+    [
+      -285564.90111648676,
+      7052991.758686396
+    ],
+    [
+      -285708.05879200564,
+      7052965.990315725
+    ]
+  ]])
+
+  // polygonSource is the source for digitising (confirm-location)
+  const polygonSource = new ol.source.Vector({
+    wrapX: false
+  })
+  // polygonLayer is the layer for digitising (confirm-location)
   const polygonLayer = new ol.layer.Vector({
     source: polygonSource,
     style: [polygonStyle, polygonVertexStyle]
@@ -65,12 +93,32 @@ $(document).ready(function () {
   // I need to look at pin location changes next.
   const classList = document.getElementById('map').classList
   if (classList.contains('map--confirm')) {
+    // This Part is for any pages (just map--confirm in reality) that require digitising polygons
     layers = [baseMapLayer, polygonLayer]
     center = ol.proj.fromLonLat([-2.564057, 53.378333])
   } else {
-    layers = [mapboxLayer, polygonLayer]
-    center = ol.proj.fromLonLat([-2.564057, 53.378333])
+    // This Part is for any pages that require a static polygon
+    const staticPolygonLayer = new ol.layer.Vector({
+      ref: 'centre',
+      visible: true,
+      zIndex: 1,
+      source: new ol.source.Vector({
+        wrapX: false,
+        features: [
+          new ol.Feature({
+            name: 'polygon',
+            geometry: polygonToRender
+          })]
+      }),
+      style: [new ol.style.Style({
+        stroke: new ol.style.Stroke({ color: '#B10E1E', width: 3 }),
+        fill: new ol.style.Fill({ color: 'rgba(178, 17, 34, 0.1)' })
+      })]
+    })
+    layers = [mapboxLayer, staticPolygonLayer]
+    center = [-285556.3115685791, 7052822.832640206]
   }
+
   // Swaps the map to the FLood Zone Layers from Mapbox Studio
   const map = new ol.Map({
     target: 'map',
@@ -153,7 +201,6 @@ $(document).ready(function () {
   if (document.getElementById('map').classList.contains('map--justboundary')) {
     addInteractions()
     document.getElementById('deleteShapeBtn').disabled = false
-    polygonLayer.setVisible(true)
   }
   // End of changes to make the polygon available
 
@@ -164,7 +211,6 @@ $(document).ready(function () {
         polygonSource.removeFeature(polygonSource.getFeatures()[0])
       }
       map.addInteraction(draw)
-      document.getElementById('draw-shape').focus()
     })
   }
 

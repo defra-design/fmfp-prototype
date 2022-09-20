@@ -54,48 +54,75 @@ $(document).ready(function () {
     }
   })
 
-  const polygonToRender = new ol.geom.Polygon([[
-    [
-      -285708.05879200564,
-      7052965.990315725
-    ],
-    [
-      -285736.6903271094,
-      7052822.832640206
-    ],
-    [
-      -285556.3115685791,
-      7052822.832640206
-    ],
-    [
-      -285564.90111648676,
-      7052991.758686396
-    ],
-    [
-      -285708.05879200564,
-      7052965.990315725
-    ]
-  ]])
+  const getPolygonAndCentreForPage = classlist => {
+    if (classList.contains('map--confirm')) {
+      return {
+        polygon: undefined,
+        center: ol.proj.fromLonLat([-2.564057, 53.378333])
+      }
+    } else if (classList.contains('map--fz1')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-285708.05879200564, 7052965.990315725],
+          [-285736.6903271094, 7052822.832640206],
+          [-285556.3115685791, 7052822.832640206],
+          [-285564.90111648676, 7052991.758686396],
+          [-285708.05879200564, 7052965.990315725]
+        ]]),
+        center: ol.proj.fromLonLat([-2.564057, 53.378333])
+      }
+    } else if (classList.contains('map--fz2')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-285708.05879200564, 7052965.990315725],
+          [-285736.6903271094, 7052822.832640206],
+          [-285556.3115685791, 7052822.832640206],
+          [-285564.90111648676, 7052991.758686396],
+          [-285708.05879200564, 7052965.990315725]
+        ]]),
+        center: ol.proj.fromLonLat([-2.570489, 53.381511])
+      }
+    } else if (classList.contains('map--fz3')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-285708.05879200564, 7052965.990315725],
+          [-285736.6903271094, 7052822.832640206],
+          [-285556.3115685791, 7052822.832640206],
+          [-285564.90111648676, 7052991.758686396],
+          [-285708.05879200564, 7052965.990315725]
+        ]]),
+        center: ol.proj.fromLonLat([-2.570489, 53.385511])
+      }
+    } else if (classList.contains('map--fzd')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-285708.05879200564, 7052965.990315725],
+          [-285736.6903271094, 7052822.832640206],
+          [-285556.3115685791, 7052822.832640206],
+          [-285564.90111648676, 7052991.758686396],
+          [-285708.05879200564, 7052965.990315725]
+        ]]),
+        center: ol.proj.fromLonLat([-2.576372, 53.382467])
+      }
+    }
+  }
 
   // polygonSource is the source for digitising (confirm-location)
-  const polygonSource = new ol.source.Vector({
-    wrapX: false
-  })
-  // polygonLayer is the layer for digitising (confirm-location)
-  const polygonLayer = new ol.layer.Vector({
-    source: polygonSource,
-    style: [polygonStyle, polygonVertexStyle]
-  })
+  const polygonSource = new ol.source.Vector({ wrapX: false })
 
   let layers
-  let center
   // If statement that changes the map layers on the confirm page
   // I need to look at pin location changes next.
   const classList = document.getElementById('map').classList
+  const { polygon, center } = getPolygonAndCentreForPage(classList)
   if (classList.contains('map--confirm')) {
     // This Part is for any pages (just map--confirm in reality) that require digitising polygons
+  // polygonLayer is the layer for digitising (confirm-location)
+    const polygonLayer = new ol.layer.Vector({
+      source: polygonSource,
+      style: [polygonStyle, polygonVertexStyle]
+    })
     layers = [baseMapLayer, polygonLayer]
-    center = ol.proj.fromLonLat([-2.564057, 53.378333])
   } else {
     // This Part is for any pages that require a static polygon
     const staticPolygonLayer = new ol.layer.Vector({
@@ -107,7 +134,7 @@ $(document).ready(function () {
         features: [
           new ol.Feature({
             name: 'polygon',
-            geometry: polygonToRender
+            geometry: polygon
           })]
       }),
       style: [new ol.style.Style({
@@ -116,7 +143,6 @@ $(document).ready(function () {
       })]
     })
     layers = [mapboxLayer, staticPolygonLayer]
-    center = [-285556.3115685791, 7052822.832640206]
   }
 
   // Swaps the map to the FLood Zone Layers from Mapbox Studio

@@ -58,7 +58,7 @@ $(document).ready(function () {
     if (classList.contains('map--confirm')) {
       return {
         polygon: undefined,
-        center: ol.proj.fromLonLat([-2.569057, 53.378333])
+        center: ol.proj.fromLonLat([-2.574057, 53.380933])
       }
     } else if (classList.contains('map--fz1')) {
       return {

@@ -46,6 +46,10 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+
+  <div class="govuk-width-container">
+  {{ govukPhaseBanner({  tag: {    text: "prototype"  },  html: 'This is site is only intended for testing purposes and is not intended for actual use.'}) }}
+  </div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -71,7 +75,7 @@
           {
             href: "privacy-notice",
             text: "Privacy notice"
-          },          
+          },
           {
             href: "/prototype-admin/clear-data",
             text: "[[ Clear data ]]"

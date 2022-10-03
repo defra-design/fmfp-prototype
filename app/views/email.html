@@ -1,0 +1,72 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Find out if you need a Flood Risk Assessment (FRA) and get flood maps for a planning application
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">
+          Dear {{ data['full-name'] }},
+        <p>
+
+        <p class="govuk-body">
+          Thank you for requesting flood risk assessment data.
+        </p>
+
+        <p class="govuk-body">
+          Location searched for: WA4 1HT
+        </p>
+
+        <p class="govuk-body">
+          Location data requested for: Warrington, -2.571657, 53.381048.
+        </p>
+
+        <p class="govuk-body">
+          You should receive your flood risk assessment data by email within 20 working days.
+        </p>
+
+        <p class="govuk-body">
+          Your reference number is: HDJ2 523F GH87
+        </p>
+
+        <p class="govuk-body">
+          <strong>Contact us</strong><br />
+          If you have any questions about your request or no longer need the data, contact the test Environment Agency team at PSOEmail@test.com. Make sure you include your reference number.
+        </p>
+
+        <p class="govuk-body">
+          Regards,
+        </p>
+
+        <p class="govuk-body">
+          Flood map for planning service
+          <br><a href="#" class="govuk-link">https://flood-map-for-planning.service.gov.uk/</a>
+        </p>
+
+        <p class="govuk-body">
+          Environment Agency
+        </p>
+
+        <p class="govuk-body">
+          If you’re not sure that an email is from the Environment Agency: do not reply to it or click any links forward it to enquiries@environment-agency.gov.uk
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

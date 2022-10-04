@@ -1,109 +1,161 @@
 
-{% extends "layout_unbranded.html" %}
+{% extends "layout_p4.html" %}
 {% block pageTitle %}
   Flood risk information
 {% endblock %}
 
+
 {% block content %}
 
-<div class="govuk-width-container">
+<div class="p4-header">
 
-  <main class="govuk-main-wrapper " id="main-content" role="main">
+  <h1 class="govuk-heading-l govuk-!-font-size-24 p4-title">
+    Flood risk information
+  </h1>
 
-    <div class="govuk-grid-row">
+  <div class="p4-logo">
+    <img src="/public/images/ea-logo.png" alt="Environment Agency logo">
+  </div>
+</div>
 
-      <div class="govuk-grid-column-two-thirds">
+<div class="p4-box">
+  <p class="govuk-!-font-size-16">
+    <strong>Location of site:</strong> 332203 / 443808 (shown as easting and northing coordinates)<br />
+    <strong>Document created on:</strong> 9 April 2021.
+  </p>
+</div>
 
-          <p class="govuk-body">
-            <strong>
-          Flood risk information
-          </strong><br />
-      <p class="govuk-body">Location of site: 332203 / 443808 (shown as easting and northing coordinates) Document created on: 9 April 2021
-          This document was previously known as a product 4.</p>
-          <p class="govuk-body">
-            <strong>
-        How to use this information
-          </strong><br />
-          <p class="govuk-body">
-            <strong>About the models used
-                </strong><br />
-                <p class="govuk-body">
-            <p class="govuk-body">You can use this information as part of a flood risk assessment for a planning application. To do this, you should include it in the appendix of your flood risk assessment.
-          We recommend that you work with a flood risk consultant to get your flood risk assessment.</p>
-          <p class="govuk-body">Model name: Burn Drain 2005</p>
-          <p class="govuk-body">Scenario(s): Defences removed fluvial, defences removed climate change fluvial Date: 1 June 2005</p>
-          <p class="govuk-body">Model name: Hillylaid Pool 2013</p>
-          <p class="govuk-body">Scenario(s): Defended fluvial</p>
-        <p class="govuk-body">  Date: 1 February 2012</p>
-          <p class="govuk-body"> Model name: Wyre Estuary_Tidal 2014</p>
-          <p class="govuk-body"> Scenario(s): Defended tidal, defences removed tidal, defended climate change tidal, defences removed climate change tidal
-          Date: 30 July 2014</p>
-          <p class="govuk-body"> These models contain the most relevant data for your area of interest.</p>
-
-          <p class="govuk-body">
-            <strong>Included in this document</strong><br />
-              <p class="govuk-body">In this document you'll find:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>how to find information about surface water and other sources of flooding
-                  <li>flood map for planning (rivers and the sea)</li>
-            <li>information about if there is a reduced flood risk from rivers and the sea because of defences</li>
-            <li>historic flooding</li>
-            <li>flood defences and attributes</li>
-            <li>modelled data</li>
-            <li>climate change</li>
-            <li>information about strategic flood risk assessments</li>
-            <li>information about this data</li>
-            <li>information about flood risk activity permits</li>
-            <li>definitions for the terminology used throughout</li>
-            <li>help and advice</li>
-            </ul>
-
-
-
-
-            <p class="govuk-body">
-              <strong>Surface water and other sources of flooding</strong><br />
-<p class="govuk-body">Use the <a href="https://check-long-term-flood-risk.service.gov.uk/map?easting=362062.26&northing=387296.02&map=SurfaceWater" class="govuk-link">long term flood risk service to find out about the risk of flooding from</a>:
-  <ul class="govuk-list govuk-list--bullet">
-    <li>surface water</li>
-  <li>ordinary watercourses</li>
-<li>reservoirs</li>
-</ul>
-<p class="govuk-body">For information about sewer flooding, contact the relevant water company for the area.
-  <p class="govuk-body">
-    <strong>
-Flood map for planning (rivers and the sea)</strong><br />
-<p class="govuk-body">Your development is in flood zone 3.</p>
-  <p class="govuk-body">Flood zone 3 shows the area at risk of flooding for an undefended flood event with:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>a 0.5% chance of occurring in any year for flooding from the sea</li>
-    <li>a 1% chance of occurring in any year for fluvial (river) flooding</li>
-    </ul>
-<p class="govuk-body">It's important to remember that:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>the flood zones on this map refer to the land at risk of flooding and do not refer to individual properties</li>
-    <li>this data is updated on a quarterly basis as better data becomes available</li>
-</ul>
 <p class="govuk-body">
-  <strong>Reduction in risk from rivers and sea due to defences</strong><br />
-<p class="govuk-body">There are flood defences in part or all of this location that reduce the risk from a specific source.
-The GIS dataset provides information about:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>
-the flood defences</li>
-  <li>the flood defence attributes</li>
-<li>modelled water levels</li>
-</ul>
-<p>This information will help you work how these flood defences affect the flood risk for this location.</p>
-<p class="govuk-body"><a href="" class="govuk-link">Download the GIS dataset for Reduction in risk of flooding from rivers and sea</a>
+  <strong>This document was previously known as a product 4.</strong>
+<p>
+
+<h2 class="govuk-heading-m">
+  How to use this information
+</h2>
+
+<p>
+  You can use this information as part of a flood risk assessment for a planning application. To do this, you should include it in the appendix of your flood risk assessment.
 </p>
 
-      </div>
-
-    </div>
-
-  </main>
-
+<div class="p4-callout">
+  <p>
+    We recommend that you work with a flood risk consultant to get your flood risk assessment.
+  </p>
 </div>
+
+<h2 class="govuk-heading-m">
+  About the models used
+</h2>
+
+<p>
+  Model name: Burn Drain 2005<br />
+  Scenario(s): Defences removed fluvial, defences removed climate change fluvial<br />
+  Date: 1 June 2005
+</p>
+
+<p>
+  Model name: Hillylaid Pool 2013<br />
+  Scenario(s): Defended fluvial<br />
+  Date: 1 February 2012
+</p>
+
+<p>
+  Model name: Wyre Estuary_Tidal 2014<br />
+  Scenario(s): Defended tidal, defences removed tidal, defended climate change tidal, defences removed climate change tidal<br />
+  Date: 30 July 2014
+</p>
+
+<p>
+  These models contain the most relevant data for your area of interest.
+</p>
+
+<h2 class="govuk-heading-m">
+  Included in this document
+</h2>
+
+<p>
+  In this document you'll find:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>how to find information about surface water and other sources of flooding</li>
+  <li>flood map for planning (rivers and the sea)</li>
+  <li>information about if there is a reduced flood risk from rivers and the sea because of defences</li>
+  <li>historic flooding</li>
+  <li>flood defences and attributes</li>
+  <li>modelled data</li>
+  <li>climate change</li>
+  <li>information about strategic flood risk assessments</li>
+  <li>information about this data</li>
+  <li>information about flood risk activity permits</li>
+  <li>definitions for the terminology used throughout</li>
+  <li>help and advice</li>
+</ul>
+
+<h2 class="govuk-heading-m">
+  Surface water and other sources of flooding
+</h2>
+
+<p>
+  Use the <a href="https://check-long-term-flood-risk.service.gov.uk/map?easting=362062.26&northing=387296.02&map=SurfaceWater" class="govuk-link">long term flood risk service to find out about the risk of flooding from</a>:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>surface water</li>
+  <li>ordinary watercourses</li>
+  <li>reservoirs</li>
+</ul>
+
+<p>
+  For information about sewer flooding, contact the relevant water company for the area.
+</p>
+
+<h2 class="govuk-heading-m">
+  Flood map for planning (rivers and the sea)
+</h2>
+
+<p>
+  Your development is in flood zone 3.
+</p>
+
+<p>
+  Flood zone 3 shows the area at risk of flooding for an undefended flood event with:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>a 0.5% chance of occurring in any year for flooding from the sea</li>
+  <li>a 1% chance of occurring in any year for fluvial (river) flooding</li>
+</ul>
+
+<p>
+  It's important to remember that:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the flood zones on this map refer to the land at risk of flooding and do not refer to individual properties</li>
+  <li>this data is updated on a quarterly basis as better data becomes available</li>
+</ul>
+
+<h2 class="govuk-heading-m">
+  Reduction in risk from rivers and sea due to defences
+</h2>
+
+<p>
+  There are flood defences in part or all of this location that reduce the risk from a specific source. The GIS dataset provides information about:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the flood defences</li>
+  <li>the flood defence attributes</li>
+  <li>modelled water levels</li>
+</ul>
+
+<p>
+  This information will help you work how these flood defences affect the flood risk for this location.
+</p>
+
+<p>
+  <a href="" class="govuk-link">Download the GIS dataset for Reduction in risk of flooding from rivers and sea</a>
+</p>
 
 {% endblock %}

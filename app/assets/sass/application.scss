@@ -78,6 +78,15 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.map-figure--error {
+  box-shadow:  -12px 0 #fff, -20px 0 #d4351c;
+
+  p.govuk-error-message {
+    margin: 10px;
+    margin-bottom: 0;
+  }
+}
+
 .ol-full-screen {
   button, button.ol-full-screen-false {
     background-color: #fff;

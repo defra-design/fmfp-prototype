@@ -1,0 +1,43 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Privacy notice - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Sorry, the service is temporarily unavailable
+        </h1>
+
+        <p class="govuk-body">
+          This is due to planned maintenance work - it should be up and running again soon.
+        </p>
+
+        <p class="govuk-body">
+          You can use the current <a href="https://flood-map-for-planning.service.gov.uk/">flood map for planning service</a> to find out which flood zone a location is in.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

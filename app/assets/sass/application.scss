@@ -72,14 +72,14 @@ $govuk-assets-path: '/govuk/assets/';
 
 .map-figure--justboundary {
 
-  border: 1px solid #ccc;
+  border: 1px solid $govuk-border-colour;
 
   #map {
     width: 100%;
   }
 
   .ol-viewport {
-    height: calc(100% - 72px) !important;
+    height: calc(100%) !important;
   }
 }
 
@@ -134,9 +134,33 @@ $govuk-assets-path: '/govuk/assets/';
   right: 6rem;
 }
 
+.map-instructions {
+  background-color: #fff;
+  border-top: 1px solid $govuk-border-colour;
+  border-right: 1px solid $govuk-border-colour;
+  border-left: 1px solid $govuk-border-colour;
+  padding: 10px;
+
+  .govuk-details {
+    background-color: #fff;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+
 .govuk-form-group.markerRadiosContainer {
+
   margin-bottom: 0;
-  padding: 1rem .5rem .5rem .75rem;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+
+  .govuk-button {
+    margin: 0;
+  }
 }
 
 .visually-hidden {

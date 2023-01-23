@@ -1,0 +1,175 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Confirm location - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Draw the boundary of your site
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">
+        Your search for 'WA4 1HT' has been placed in Warrington, North West, England.
+      </p>
+
+      <p class="govuk-body">
+        You need to draw the boundary of your site on the map below so we can give you accurate flood risk information.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="map-instructions">
+        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How to draw a boundary
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ol class="govuk-list govuk-list--number">
+              <li>
+                Click or tap to place the first point of your boundary.
+              </li>
+              <li>
+                Place a second point on the boundary, you should see a line drawn between the points.
+              </li>
+              <li>
+                Keep adding points until you've fully defined the boundary of the site.
+              </li>
+              <li>
+                When you have finished drawing the boundary double click or tap to mark the final point.
+              </li>
+            </ol>
+  
+            <p class="govuk-body">
+              If you need to change the finished boundary you can:
+            </p>
+            
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                click and drag the points to adjust them
+              </li>
+              <li>
+                add more points by clicking or tapping on a line
+              </li>
+              <li>
+                delete the boundary you've drawn and start again by clicking or tapping the 'Delete boundary' button
+              </li>
+            </ul>
+  
+            <p class="govuk-body">
+              Click or tap the Continue button to get your flood risk information.
+            <p>
+  
+          </div>
+        </details>
+      </div>
+
+      <figure class="map-figure map-figure--justboundary" role="application">
+
+        <figcaption class="map-figcaption govuk-visually-hidden">
+          An interactive map tool to allow you to accurately locate the site you require
+        </figcaption>
+
+        <div id="map" class="map map--confirm map--justboundary">
+
+          <noscript>
+            <h2 class="govuk-heading-m">
+              The interactive map part of this service needs JavaScript to function
+            </h2>
+            <p class="govuk-body">
+              It is still possible for you to use the service but without the map it might be difficult to supply an accurate location. This could mean that your request is delayed.
+            </p>
+            <p class="govuk-body">
+              If you can, please enable JavaScript to allow the service to work to it's full potential.
+            </p>
+            <p class="govuk-body">
+              If this is something that you are unable to do it, it might be best to contact the Envirnoment Agency by telephone: <tel>03708 506 506</tel> (Monday to Friday, 8am to 6pm) to help you.
+            </p>
+          </noscript>
+
+          <div class="govuk-form-group markerRadiosContainer">
+
+            <div class="govuk-form-group">
+  
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="delete-shape" value="delete-shape" id="deleteShapeBtn">
+                  Redraw boundary
+                </button>
+  
+              </fieldset>
+  
+            </div>
+            
+          </div>
+
+          <div class="os-credits">
+            <div class="os-credits__logo">
+              <img src="/public/images/os-logo.png" alt="Ordanance Survey logo">
+            </div>
+            <div class="os-credits__text">
+              <a href="os-terms" class="os-credits__link">
+                OS data &copy; Crown copyright and database rights 2021
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </figure>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- https://flood-map-for-planning-proto.herokuapp.com/current/confirm-location--error -->
+
+      <a id="continue-button" href="{{ data['results'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-7 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+        Continue
+      </a>
+
+      <h2 class="govuk-heading-m">
+        If you need help drawing a boundary
+      </h2>
+
+      <p class="govuk-body">
+        Contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>.
+      </p>
+
+      <p class="govuk-body">
+        Or contact the Environment Agency:
+      </p>
+
+      <p class="govuk-body">Environment Agency<br>
+        Telephone: 03708 506 506 <br>
+        Monday to Friday, 8am to 6pm <br>
+        <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+{% endblock %}

@@ -32,56 +32,54 @@
         You need to draw the boundary of your site on the map below so we can give you accurate flood risk information.
       </p>
 
+      <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How to draw a boundary
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ol class="govuk-list govuk-list--number">
+            <li>
+              Click or tap to place the first point of your boundary.
+            </li>
+            <li>
+              Place a second point on the boundary, you should see a line drawn between the points.
+            </li>
+            <li>
+              Keep adding points until you've fully defined the boundary of the site.
+            </li>
+            <li>
+              When you have finished drawing the boundary double click or tap to mark the final point.
+            </li>
+          </ol>
+
+          <p class="govuk-body">
+            If you need to change the finished boundary you can:
+          </p>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              click and drag the points to adjust them
+            </li>
+            <li>
+              add more points by clicking or tapping on a line
+            </li>
+            <li>
+              delete the boundary you've drawn and start again by clicking or tapping the 'Delete boundary' button
+            </li>
+          </ul>
+
+          <p class="govuk-body">
+            Click or tap the Continue button to get your flood risk information.
+          <p>
+
+        </div>
+      </details>
+
     </div>
 
     <div class="govuk-grid-column-full">
-
-      <div class="map-instructions">
-        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              How to draw a boundary
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <ol class="govuk-list govuk-list--number">
-              <li>
-                Click or tap to place the first point of your boundary.
-              </li>
-              <li>
-                Place a second point on the boundary, you should see a line drawn between the points.
-              </li>
-              <li>
-                Keep adding points until you've fully defined the boundary of the site.
-              </li>
-              <li>
-                When you have finished drawing the boundary double click or tap to mark the final point.
-              </li>
-            </ol>
-  
-            <p class="govuk-body">
-              If you need to change the finished boundary you can:
-            </p>
-            
-            <ul class="govuk-list govuk-list--bullet">
-              <li>
-                click and drag the points to adjust them
-              </li>
-              <li>
-                add more points by clicking or tapping on a line
-              </li>
-              <li>
-                delete the boundary you've drawn and start again by clicking or tapping the 'Delete boundary' button
-              </li>
-            </ul>
-  
-            <p class="govuk-body">
-              Click or tap the Continue button to get your flood risk information.
-            <p>
-  
-          </div>
-        </details>
-      </div>
 
       <figure class="map-figure map-figure--justboundary" role="application">
 
@@ -106,22 +104,6 @@
             </p>
           </noscript>
 
-          <div class="govuk-form-group markerRadiosContainer">
-
-            <div class="govuk-form-group">
-  
-              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="delete-shape" value="delete-shape" id="deleteShapeBtn">
-                  Redraw boundary
-                </button>
-  
-              </fieldset>
-  
-            </div>
-            
-          </div>
-
           <div class="os-credits">
             <div class="os-credits__logo">
               <img src="/public/images/os-logo.png" alt="Ordanance Survey logo">
@@ -130,6 +112,25 @@
               <a href="os-terms" class="os-credits__link">
                 OS data &copy; Crown copyright and database rights 2021
               </a>
+            </div>
+          </div>
+
+          <div class="govuk-form-group markerRadiosContainer">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <!-- <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="draw-shape" name="marker-or-shape" type="radio" value="draw-shape">
+                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="draw-shape">
+                      Draw boundary
+                    </label>
+                  </div>
+                </div> -->
+                <button disabled class="govuk-button govuk-button--secondary" data-module="govuk-button" name="delete-shape" value="delete-shape" id="deleteShapeBtn">
+                  Delete boundary
+                </button>
+              </fieldset>
             </div>
           </div>
 
@@ -159,7 +160,10 @@
         Or contact the Environment Agency:
       </p>
 
-      <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list govuk-list">
+        <li>
+          Environment Agency
+        </li>
         <li>
           Telephone: 03708 506 506
         </li>

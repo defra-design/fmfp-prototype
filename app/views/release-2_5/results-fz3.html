@@ -1,0 +1,327 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Flood risk information for this location - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+          This location is in flood zone 3
+      </h1>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <p class="govuk-body">
+        Your selected location is in flood zone 3. This means it has a high probability of flooding.
+      </p> -->
+
+      <!--<div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You must carry out a flood risk assessment for your planning application.
+        </strong>
+      </div>-->
+
+      <h2 class="govuk-heading-m">
+        What flood zone 3 means
+      </h2>
+
+      <p class="govuk-body">
+      Areas within flood zone 3 have a high probability of flooding from rivers and the sea.
+      </p>
+
+      <p class="govuk-body">
+        You need to carry out a flood risk assessment as part of your planning application for a development in flood zone 3.
+      </p>
+
+      <p class="govuk-body">
+        <a href="flood-zones-explained">More information about flood zones</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        What the flood map shows
+      </h2>
+      <p class="govuk-body">
+        The map data is for the 10 km area around the boundary you chose. It is not for a specific development.
+      </p>
+
+      <p class="govuk-body">
+        The map shows:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          the flood zone your development is in
+        </li>
+        <li>
+          the areas in the location that could be affected by flooding from rivers or the sea
+        </li>
+        <li>
+          flood defences
+        </li>
+      </ul>
+      <p class="govuk-body">
+
+You may need more information about flood risk from rivers and seas, and you should also<a href="https://check-long-term-flood-risk.service.gov.uk/map?easting=362062.26&northing=387296.02&map=SurfaceWater" class="govuk-link">check the risk from surface water and other sources of flooding in this area</a>.
+      </p>
+
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <figure class="map-figure govuk-!-margin-top-4 govuk-!-margin-bottom-3" role="application">
+
+        <figcaption class="map-figcaption govuk-visually-hidden">
+          A map showing the flood risk for the location you have provided
+        </figcaption>
+
+        <div id="map" class="map map--fz3 map--result">
+
+          <noscript>
+            <h2 class="govuk-heading-m">
+              The interactive map part of this service needs JavaScript to function
+            </h2>
+            <p class="govuk-body">
+              It is still possible for you to use the service but without the map it might be difficult to supply an accurate location. This could mean that your request is delayed.
+            </p>
+            <p class="govuk-body">
+              If you can, please enable JavaScript to allow the service to work to it's full potential.
+            </p>
+            <p class="govuk-body">
+              If this is something that you are unable to do it, it might be best to contact the Envirnoment Agency by telephone: <tel>03708 506 506</tel> (Monday to Friday, 8am to 6pm) to help you.
+            </p>
+          </noscript>
+
+          <div class="os-credits">
+            <div class="os-credits__logo">
+              <img src="/public/images/os-logo.png" alt="Ordanance Survey logo">
+            </div>
+            <div class="os-credits__text">
+              <a href="os-terms" class="os-credits__link">
+                OS data &copy; Crown copyright and database rights 2021
+              </a>
+            </div>
+          </div>
+
+          <div class="map-legend">
+
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-3">
+              Key
+            </h2>
+
+            <ul class="map-legend-list govuk-body-s govuk-!-font-size-14 govuk-!-margin-top-3">
+              <li class="map-legend-item">
+                <img class="map-legend-image" src="/public/images/polygon-icon.png" alt="Map marker icon">
+                Your site boundary
+              </li>
+              <li class="map-legend-item">
+                <img class="map-legend-image map-legend-image--border" src="/public/images/fz3.png" alt="Icon showing what flood zone 3 looks like on the map.">
+                Flood zone 3
+              </li>
+              <!-- <li class="map-legend-item">
+                <img class="map-legend-image map-legend-image--border" src="/public/images/area-benefitting.png" alt="Icon showing what an area benefiting from flood defences looks like on the map.">
+                Areas benefitting from from flood defences
+              </li> -->
+              <li class="map-legend-item">
+                <img class="map-legend-image map-legend-image--border" src="/public/images/fz2.png" alt="Icon showing what flood zone 2 looks like on the map.">
+                Flood zone 2
+              </li>
+              <li class="map-legend-item">
+                <img class="map-legend-image" src="/public/images/fz1.png" alt="Icon showing what flood zone 1 looks like on the map.">
+                Flood zone 1
+              </li>
+              <li class="map-legend-item">
+                <img class="map-legend-image map-legend-image--small map-legend-image--border" src="/public/images/defence.png" alt="Icon showing what a flood defence looks like on the map.">
+                Flood defence
+              </li>
+              <li class="map-legend-item">
+                <img class="map-legend-image" src="/public/images/main-river.png" alt="Icon showing what a main river looks like on the map.">
+                Main river
+              </li>
+              <li class="map-legend-item">
+                <img class="map-legend-image" src="/public/images/flood-holding-area.png" alt="Icon showing what a flood storage area looks like on the map.">
+                Water storage area
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </figure>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m  govuk-!-margin-top-6">
+        Decide what you need for your planning application
+      </h2>
+
+      <p class="govuk-body">
+        You should:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Speak to Warrington local authority to find what their planning requirements are
+        </li>
+        <li>
+          get a flood risk assessment, this is usually done by flood risk consultant
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        Download the flood map for this location
+      </h3>
+
+      <p class="govuk-body">
+        The flood map is suitable for a local planning authority to use when checking a planning application to see if a development is:
+      <p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          in flood zone 1, 2 or 3
+        </li>
+        <li>
+          within 20 metres of a main river or a flood defence
+        </li>
+        <li>
+          in a water storage area
+        </li>
+      </ul>
+
+      <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Add a reference to the flood map and set the scale
+          </span>
+        </summary>
+  <div class="govuk-details__text">
+          <form class="form" method="POST" action="pdf">
+            <input name="id" type="hidden">
+            <input name="zone" type="hidden" value="FZ1">
+            <input name="polygon" type="hidden" value="">
+            <input name="center" type="hidden" value="[362105,387218]">
+
+            <div class="govuk-form-group">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label--m" for="reference">
+                  Add a reference
+                </label>
+                <span class="govuk-hint govuk-hint--block">
+                 Optional. This is chosen by you to help you find the report later and should be less than 25 characters.
+                </span>
+              </h3>
+              <input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference" type="text" maxlength="13">
+            </div>
+
+            <div class="govuk-form-group">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label--m" for="scale">
+                  Scale
+                </label>
+                <span class="govuk-hint govuk-hint--block">
+                 Select the scale of the map shown in the report
+                </span>
+              </h3>
+              <select class="govuk-select" id="scale" name="scale">
+                <option value="2500">1:2500</option>
+                <option value="10000">1:10000</option>
+                <option value="25000">1:25000</option>
+                <option value="50000">1:50000</option>
+              </select>
+            </div>
+        </div>
+      </details>
+
+      <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary">
+        Download a PDF of this flood map
+      </button>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-3">
+        Order flood risk data for rivers and the sea
+      </h3>
+
+      <p class="govuk-body">
+        You can make a request using this service. Flood risk data should normally be emailed to you within 20 working days.
+      </p>
+
+      <p class="govuk-body">
+        Depending on the information that's available, the flood risk data will include:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          detailed flood data
+        </li>
+        <li>
+          historic flood event data
+          </li>
+        <li>
+          modelled flood levels and extents
+        </li>
+        <li>
+          flood defence locations and attributes
+        </li>
+      </ul>
+
+      <div class="govuk-inset-text">
+
+        <p class="govuk-body">
+        Some developments are more complex than others and this data isn’t always enough to allow you to produce a flood risk assessment. You should check what other <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#get-information-to-complete-an-assessment"> information you might need to complete a flood risk assessment</a>.
+        </p>
+
+      </div>
+
+      <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-9" data-module="govuk-button">
+        Order flood risk data
+      </a>
+
+      <!-- <h2 class="govuk-heading-m">More detailed flood risk assessments</h2>
+      <p>Some developments need a more detailed flood risk assessment (previously known as a product 5, 6, 7 or 8).</p> -->
+
+      <h2 class="govuk-heading-s">
+        Get help deciding what flood risk information you need
+      </h2>
+
+      <p class="govuk-body">
+        Email the Environment Agency team in Greater Manchester, Merseyside and Cheshire at  <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk">Inforequests.GMMC@environment-agency.gov.uk</a>
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Change the location
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="confirm-location">Redraw the boundary of your site</a>
+        </li>
+        <li>
+          <a href="location">Search for a different location</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

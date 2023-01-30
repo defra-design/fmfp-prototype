@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, ol */
 
 // Warn about using the kit in production
 if (window.console && window.console.info) {
@@ -8,18 +8,18 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
-
-  var baseMapLayer = new ol.layer.Tile({
+  const baseMapLayer = new ol.layer.Tile({
     source: new ol.source.OSM()
-  });
+  })
 
-  var mapboxLayer = new ol.layer.MapboxVector ({
+  const mapboxLayer = new ol.layer.MapboxVector({
+    zIndex: 0,
     styleUrl: 'mapbox://styles/ant-defra/cknou8uzf5hfw17qzo0076s58',
     accessToken:
-      'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA',
-  });
+      'pk.eyJ1IjoiYW50LWRlZnJhIiwiYSI6ImNrbmtkaDEyMzA2emQycHFsOW04YjB1eWkifQ.NR7GSXgdwmFKZzLwSti3uA'
+  })
 
-  var polygonStyle = new ol.style.Style({
+  const polygonStyle = new ol.style.Style({
     fill: new ol.style.Fill({
       color: 'rgba(255, 255, 255, 0.5)'
     }),
@@ -33,211 +33,138 @@ $(document).ready(function () {
       scale: 0.5,
       src: 'public/images/map-draw-cursor-2x.png'
     })
-  });
+  })
 
-  var polygonVertexStyle = new ol.style.Style({
+  const polygonVertexStyle = new ol.style.Style({
     image: new ol.style.Icon({
       opacity: 1,
       size: [32, 32],
       scale: 0.5,
       src: 'public/images/map-draw-cursor-2x.png'
     }),
+
     // Return the coordinates of the first ring of the polygon
     geometry: function (feature) {
       if (feature.getGeometry().getType() === 'Polygon') {
-        var coordinates = feature.getGeometry().getCoordinates()[0]
+        const coordinates = feature.getGeometry().getCoordinates()[0]
         return new ol.geom.MultiPoint(coordinates)
       } else {
         return null
       }
     }
-  });
-
-  var polygonSource = new ol.source.Vector({wrapX: false});
-  var polygonLayer = new ol.layer.Vector({
-    source: polygonSource,
-    style: [polygonStyle, polygonVertexStyle]
-  });
-
-
-
-  // If statement that changes the map layers on the confirm page
-  // I need to look at pin location changes next.
-  if(document.getElementById("map").classList.contains("map--confirm")){
-    var map = new ol.Map({
-      target: 'map',
-      layers: [ baseMapLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.571657, 53.381048]),
-        zoom: 15, //Initial Zoom Level
-        maxZoom: 17
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  } else if (document.getElementById("map").classList.contains("map--fz1")) {
-    var map = new ol.Map({
-      target: 'map',
-      // controls: ol.control.defaults().extend([
-      //   new ol.control.FullScreen({
-      //     label: 'Full screen \u2922'
-      //   })
-      // ]),
-      layers: [ mapboxLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.564057, 53.378333]),
-        zoom: 15 //Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  }
-  else if (document.getElementById("map").classList.contains("map--fz2")) {
-    var map = new ol.Map({
-      target: 'map',
-      // controls: ol.control.defaults().extend([
-      //   new ol.control.FullScreen({
-      //     label: 'Full screen \u2922'
-      //   })
-      // ]),
-      layers: [ mapboxLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.570489, 53.381511]),
-        zoom: 15 //Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  }
-  else if (document.getElementById("map").classList.contains("map--fz3")) {
-    var map = new ol.Map({
-      target: 'map',
-      // controls: ol.control.defaults().extend([
-      //   new ol.control.FullScreen({
-      //     label: 'Full screen \u2922'
-      //   })
-      // ]),
-      layers: [ mapboxLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.570489, 53.385511]),
-        zoom: 15 //Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  }
-  else if (document.getElementById("map").classList.contains("map--fzd")) {
-    var map = new ol.Map({
-      target: 'map',
-      // controls: ol.control.defaults().extend([
-      //   new ol.control.FullScreen({
-      //     label: 'Full screen \u2922'
-      //   })
-      // ]),
-      layers: [ mapboxLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.576372, 53.382467]),
-        zoom: 15 //Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  }
-  else {
-    //Swaps the map to the FLood Zone Layers from Mapbox Studio
-    var map = new ol.Map({
-      target: 'map',
-      layers: [ mapboxLayer, polygonLayer ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-2.571657, 53.381048]),
-        zoom: 15 //Initial Zoom Level
-      }),
-      interactions: ol.interaction.defaults({
-        altShiftDragRotate: false,
-        pinchRotate: false
-      })
-    });
-  }
-
-  // Adding a marker on the map
-
-  if (document.getElementById("map").classList.contains("map--fzd")){
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.580372, 53.382467])
-      ),
-    });
-  } else if (document.getElementById("map").classList.contains("map--fz3")) {
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.573489, 53.385511])
-      ),
-    });
-  } else if (document.getElementById("map").classList.contains("map--fz1")) {
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.566257, 53.378333])
-      ),
-    });
-  } else if (document.getElementById("map").classList.contains("map--justboundary")) {
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-1.566257, 53.378333])
-      ),
-    });
-  } else {
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(
-        ol.proj.fromLonLat([-2.571657, 53.381048])
-      ),
-    });
-  }
-
-  marker.setStyle(new ol.style.Style({
-    image: new ol.style.Icon(({
-      crossOrigin: 'anonymous',
-      anchor: [0.5, 1],
-      anchorXUnits: 'fraction',
-      anchorYUnits: 'fraction',
-      src: '/public/images/iconfinder_marker.png'
-    }))
-  }));
-
-  var markerSource = new ol.source.Vector({
-    features: [marker]
-  });
-
-  var markerLayer = new ol.layer.Vector({
-    source: markerSource,
-  });
-  map.addLayer(markerLayer);
-
-  // Click handler for pointer
-  map.on('singleclick', function (e) {
-    if (markerLayer.getVisible() === true) {
-      var point = markerSource.getFeatures()[0];
-      point.getGeometry().setCoordinates([e.coordinate[0], e.coordinate[1]])
-    }
   })
 
+  const getPolygonAndCentreForPage = classlist => {
+    if (classList.contains('map--confirm')) {
+      return {
+        polygon: undefined,
+        center: ol.proj.fromLonLat([-2.574057, 53.380933])
+      }
+    } else if (classList.contains('map--fz1')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-286181.90009821305, 7053073.333101019],
+          [-286013.3307608251, 7053131.972235377],
+          [-285998.6520516036, 7053094.255282374],
+          [-285989.94844777836, 7053098.242221429],
+          [-285964.96446314506, 7053012.778769246],
+          [-286092.79031367914, 7052968.334095778],
+          [-286094.0053811668, 7052977.082712902],
+          [-286142.9987669509, 7052958.794593168],
+          [-286181.90009821305, 7053073.333101019]
+        ]]),
+        center: [-285799.8,7053023.498395808]
+      }
+    } else if (classList.contains('map--fz2')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-287453.6950260728,7053547.81645298],
+          [-287387.71521187964,7053471.082060037],
+          [-287247.15437214554,7053574.344476758],
+          [-287311.99951164605,7053657.167138065],
+          [-287453.6950260728,7053547.81645298]
+        ]]),
+        center: [-287050.15437214554,7053574.344476758]
+      }
+    } else if (classList.contains('map--fz3')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-286435.02510355425,7054885.783510737],
+          [-286296.37422890955,7054878.498864598],
+          [-286312.82934150315,7054656.417462274],
+          [-286433.5187799759,7054664.330472198],
+          [-286435.02510355425,7054885.783510737]
+        ]]),
+        center: ol.proj.fromLonLat([-2.570489, 53.385511])
+      }
+    } else if (classList.contains('map--fzd')) {
+      return {
+        polygon: new ol.geom.Polygon([[
+          [-286799.37845813454,7053750.640779134],
+          [-286757.7712044237,7053814.590622908],
+          [-286630.3911880156,7053725.190187324],
+          [-286660.58136806946,7053662.1983952755],
+          [-286799.37845813454,7053750.640779134]
+        ]]),
+        center: [-286490.3911880156,7053725.190187324]
+      }
+    }
+  }
 
+  // polygonSource is the source for digitising (confirm-location)
+  const polygonSource = new ol.source.Vector({ wrapX: false })
 
+  let layers
+  // If statement that changes the map layers on the confirm page
+  // I need to look at pin location changes next.
+  const classList = document.getElementById('map').classList
+  const { polygon, center } = getPolygonAndCentreForPage(classList)
+  if (classList.contains('map--confirm')) {
+    // This Part is for any pages (just map--confirm in reality) that require digitising polygons
+  // polygonLayer is the layer for digitising (confirm-location)
+    const polygonLayer = new ol.layer.Vector({
+      source: polygonSource,
+      style: [polygonStyle, polygonVertexStyle]
+    })
+    layers = [baseMapLayer, polygonLayer]
+  } else {
+    // This Part is for any pages that require a static polygon
+    const staticPolygonLayer = new ol.layer.Vector({
+      ref: 'centre',
+      visible: true,
+      zIndex: 1,
+      source: new ol.source.Vector({
+        wrapX: false,
+        features: [
+          new ol.Feature({
+            name: 'polygon',
+            geometry: polygon
+          })]
+      }),
+      style: [new ol.style.Style({
+        stroke: new ol.style.Stroke({ color: '#B10E1E', width: 3 }),
+        fill: new ol.style.Fill({ color: 'rgba(178, 17, 34, 0.1)' })
+      })]
+    })
+    layers = [mapboxLayer, staticPolygonLayer]
+  }
 
-
-  /////// POLYGON STUF ///////
+  // Swaps the map to the FLood Zone Layers from Mapbox Studio
+  const map = new ol.Map({
+    target: 'map',
+    layers,
+    view: new ol.View({
+      center,
+      zoom: 15 // Initial Zoom Level
+    }),
+    interactions: ol.interaction.defaults({
+      altShiftDragRotate: false,
+      pinchRotate: false
+    })
+  })
 
   // Modify polygon drawing style
-  var modifyStyle = new ol.style.Style({
+  const modifyStyle = new ol.style.Style({
     fill: new ol.style.Fill({
       color: 'rgba(255, 255, 255, 0.5)'
     }),
@@ -251,15 +178,15 @@ $(document).ready(function () {
       scale: 0.5,
       src: '/public/images/map-draw-cursor-2x.png'
     })
-  });
+  })
 
-  var modify = new ol.interaction.Modify({
+  const modify = new ol.interaction.Modify({
     source: polygonSource,
     style: modifyStyle
-  });
+  })
 
   // Draw polygon drawing style
-  var drawStyle = new ol.style.Style({
+  const drawStyle = new ol.style.Style({
     fill: new ol.style.Fill({
       color: 'rgba(255, 255, 255, 0.5)'
     }),
@@ -273,165 +200,53 @@ $(document).ready(function () {
       scale: 0.5,
       src: '/public/images/map-draw-cursor-2x.png'
     })
-  });
+  })
 
-  var draw = new ol.interaction.Draw({
+  const draw = new ol.interaction.Draw({
     source: polygonSource,
     type: 'Polygon',
     style: drawStyle
-  });
+  })
 
   draw.on('drawend', function (e) {
-    var coordinates = e.feature.getGeometry().getCoordinates()[0]
+    const coordinates = e.feature.getGeometry().getCoordinates()[0]
     if (coordinates.length >= 4) {
       setTimeout(function () {
         map.removeInteraction(draw)
-      }, 500);
+      }, 500)
     }
-  });
+  })
 
-  var snap = new ol.interaction.Snap({
+  const snap = new ol.interaction.Snap({
     source: polygonSource
-  });
+  })
 
-  function addInteractions() {
-    if (polygonSource.getFeatures().length === 0) {
-      map.addInteraction(draw);
-    }
-    map.addInteraction(modify);
-    map.addInteraction(snap);
+  function addInteractions () {
+    map.addInteraction(draw)
+    map.addInteraction(modify)
+    map.addInteraction(snap)
   }
 
-  function removeInteractions() {
-    map.removeInteraction(draw);
-    map.removeInteraction(modify);
-    map.removeInteraction(snap);
-  }
   // Changes to make the polygon available
-  addInteractions()
-  document.getElementById("deleteShapeBtn").disabled = false
-  polygonLayer.setVisible(true)
-  markerLayer.setVisible(false)
+  if (document.getElementById('map').classList.contains('map--justboundary')) {
+    addInteractions()
+    document.getElementById('deleteShapeBtn').disabled = false
+  }
   // End of changes to make the polygon available
 
-  var radios = document.getElementsByName('marker-or-shape');
-  for (var i = 0, length = radios.length; i < length; i++) {
-    radios[i].addEventListener('click', function(event) {
-
-      var deleteBtn = document.getElementById("deleteShapeBtn");
-
-      if (this.value == 'draw-shape') {
-        addInteractions();
-        deleteBtn.disabled = false;
-        polygonLayer.setVisible(true);
-        markerLayer.setVisible(false);
-      } else if (this.value == 'delete-shape' &&
-        polygonSource.getFeatures().length === 1) {
-          polygonSource.removeFeature(polygonSource.getFeatures()[0]);
-      } else if (this.value === 'move-marker') {
-        removeInteractions();
-        deleteBtn.disabled = true;
-        polygonLayer.setVisible(false);
-        markerLayer.setVisible(true);
-      }
-    }, false);
-  }
-
-  var buttons = document.getElementsByName('delete-shape');
+  const buttons = document.getElementsByName('delete-shape')
   if (buttons.length === 1) {
-    buttons[0].addEventListener('click', function(event) {
+    buttons[0].addEventListener('click', function (event) {
       if (polygonSource.getFeatures().length === 1) {
-          polygonSource.removeFeature(polygonSource.getFeatures()[0]);
+        polygonSource.removeFeature(polygonSource.getFeatures()[0])
       }
-
-      map.addInteraction(draw);
-      document.getElementById("draw-shape").focus();
-
-    });
+      map.addInteraction(draw)
+    })
   }
-
-// DRAGGABLE MARKER
-  var translate1 = new ol.interaction.Translate({
-  	features: new ol.Collection([marker])
-  });
-  map.addInteraction(translate1);
-
-  map.on('pointermove', function(e) {
-    if (e.dragging) return;
-    var hit = map.hasFeatureAtPixel(map.getEventPixel(e.originalEvent));
-    map.getTargetElement().style.cursor = hit ? 'pointer' : '';
-  });
-//////////////////////
-
 
   // EVENT HANDLER FOR CUSTOM DETAILS COMPONENT
-  $('.map-toggle').on('click', function(e) {
-    e.preventDefault();
-    $(this).toggleClass('active');
-  });
-
-  // STUFF FOR THE MODAL //
-
-  $('.govuk-button--pdf-download').on('click', function(e) {
-    e.preventDefault();
-    $('.dialog').toggleClass('is-visible');
-    $('.dialog').find('#reference').focus();
-    $('body').addClass('modal-open');
-  });
-
-  $('.dialog-cancel').on('click', function(e) {
-    e.preventDefault();
-    $('.dialog').toggleClass('is-visible');
-    $('.pdf-download').find('.govuk-button--pdf-download').focus();
-    $('body').removeClass('modal-open');
-  });
-
-  $('.dialog-close').on('click', function(e) {
-    e.preventDefault();
-    $('.dialog').toggleClass('is-visible');
-    $('.pdf-download').find('.govuk-button--pdf-download').focus();
-    $('body').removeClass('modal-open');
-  });
-
-  $(document).keydown(function(event) {
-  if ((event.keyCode == 27) && $('.dialog').hasClass('is-visible')) {
-    $('.dialog').toggleClass('is-visible');
-    $('.pdf-download').find('.govuk-button--pdf-download').focus();
-    $('body').removeClass('modal-open');
-  }
-
-});
-
-  // add all the elements inside modal which you want to make focusable
-  const  focusableElements =
-      'button, [href], input, select, [tabindex]:not([tabindex="-1"])';
-  const modal = document.querySelector('#dialog-main'); // select the modal by it's id
-
-  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
-  const focusableContent = modal.querySelectorAll(focusableElements);
-  const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
-
-
-  document.addEventListener('keydown', function(e) {
-    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey) { // if shift key pressed for shift + tab combination
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement.focus(); // add focus for the last focusable element
-        e.preventDefault();
-      }
-    } else { // if tab key is pressed
-      if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus(); // add focus for the first focusable element
-        e.preventDefault();
-      }
-    }
-  });
-
-  firstFocusableElement.focus();
-
+  $('.map-toggle').on('click', function (e) {
+    e.preventDefault()
+    $(this).toggleClass('active')
+  })
 })

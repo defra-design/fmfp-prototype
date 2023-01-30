@@ -1,0 +1,107 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Request recieved - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-main-wrapper govuk-main-wrapper--l">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+
+          <h1 class="govuk-panel__title">
+            Request submitted
+          </h1>
+
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2 523F GH87</strong>
+          </div>
+
+        </div>
+
+        <p class="govuk-body">
+          We have sent a confirmation email to <strong>{{ data['email'] }}</strong>.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          What happens next
+        </h2>
+
+        <p class="govuk-body">
+          We’re processing your request for flood risk assessment data.
+        </p>
+
+        <p class="govuk-body">
+          You should recieve your data within 20 working days.
+        </p>
+
+        <p class="govuk-body">
+          Depending on the data that's available, this information will include:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a flood zone map (flood map for planning)
+          </li>
+          <li>
+            historic flood outlines
+          </li>
+          <li>
+            relevant modelled flood levels and extents
+          </li>
+          <li>
+          flood defence locations and attributes
+          </li>
+        </ul>
+
+        <h2 class="govuk-heading-m">
+          Help and advice
+        </h2>
+
+        <p class="govuk-body">
+          Contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk">Inforequests.GMMC@environment-agency.gov.uk</a> for:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#get-information-to-complete-an-assessment">more information about getting additional products to help you complete a flood risk assessment (products 5,6, 7 and 8)</a>
+          </li>
+          <li>
+            general help and advice about the site you're requesting data for
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          For advice around flood risk assessments and planning permission you can:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            speak to your local authority, <strong>Warrington council</strong>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#contact">contact the Environment Agency</a>
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          <a href="results-fzd">Go back to your flood information</a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

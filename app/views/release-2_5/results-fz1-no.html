@@ -1,3 +1,4 @@
+
 {% extends "layout-footer.html" %}
 
 {% block pageTitle %}
@@ -15,49 +16,18 @@
 
   <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-full">
-
-      <h1 class="govuk-heading-xl">
-        This location is in flood zone 1
-      </h1>
-
-    </div>
-
     <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-m">
-        What flood zone 1 means
-      </h2>
+      <h1 class="govuk-heading-xl">
+        Flood risk information for this location
+      </h1>
 
       <p class="govuk-body">
-        Areas within flood zone 1 have a low probability of flooding from rivers and the sea.</p>
-        <p class="govuk-body">
-          <a href="flood-zones-explained">More information about flood zones</a>
-        </p>
-      <h2 class="govuk-heading-m">
-        What the flood map shows
-      </h2>
-      <p class="govuk-body">
-        The map data is for the 10 km area around the boundary you chose. It is not for a specific development.</p>
-
-      <p class="govuk-body">
-        The map shows:
+        Your site is in flood zone 1. This means it has a low probability of flooding from rivers and the sea.
       </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          the flood zone your development is in
-        </li>
-        <li>
-          the areas in the location  that could be affected by flooding from rivers or the sea
-        </li>
-        <li>
-          flood defences
-        </li>
-      </ul>
-      
       <p class="govuk-body">
-        You may need more information about flood risk from rivers and seas, and you should also <a href="https://check-long-term-flood-risk.service.gov.uk/map?easting=362062.26&northing=387296.02&map=SurfaceWater" class="govuk-link">check the risk from surface water and other sources of flooding in this area</a>.
+        <a href="results-expanded-fz1">More information about your results</a>.
       </p>
 
     </div>
@@ -89,10 +59,6 @@
 
           <div class="map-legend">
 
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-3">
-              Key
-            </h2>
-
             <ul class="map-legend-list govuk-body-s govuk-!-font-size-14 govuk-!-margin-top-3">
               <li class="map-legend-item">
                 <img class="map-legend-image" src="/public/images/polygon-icon.png" alt="Map marker icon">
@@ -102,10 +68,10 @@
                 <img class="map-legend-image map-legend-image--border" src="/public/images/fz3.png" alt="Icon showing what flood zone 3 looks like on the map.">
                 Flood zone 3
               </li>
-              <!-- <li class="map-legend-item">
+              <li class="map-legend-item">
                 <img class="map-legend-image map-legend-image--border" src="/public/images/area-benefitting.png" alt="Icon showing what an area benefiting from flood defences looks like on the map.">
                 Areas benefitting from from flood defences
-              </li> -->
+              </li>
               <li class="map-legend-item">
                 <img class="map-legend-image map-legend-image--border" src="/public/images/fz2.png" alt="Icon showing what flood zone 2 looks like on the map.">
                 Flood zone 2
@@ -150,57 +116,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m  govuk-!-margin-top-6">
-        Decide what you need for your planning application
+        What to do next
       </h2>
-  <p class="govuk-body">Your development has a site area of 0.85 hectares (ha).
-      <p>
-      <p class="govuk-body">
-        You only need a flood risk assessment when a development in flood zone 1:
-      <p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          has a site area of 1 ha or more
-        </li>
-        <li>
-          is in an area with critical drainage problems
-        </li>
-        <li>
-          where the local planning authority’s (LPA) strategic flood risk assessment (SFRA) shows it will be at increased flood risk in future
-        </li>
-        <li>
-          is at risk from other sources of flooding and its development would increase its vulnerability classification
-        </li>
-      </ul>
 
       <p class="govuk-body">
-        Contact your local planning authority, Warrington, to check its SRFA.
+        You may still need to request a flood risk assessment for your planning application but for most cases including a copy of these results (sometimes know as a Prodct 1) will be enough.
       <p>
-
-      <h3 class="govuk-heading-s">
-        Download the flood map for this location
-      </h3>
-
-      <p class="govuk-body">
-        The flood map is suitable for a local planning authority to use when checkinga planning application to see if a development is:
-      <p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          in flood zone 1, 2 or 3
-        </li>
-        <li>
-          within 20 metres of a main river or a flood defence
-        </li>
-        <li>
-          in a water storage area
-        </li>
-      </ul>
 
       <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Add a reference to the flood map and set the scale
+            Report options (select scale, add reference number)
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -242,40 +168,115 @@
       </details>
 
       <button href="#" type="button" draggable="false" class="govuk-button govuk-button--secondary">
-        Download a PDF of this flood map
+        Download a copy of these results (PDF)
       </button>
 
-      <h3 class="govuk-heading-s govuk-!-margin-top-3">
-        Order flood risk data for rivers and the sea
-      </h3>
+      <!-- <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Your development may still be at risk of flooding. <a href="https://www.gov.uk/check-long-term-flood-risk" class="govuk-link">Check you long term flood risk</a>.
+        </strong>
+      </div> -->
 
       <p class="govuk-body">
-        Your site is in flood zone 1, so it's unlikely there will be any flood risk data available. But you can make a request using this service, if you think you need it for your planning application.
-      </p>
+        Be aware that there are certain types of development that will require you to request a flood risk assessment to be included as part of your planning application.
+      <p>
 
-      <p class="govuk-body">
-        Flood risk data should normally be emailed to you within 20 working days.
-      </p>
-
-      <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-        Order flood risk data
-      </a>
-
-      <h2 class="govuk-heading-s">
-         Get help deciding what flood risk information you need
+      <h2 class="govuk-heading-m">
+        When a flood risk assessment is needed as part of your planning application
       </h2>
 
       <p class="govuk-body">
-        Email the Environment Agency team in Greater Manchester, Merseyside and Cheshire at: <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk">Inforequests.GMMC@environment-agency.gov.uk</a>.
+        You will need to do a flood risk assessment if your site is <span class="govuk-!-font-weight-bold">any of the following:</span>
       </p>
 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          bigger than 1 hectare (A hectare (ha) is about 2.5 acres)
+        </li>
+        <li>
+          in an area with critical drainage problems as notified by the Environment Agency
+        </li>
+        <li>
+          identified as being at increased flood risk in future by the local authority's strategic flood risk assessment
+        </li>
+        <li>
+          at risk from other sources of flooding (such as surface water or reservoirs) and its development would increase the vulnerability of its use (such as constructing an office on an undeveloped site or converting a shop to a dwelling)
+        </li>
+      </ul>
+
+      <p class="govuk-body">
+        If your development <span class="govuk-!-font-weight-bold">does not</span> fall into any of these categories, you only need to download a copy of the results from this page (sometimes know as a Product 1) to include as part of your planning application.
+      </p>
+
+
+
+      <div class="govuk-inset-text">
+
+        <p class="govuk-body">
+          Your site may still be at risk of flooding. You should also <a href="https://flood-warning-information.service.gov.uk/long-term-flood-risk/map?easting=362574&northing=386979&amp;map=SurfaceWater">check the risk from surface water and other sources of flooding</a>.
+        </p>
+
+      </div>
+
+      <p class="govuk-body">
+        We recommend that you check the relevant local planning authority's strategic flood risk assessment (SFRA) as part of your work to prepare a flood risk assessment.
+      <p>
+
+      <h2 class="govuk-heading-m">
+        How to request flood risk assessment data
+      </h2>
+
+      <p class="govuk-body">
+        If you need to request a flood risk assessment for this site contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
+      <p>
+
+      <p class="govuk-body">
+        Your email should say that you are requesting flood risk assessment data (also known as a product 4) and include:
+      <p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          the address
+        </li>
+        <li>
+          a map showing the site boundary
+        </li>
+      </ul>
+
+      <p class="govuk-body">
+        As your selected location is in Flood Zone 1, it is likely that there will be no extra data available.
+      <p>
+
+      <!-- <a href="confirm-location" role="button" draggable="false" class="govuk-button--pdf-download govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Download flood zone information
+      </a> -->
+
+      <h2 class="govuk-heading-s">
+        More help and advice
+      </h2>
+
+      <p class="govuk-body">
+        Contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at  <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk">Inforequests.GMMC@environment-agency.gov.uk</a> for:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#get-information-to-complete-an-assessment">more information about getting additional products to help you complete a flood risk assessment (products 5, 6, 7 and 8)</a>
+        </li>
+        <li>
+          general help and advice about the site you're requesting data for
+        </li>
+      </ul>
+
       <h3 class="govuk-heading-s">
-        Change the location
+        Change location
       </h3>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a href="confirm-location">Redraw the boundary of your site</a>
+          <a href="confirm-location">Redraw your boundary</a>
         </li>
         <li>
           <a href="location">Search for a different location</a>

@@ -1,0 +1,47 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Privacy notice - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Sorry, there's a problem with the service
+        </h1>
+
+        <p class="govuk-body">
+          Your order has not been submitted Try again later.
+        </p>
+
+        <p class="govuk-body">
+          We've saved your location and boundary details. You'll only need to enter your name and email address again when you order the flood risk data.</p>
+
+          <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
+            Try again
+          </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

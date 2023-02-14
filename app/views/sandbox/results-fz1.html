@@ -17,9 +17,17 @@
 
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl">
-        This location is in flood zone 1
-      </h1>
+      {% if data['results'] === 'results-fz1.html' %}
+        <h1 class="govuk-heading-xl">
+          This location is in flood zone 1
+        </h1>
+      {% else %}
+        <h1>
+          Page is broken
+        </h1>
+      {% endif %}
+
+      
 
     </div>
 

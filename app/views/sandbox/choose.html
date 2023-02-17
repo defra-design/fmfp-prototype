@@ -9,15 +9,85 @@
 
 <div class="govuk-width-container">
 
-  <main class="govuk-main-wrapper " id="main-content" role="main">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
 
     <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Choose your journey</h1>
+        <form class="form" action="start" method="post">
 
-        <p class="govuk-body">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Choose the journey
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-1" type="radio" name="journey" value="fz1"  checked="checked" {{checked("journey","fz1")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-1">
+                    Flood zone 1
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-2" type="radio" name="journey" value="fz2" {{checked("journey","fz2")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-2">
+                    Flood zone 2
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-3" type="radio" name="journey" value="fz3" {{checked("journey","fz3")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-3">
+                    Flood zone 3
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-4" type="radio" name="journey" value="fzd" {{checked("journey","fzd")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-4">
+                    Flood zone 3 with defences
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {# Size modifiers: xl, l, m #}
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Choose the opted
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-1" type="radio" name="opted" value="in"  checked="checked" {{checked("opted","in")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-1">
+                    Area opted in
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-2" type="radio" name="opted" value="out" {{checked("opted","out")}}>
+                  <label class="govuk-label govuk-radios__label" for="radio-2">
+                    Area opted out
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Start
+          </button>
+
+      </form>
+        
+
+        <!-- <p class="govuk-body">
           <a href="start?journey=fz1">Flood zone 1 journey</a>
         </p>
 
@@ -41,7 +111,7 @@
 
           <li><a href="start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a></li>
 
-          <li><a href="start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a></li>
+          <li><a href="start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a></li> -->
         </ul>
 
       </div>

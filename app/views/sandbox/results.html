@@ -18,25 +18,43 @@
     <div class="govuk-grid-column-full">
 
       {% if data['journey'] === 'fz1' %}
+      <!-- Start flood zone 1 title -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 1
         </h1>
+      <!-- End flood zone 1 title -->
+
       {% elif data['journey'] === 'fz2' %}
+      <!-- Start flood zone 2 title -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 2
         </h1>
+      <!-- End flood zone 2 title -->
+
       {% elif data['journey'] === 'fz3' %}
+      <!-- Start flood zone 3 title -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 3
         </h1>
+      <!-- End flood zone 3 title -->
+
       {% elif data['journey'] === 'fzd' %}
+      <!-- Start flood zone 3 with defences title -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 3
         </h1>
+      <!-- End flood zone 3 with defences title -->
+
       {% else %}
+      <!-- You've tried to look at the page with no journey set -->
         <h1>
-          Try adding ?journey=fz1 to end of the url
+          You've tried to look at the page with no journey set
         </h1>
+
+        <p class="govuk-body">
+          Try adding ?journey=fz1 to end of the url
+        </p>
+      <!-- You've tried to look at the page with no journey set -->
       {% endif %}
 
     </div>
@@ -44,6 +62,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if data['journey'] === 'fz1' %}
+      <!-- Start what flood zone 1 means content -->
         <h2 class="govuk-heading-m">
           What flood zone 1 means
         </h2>
@@ -56,7 +75,13 @@
           Most developments that are less than 1 hectare (ha) in flood zone 1 do not need a flood risk assessment (FRA) as part of the planning application. The site you have drawn is 0.85 ha.
         </p>
 
+        <p class="govuk-body">
+          Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
+        </p>
+      <!-- End what flood zone 1 means content -->
+      
       {% elif data['journey'] === 'fz2' %}
+      <!-- Start what flood zone 2 means content -->
         <h2 class="govuk-heading-m">
           What flood zone 2 means
         </h2>
@@ -68,7 +93,14 @@
         <p class="govuk-body">
           You need to carry out a flood risk assessment (FRA) as part of the planning application for this development.
         </p>
+
+        <p class="govuk-body">
+          Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
+        </p>
+      <!-- End what flood zone 2 means content -->
+      
       {% elif data['journey'] === 'fz3' %}
+      <!-- Start what flood zone 3 means content -->
         <h2 class="govuk-heading-m">
           What flood zone 3 means
         </h2>
@@ -79,19 +111,34 @@
         <p class="govuk-body">
           You need to carry out a flood risk assessment (FRA) as part of the planning application for this development.
         </p>
+
+        <p class="govuk-body">
+          Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
+        </p>
+      <!-- End what flood zone 3 means content -->
+
       {% elif data['journey'] === 'fzd' %}
+      <!-- Start what flood zone 3 with defences means content -->
         <h2 class="govuk-heading-m">
           What flood zone 3 means
         </h2>
-      {% else %}
-        <h1>
-          Try adding ?journey=fz1 to end of the url
-        </h1>
-      {% endif %}
 
-      <p class="govuk-body">
-        Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
-      </p>
+        <p class="govuk-body">
+          Land within flood zone 3 has a high probability of flooding from rivers and the sea.
+        </p>
+  
+        <p class="govuk-body">
+          You need to carry out a flood risk assessment (FRA) as part of the planning application for this development.
+        </p>
+      <!-- End what flood zone 3 with defences means content -->
+
+      {% else %}
+      <!-- You've tried to look at the page with no journey set -->
+        <p class="govuk-body">
+          Try adding ?journey=fz1 to end of the url
+        </p>
+      <!-- You've tried to look at the page with no journey set -->
+      {% endif %}
 
       <p class="govuk-body">
         To find out about other factors that might affect the flood risk of this location, you should also check:
@@ -114,6 +161,22 @@
         The map shows the flood risk to your site and the surrounding area.
       </p>
 
+      {% if data['journey'] === 'fzd' %}
+      <!-- Start extra flood defences content -->
+      <h3 class="govuk-heading-s">
+        Flood defences
+      </h3>
+
+      <p class="govuk-body">
+        Flood defences have been built to protect against flooding from rivers or the sea (shown as an orange line on the map). Flood defences reduce, but do not completely stop the chance of flooding because they can be overtopped or fail.
+      </p>
+
+      <p class="govuk-body">
+        Find out more about <a href="flood-zones-explained-defences" class="govuk-link">flood defences, flood zones and what they mean</a>.
+      </p>
+      <!-- End extra flood defences content-->
+      {% endif %}
+
     </div>
 
     <div class="govuk-grid-column-full">
@@ -124,7 +187,7 @@
           A map showing the flood risk for the location you have provided
         </figcaption>
 
-        <div id="map" class="map map--fz1 map--result">
+        <div id="map" class="map map--{{ data['journey'] }} map--result">
 
           <noscript>
             <h2 class="govuk-heading-m">
@@ -305,6 +368,7 @@
       </h2>
 
       {% if data['journey'] === 'fz1' %}
+      <!-- Start what to do next in fz1 -->
         <p class="govuk-body">
           You only need an FRA in flood zone 1 when one or more of these points apply:
         </p>
@@ -323,36 +387,160 @@
             the site is at risk from other sources of flooding and its development would increase its vulnerability classification
           </li>
         </ul>
-      {% elif data['journey'] === 'fz2' %}
-        <h1 class="govuk-heading-xl">
-          This location is in flood zone 2
-        </h1>
-      {% elif data['journey'] === 'fz3' %}
-        <h1 class="govuk-heading-xl">
-          This location is in flood zone 3
-        </h1>
-      {% elif data['journey'] === 'fzd' %}
-        <h1 class="govuk-heading-xl">
-          This location is in flood zone 3
-        </h1>
+      <!-- End what to do next in fz1 -->
+
       {% else %}
-        <h1>
-          Try adding ?journey=fz1 to end of the url
-        </h1>
+      <!-- Start what you need content -->
+      <p class="govuk-body">
+        You should:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          contact Warrington local planning authority to check their planning requirements
+        </li>
+        <li>
+          get an FRA, you'll normally need to pay a flood risk specialist to carry it out
+        </li>
+      </ul>
+      <!-- End of what you need content -->
       {% endif %}
 
       <h3 class="govuk-heading-s govuk-!-margin-top-3">
         Order flood risk data for rivers and the sea
       </h3>
 
+      {% if data['journey'] === 'fz1' %}
+      <!-- Start probably no data in fz1 content -->
+      <p class="govuk-body">
+        Your site is in flood zone 1, so it's unlikely we'll have any flood risk data for it. But you can place an order and we'll email you if none is available.
+      </p>
+      <!-- End probably no data in fz1 content -->
+
+      {% else %}
+      <!-- Start what's in a P4 content -->
+      <p class="govuk-body">
+        The flood risk data usually includes:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          detailed flood data
+        </li>
+        <li>
+          historic flood event data
+        </li>
+        <li>
+          modelled flood levels and extents
+        </li>
+        <li>
+          flood defence locations and attributes
+        </li>
+      </ul>
+      <!-- End what's in a P4 content -->
+
+      {% endif %}
+
+      {% if data['opted'] === 'in' %}
+      <!-- Start opted in to P4 content and green button -->
+        <p class="govuk-body">
+          We aim to email you the data within 20 working days or sooner if we can.
+        </p>
+
+        <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
+          Order flood risk data
+        </a>
+      <!-- End opted in to P4 content and green button -->
+
+      {% elif data['opted'] === 'out' %}
+      <!-- Start opted out of P4 content and green button -->
+        <p class="govuk-body">
+          To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
+        <p>
+
+        <p class="govuk-body">
+          Your email should say that you are requesting flood risk assessment data (also known as a product 4) and include:
+        <p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            the address
+          </li>
+          <li>
+            a map showing the site boundary
+          </li>
+        </ul>
+      <!-- End opted out of P4 content and green button -->
+      {% endif %}
+
+
+      {% if data['journey'] === 'fz2' %}
+      <!-- Start FZ2 FRA info -->
+      <div class="govuk-inset-text govuk-!-margin-top-3">
+
+        <p class="govuk-body">
+          For developments in flood zone 2, your FRA should include an assessment of all sources of flooding and <a href="https://www.gov.uk/guidance/flood-risk-assessments-climate-change-allowances" class="govuk-link">take into account climate change allowances.</a>
+        </p>
+        <p class="govuk-body">
+          Find out <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#how-to-do-an-assessment" class="govuk-link">how to do an assessment</a>.
+        </p>
+
+      </div>
+      <!-- End FZ2 FRA info -->
+
+      {% elif data['journey'] === 'fz3' %}
+      <!-- Start FZ3 FRA info -->
+      <div class="govuk-inset-text govuk-!-margin-top-3">
+
+        <p class="govuk-body">
+          For developments in flood zone 3, your FRA should include an assessment of all sources of flooding and <a href="https://www.gov.uk/guidance/flood-risk-assessments-climate-change-allowances" class="govuk-link">take into account climate change allowances.</a>
+        </p>
+        <p class="govuk-body">
+          Find out <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#how-to-do-an-assessment" class="govuk-link">how to do an assessment</a>.
+        </p>
+
+      </div>
+      <!-- End FZ3 FRA info -->
+
+      {% elif data['journey'] === 'fzd' %}
+      <!-- Start FZ3 with defences FRA info -->
+      <div class="govuk-inset-text govuk-!-margin-top-3">
+
+        <p class="govuk-body">
+          You also need to make a separate request for a Flood Defence Breach Hazard Map from the Greater Manchester, Merseyside and Cheshire Environment Agency team at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>. This will be available if modelling has been carried out for breach scenarios.
+        </p>
+
+        <p class="govuk-body">
+          For developments in flood zone 3, your FRA should include an assessment of all sources of flooding and <a href="https://www.gov.uk/guidance/flood-risk-assessments-climate-change-allowances" class="govuk-link">take into account climate change allowances.</a>
+        </p>
+
+        <p class="govuk-body">
+          Find out <a href="https://www.gov.uk/guidance/flood-risk-assessment-for-planning-applications#how-to-do-an-assessment" class="govuk-link">how to do an assessment</a>.
+        </p>
+
+      </div>
+      <!-- End FZ3 with defences FRA info -->
+      
+      {% endif %}
+
+      <h2 class="govuk-heading-s">
+        Get help deciding what flood risk information you need
+      </h2>
 
       <p class="govuk-body">
-        We aim to email you the data within 20 working days or sooner if we can.
+        Email the Environment Agency team in Greater Manchester, Merseyside and Cheshire at: <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>.
       </p>
 
-      <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
-        Order flood risk data
-      </a>
+      <h3 class="govuk-heading-s">
+        Change the location
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="confirm-location" class="govuk-link">Redraw the boundary of your site</a>
+        </li>
+        <li>
+          <a href="location" class="govuk-link">Search for a different location</a>
+        </li>
+      </ul>
 
     </div>
 

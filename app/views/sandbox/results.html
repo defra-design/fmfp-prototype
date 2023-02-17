@@ -438,19 +438,8 @@
       <!-- End what's in a P4 content -->
 
       {% endif %}
-
-      {% if data['opted'] === 'in' %}
-      <!-- Start opted in to P4 content and green button -->
-        <p class="govuk-body">
-          We aim to email you the data within 20 working days or sooner if we can.
-        </p>
-
-        <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
-          Order flood risk data
-        </a>
-      <!-- End opted in to P4 content and green button -->
-
-      {% elif data['opted'] === 'out' %}
+      
+      {% if data['opted'] === 'out' %}
       <!-- Start opted out of P4 content and green button -->
         <p class="govuk-body">
           To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
@@ -469,6 +458,16 @@
           </li>
         </ul>
       <!-- End opted out of P4 content and green button -->
+      {% else %}
+      <!-- Start opted in to P4 content and green button -->
+      <p class="govuk-body">
+        We aim to email you the data within 20 working days or sooner if we can.
+      </p>
+
+      <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
+        Order flood risk data
+      </a>
+      <!-- End opted in to P4 content and green button -->
       {% endif %}
 
 

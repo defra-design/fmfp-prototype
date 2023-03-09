@@ -1,0 +1,143 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Check your details - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'contact'
+  }) }}
+
+  <div class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your details before requesting your data
+        </h1>
+
+        <p class="govuk-body">
+          After you have submitted your request you will not be able to change it. Make sure the site location is accurate.
+        </p>
+
+        <p class="govuk-body">
+          You should receive your data within 20 working days.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['full-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden">&nbsp;name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden">&nbsp;email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--location">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <span class="govuk-visually-hidden">{{ data['location-postcode'] }}</span>
+              
+              {% if data['journey'] === 'fz1' %}
+              <!-- Start of FZ1 image-->
+              <img class="summary-image" src="/public/images/fz1-summary-map.png" alt="An image comfirming the location of your site">
+              <!-- End of FZ1 image -->
+
+              <!-- Start of FZ2 image-->
+              {% elif data['journey'] === 'fz2' %}
+              <img class="summary-image" src="/public/images/fz2-summary-map.png" alt="An image comfirming the location of your site"> 
+              <!-- End of FZ2 image -->
+              
+              <!-- Start of FZ3 image-->
+              {% elif data['journey'] === 'fz3' %}
+              <img class="summary-image" src="/public/images/fz3-summary-map.png" alt="An image comfirming the location of your site">
+              <!-- End of FZ3 image -->
+              
+              <!-- Start of FZd image-->
+              {% elif data['journey'] === 'fzd' %}
+              <img class="summary-image" src="/public/images/fzd-summary-map.png" alt="An image comfirming the location of your site">
+              <!-- End of FZd image -->
+             
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="confirm-location">
+                Change<span class="govuk-visually-hidden">&nbsp;location</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Flood Zone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+              {% if data['journey'] === 'fz1' %}
+              <!-- Start of FZ1 -->
+              1
+              <!-- End of Fz1 -->
+
+              {% elif data['journey'] === 'fz2' %}
+              <!-- Start of FZ2 -->
+              2
+              <!-- End of FZ2 -->
+
+              {% elif data['journey'] === 'fz3' %}
+              <!-- Start of FZ3 -->
+              3
+              <!-- End of FZ3 -->
+
+              {% elif data['journey'] === 'fzd' %}
+              <!-- Start of FZD -->
+              3 benefitting from flood defences
+              <!-- End of FZD -->
+
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <span class="govuk-visually-hidden">You can not change your flood zone</span>
+            </dd>
+          </div>
+        </dl>
+
+        <a href="confirmation" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 " data-module="govuk-button">
+          Request your flood risk assessment data
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

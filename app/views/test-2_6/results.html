@@ -18,35 +18,35 @@
     <div class="govuk-grid-column-full">
 
       {% if data['journey'] === 'fz1' %}
-      <!-- Start flood zone 1 title -->
+      <!-- vvvvvvvvvv Start flood zone 1 title vvvvvvvvvv -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 1
         </h1>
-      <!-- End flood zone 1 title -->
+      <!-- ^^^^^^^^^^^ End flood zone 1 title ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fz2' %}
-      <!-- Start flood zone 2 title -->
+      <!-- vvvvvvvvvv Start flood zone 2 title vvvvvvvvvv -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 2
         </h1>
-      <!-- End flood zone 2 title -->
+      <!-- ^^^^^^^^^^^ End flood zone 2 title ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fz3' %}
-      <!-- Start flood zone 3 title -->
+      <!-- vvvvvvvvvv Start flood zone 3 title vvvvvvvvvv -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 3
         </h1>
-      <!-- End flood zone 3 title -->
+      <!-- ^^^^^^^^^^^ End flood zone 3 title ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fzd' %}
-      <!-- Start flood zone 3 with defences title -->
+      <!-- vvvvvvvvvv Start flood zone 3 with defences title vvvvvvvvvv -->
         <h1 class="govuk-heading-xl">
           This location is in flood zone 3
         </h1>
-      <!-- End flood zone 3 with defences title -->
+      <!-- ^^^^^^^^^^^ End flood zone 3 with defences title ^^^^^^^^^^^ -->
 
       {% else %}
-      <!-- You've tried to look at the page with no journey set -->
+      <!-- vvvvvvvvvv You've tried to look at the page with no journey set vvvvvvvvvv -->
         <h1>
           You've tried to look at the page with no journey set
         </h1>
@@ -54,7 +54,7 @@
         <p class="govuk-body">
           Try adding ?journey=fz1 to end of the url
         </p>
-      <!-- You've tried to look at the page with no journey set -->
+      <!-- ^^^^^^^^^^^ You've tried to look at the page with no journey set ^^^^^^^^^^^ -->
       {% endif %}
 
     </div>
@@ -62,7 +62,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if data['journey'] === 'fz1' %}
-      <!-- Start what flood zone 1 means content -->
+      <!-- vvvvvvvvvv Start what flood zone 1 means content vvvvvvvvvv -->
         <h2 class="govuk-heading-m">
           What flood zone 1 means
         </h2>
@@ -78,10 +78,10 @@
         <p class="govuk-body">
           Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
         </p>
-      <!-- End what flood zone 1 means content -->
+      <!-- ^^^^^^^^^^^ End what flood zone 1 means content ^^^^^^^^^^^ -->
       
       {% elif data['journey'] === 'fz2' %}
-      <!-- Start what flood zone 2 means content -->
+      <!-- vvvvvvvvvv Start what flood zone 2 means content vvvvvvvvvv -->
         <h2 class="govuk-heading-m">
           What flood zone 2 means
         </h2>
@@ -97,10 +97,10 @@
         <p class="govuk-body">
           Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
         </p>
-      <!-- End what flood zone 2 means content -->
+      <!-- ^^^^^^^^^^^ End what flood zone 2 means content ^^^^^^^^^^^ -->
       
       {% elif data['journey'] === 'fz3' %}
-      <!-- Start what flood zone 3 means content -->
+      <!-- vvvvvvvvvv Start what flood zone 3 means content vvvvvvvvvv -->
         <h2 class="govuk-heading-m">
           What flood zone 3 means
         </h2>
@@ -115,10 +115,10 @@
         <p class="govuk-body">
           Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
         </p>
-      <!-- End what flood zone 3 means content -->
+      <!-- ^^^^^^^^^^^ End what flood zone 3 means content ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fzd' %}
-      <!-- Start what flood zone 3 with defences means content -->
+      <!-- vvvvvvvvvv Start what flood zone 3 with defences means vvvvvvvvvv content -->
         <h2 class="govuk-heading-m">
           What flood zone 3 means
         </h2>
@@ -130,14 +130,14 @@
         <p class="govuk-body">
           You need to carry out a flood risk assessment (FRA) as part of the planning application for this development.
         </p>
-      <!-- End what flood zone 3 with defences means content -->
+      <!-- ^^^^^^^^^^^ End what flood zone 3 with defences means content ^^^^^^^^^^^ -->
 
       {% else %}
-      <!-- You've tried to look at the page with no journey set -->
+      <!-- vvvvvvvvvv You've tried to look at the page with no journey set vvvvvvvvvv -->
         <p class="govuk-body">
           Try adding ?journey=fz1 to end of the url
         </p>
-      <!-- You've tried to look at the page with no journey set -->
+      <!-- ^^^^^^^^^^ You've tried to look at the page with no journey set ^^^^^^^^^^ -->
       {% endif %}
 
       <p class="govuk-body">
@@ -162,7 +162,7 @@
       </p>
 
       {% if data['journey'] === 'fzd' %}
-      <!-- Start extra flood defences content -->
+      <!-- vvvvvvvvvv Start extra flood defences content vvvvvvvvvv -->
       <h3 class="govuk-heading-s">
         Flood defences
       </h3>
@@ -174,7 +174,7 @@
       <p class="govuk-body">
         Find out more about <a href="flood-zones-explained-defences" class="govuk-link">flood defences, flood zones and what they mean</a>.
       </p>
-      <!-- End extra flood defences content-->
+      <!-- ^^^^^^^^^^^ End extra flood defences content ^^^^^^^^^^^ -->
       {% endif %}
 
     </div>
@@ -368,7 +368,7 @@
       </h2>
 
       {% if data['journey'] === 'fz1' %}
-      <!-- Start what to do next in fz1 -->
+      <!-- vvvvvvvvvv Start what to do next in fz1 vvvvvvvvvv -->
         <p class="govuk-body">
           You only need an FRA in flood zone 1 when one or more of these points apply:
         </p>
@@ -387,10 +387,10 @@
             the site is at risk from other sources of flooding and its development would increase its vulnerability classification
           </li>
         </ul>
-      <!-- End what to do next in fz1 -->
+      <!-- ^^^^^^^^^^^ End what to do next in fz1 ^^^^^^^^^^^ -->
 
       {% else %}
-      <!-- Start what you need content -->
+      <!-- vvvvvvvvvv Start what you need content vvvvvvvvvv -->
       <p class="govuk-body">
         You should:
       </p>
@@ -402,7 +402,7 @@
           get an FRA, you'll normally need to pay a flood risk specialist to carry it out
         </li>
       </ul>
-      <!-- End of what you need content -->
+      <!-- ^^^^^^^^^^^ End of what you need content ^^^^^^^^^^^ -->
       {% endif %}
 
       <h3 class="govuk-heading-s govuk-!-margin-top-3">
@@ -410,14 +410,14 @@
       </h3>
 
       {% if data['journey'] === 'fz1' %}
-      <!-- Start probably no data in fz1 content -->
+      <!-- vvvvvvvvvv Start probably no data in fz1 content vvvvvvvvvv -->
       <p class="govuk-body">
         Your site is in flood zone 1, so it's unlikely we'll have any flood risk data for it. But you can place an order and we'll email you if none is available.
       </p>
-      <!-- End probably no data in fz1 content -->
+      <!-- ^^^^^^^^^^^ End probably no data in fz1 content ^^^^^^^^^^^ -->
 
       {% else %}
-      <!-- Start what's in a P4 content -->
+      <!-- vvvvvvvvvv Start what's in a P4 content vvvvvvvvvv -->
       <p class="govuk-body">
         The flood risk data usually includes:
       </p>
@@ -435,12 +435,12 @@
           flood defence locations and attributes
         </li>
       </ul>
-      <!-- End what's in a P4 content -->
+      <!-- ^^^^^^^^^^^ End what's in a P4 content ^^^^^^^^^^^ -->
 
       {% endif %}
       
       {% if data['opted'] === 'out' %}
-      <!-- Start opted out of P4 -->
+      <!-- vvvvvvvvvv Start opted out of P4 vvvvvvvvvv -->
         <p class="govuk-body">
           To request flood risk assessment data for this location, contact the Environment Agency team in Greater Manchester, Merseyside and Cheshire at <a href="mailto:Inforequests.GMMC@environment-agency.gov.uk" class="govuk-link">Inforequests.GMMC@environment-agency.gov.uk</a>
         <p>
@@ -457,10 +457,10 @@
             a map showing the site boundary
           </li>
         </ul>
-      <!-- End opted out of P4 -->
+      <!-- ^^^^^^^^^^^ End opted out of P4 ^^^^^^^^^^^ -->
       {% else %}
 
-      <!-- Start opted in to P4 content and green button -->
+      <!-- vvvvvvvvvv Start opted in to P4 content and green button vvvvvvvvvv -->
       <p class="govuk-body">
         We aim to email you the data within 20 working days or sooner if we can.
       </p>
@@ -468,12 +468,12 @@
       <a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
         Order flood risk data
       </a>
-      <!-- End opted in to P4 content and green button -->
+      <!-- ^^^^^^^^^^^ End opted in to P4 content and green button ^^^^^^^^^^^ -->
       {% endif %}
 
 
       {% if data['journey'] === 'fz2' %}
-      <!-- Start FZ2 FRA info -->
+      <!-- vvvvvvvvvv Start FZ2 FRA info vvvvvvvvvv -->
       <div class="govuk-inset-text govuk-!-margin-top-3">
 
         <p class="govuk-body">
@@ -484,10 +484,10 @@
         </p>
 
       </div>
-      <!-- End FZ2 FRA info -->
+      <!-- ^^^^^^^^^^^ End FZ2 FRA info ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fz3' %}
-      <!-- Start FZ3 FRA info -->
+      <!-- vvvvvvvvvv Start FZ3 FRA info vvvvvvvvvv -->
       <div class="govuk-inset-text govuk-!-margin-top-3">
 
         <p class="govuk-body">
@@ -498,10 +498,10 @@
         </p>
 
       </div>
-      <!-- End FZ3 FRA info -->
+      <!-- ^^^^^^^^^^^ End FZ3 FRA info ^^^^^^^^^^^ -->
 
       {% elif data['journey'] === 'fzd' %}
-      <!-- Start FZ3 with defences FRA info -->
+      <!-- vvvvvvvvvv Start FZ3 with defences FRA info vvvvvvvvvv -->
       <div class="govuk-inset-text govuk-!-margin-top-3">
 
         <p class="govuk-body">
@@ -517,7 +517,7 @@
         </p>
 
       </div>
-      <!-- End FZ3 with defences FRA info -->
+      <!-- ^^^^^^^^^^^ End FZ3 with defences FRA info ^^^^^^^^^^^ -->
       
       {% endif %}
 

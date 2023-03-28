@@ -460,3 +460,76 @@ body.modal-open {
 .govuk-hint--block {
   display: block;
 }
+
+//Stuff to make product4.html dsiplay more like the pdf-download
+
+.pdf-container {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 60px 100px !important;
+  width: 75%;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  p {
+    font-size: 1rem;
+    max-width: 65ch;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+}
+
+.p4-header {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.p4-title {
+  margin: 0 !important;
+  padding: 0;
+  width: 400px;
+
+}
+
+.p4-logo {
+  width: 150px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.p4-box {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px;
+  padding: 12px 0;
+
+  p {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+.p4-callout {
+  background-color: #eee;
+  margin-bottom: 30px;
+  padding: 20px 40px;
+
+  p {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    max-width: 80%;
+  }
+}
+
+

@@ -1,0 +1,98 @@
+
+{% extends "layout_p4.html" %}
+{% block pageTitle %}
+  Flood risk information
+{% endblock %}
+
+
+{% block content %}
+
+<h2 class="govuk-heading-l">Modelled data</h2>
+
+<p>This section provides details of different scenarios we have modelled and includes the following (where available):</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>outline maps showing the area at risk from flooding in different modelled scenarios</li>
+<li>modelled node point map(s) showing the points used to get the data to model the</li>
+<li>scenarios and table(s) providing details of the flood risk for different return periods</li>
+<li>map(s) showing the approximate water levels for the return period with the largest flood extent for a scenario and table(s) of sample points providing details of the flood risk for different return periods</li>
+
+</ul>
+
+<h3 class="govuk-heading-m">Modelled scenarios</h3>
+<p>The following scenarios are included:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>defended modelled fluvial: risk of flooding from rivers where there are flood defences</li>
+<li>defences removed modelled fluvial: risk of flooding from rivers where flood defences have been removed</li>
+<li>no defences exist modelled fluvial: risk of flooding from rivers where there are no flood defences</li>
+<li>defended climate change modelled fluvial: risk of flooding from rivers where there are flood defences, including estimated impact of climate change</li>
+<li>defences removed climate change modelled fluvial: risk of flooding from rivers where flood defences have been removed, including estimated impact of climate change</li>
+<li>no defences exist climate change modelled fluvial: risk of flooding from rivers where there are no flood defences, including estimated impact of climate change</li>
+
+</ul>
+<h3 class="govuk-heading-m">Future flood risk</h3>
+<p>The modelled data includes increased peak river flows and sea level rise due to climate change. The data shows the predicted impacts on future flood risk for the following scenarios:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+    
+<li>defended (actual situation)</li>
+<li>undefended (natural floodplain with defences and assets removed)</li>
+</ul>
+
+<h3 class="govuk-heading-m">How to use the modelled climate change data</h3>
+<p>The flood modelling data provided here takes climate change into account, but may not use the latest climate change allowances. For a flood risk assessment you need to check which allowances to use, based on:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>flood zone</li>
+<li>vulnerability classification or development type</li>
+<li>development lifetime</li>
+</ul>
+
+<p>The latest guidance tells you how and when to use climate change allowances and includes surface water risk.</p>
+
+<p>Check the guidance on flood risk assessment climate change allowances.</p>
+
+<h3 class="govuk-heading-m">Get more information for your flood risk assessment</h3>
+<p>A flood model report will tell you:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>if a model was produced for a specific purpose</li>
+<li>the type of flood risk that was modelled within the model study area</li>
+<li>if you need to account for storm surge and wave heights for areas at risk of coastal flooding</li>
+<li>any limitations of a model, for example it may not show improved flood defences</li>
+
+</ul>
+
+<p>More climate scenarios may also be available for different epochs or uplifts.</p>
+
+<p>Order the flood model report and check if there are more flood scenarios available <a href="#">Inforequests.GMMC@environment-agency.gov.uk</a>.</p>
+</div>
+<div class="pdf-container-landscape">
+<h4 class="govuk-heading-s">Figure 1. Defences removed climate change modelled tidal extent from Thume and Hickling, 2018 model for 3 annual exceedance probabilities (AEPs). Climate change is given as additional millimetres uplift (+mm)</h4>
+</br>
+<p>[Image here]</p>
+</div>
+<div class="pdf-container-landscape">
+    <h4 class="govuk-heading-s">
+Figure 2. 2D grid sample points map for defences removed climate change modelled tidal extent and height from Thume and Hickling, 2018 model for 0.1% annual exceedance probabilities (AEP) +1110mm height data.
+</h4>
+</br>
+<p>[Image here]</p>
+</div>
+<div class="pdf-container-landscape">
+    <h4 class="govuk-heading-s">
+        Table 1. Flood depths and heights for modelled AEP percentages with climate change allowances given as additional millimetres (+mm) uplift. Thume and Hickling, 2018 model.
+        </h4>
+    </br>
+    <p>[Table 1 here]</p>
+
+    <h4 class="govuk-heading-s">
+    Table 2: Climate change uplift in +mm and related epoch (time frame for sea level rise). The year given is the end of each time frame.
+    </h4>
+    <p>[Table 2 here]</p>
+</div>
+{% endblock %}

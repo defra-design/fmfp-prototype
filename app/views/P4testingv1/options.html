@@ -1,0 +1,138 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find out if you need a Flood Risk Assessment (FRA) and get flood maps for a planning application
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% if data.chooseptype=="aep" %}
+
+  
+
+        <form class="form" action="P4AEP" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Choose the Product 4 AEP options for usability testing
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option1" type="radio" name="aep_option" value="option1">
+                  <label class="govuk-label govuk-radios__label" for="radio-1">
+                    Option 1
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option2" type="radio" name="aep_option" value="option2">
+                  <label class="govuk-label govuk-radios__label" for="radio-2">
+                    Option 2
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option3" type="radio" name="aep_option" value="option3">
+                  <label class="govuk-label govuk-radios__label" for="radio-3">
+                    Option 3
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+          {% endif %}
+          
+       {% if data.chooseptype=="historic" %}
+       
+
+        <form class="form" action="recorded_flood" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Choose the Product 4 recorded flood options for usability testing
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option1" type="radio" name="recorded_flood" value="option1">
+                  <label class="govuk-label govuk-radios__label" for="radio-1">
+                    Option 1
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option2" type="radio" name="recorded_flood" value="option2">
+                  <label class="govuk-label govuk-radios__label" for="radio-2">
+                    Option 2
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="option3" type="radio" name="recorded_flood" value="option3">
+                  <label class="govuk-label govuk-radios__label" for="radio-3">
+                    Option 3
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>      
+          
+      {% endif %}
+
+    {% if data.chooseptype=="tidal" %}
+       tidal
+    {% endif %}
+          <button class="govuk-button" data-module="govuk-button">
+            Go to prototype options
+          </button>
+
+      </form>
+        
+
+        <!-- <p class="govuk-body">
+          <a href="start?journey=fz1">Flood zone 1 journey</a>
+        </p>
+
+        <p class="govuk-body">
+          <a href="start?journey=fz2">Flood zone 2 journey</a>
+        </p>
+
+        <p class="govuk-body">
+          <a href="start?journey=fz3">Flood zone 3 journey</a>
+        </p>
+
+        <p class="govuk-body">
+          <a href="start?journey=fzd">Flood zone 3 with defences journey</a>
+        </p>
+
+        <p class="govuk-body">Choose the user journey you wish to review:</p>
+
+      
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="start?results=results-fz1.html&confirmation=confirmation-fz1.html&summary=summary-fz1">Go to Start page (flood zone 1 results)</a></li>
+
+          <li><a href="start?results=results-fz3.html&confirmation=confirmation-fz3&summary=summary-fz3">Go to Start page (flood zone 3 results)</a></li>
+
+          <li><a href="start?results=results-fzd.html&confirmation=confirmation-fzd.html&summary=summary-fzd">Go to Start page (Benefitting from flood defences results)</a></li> -->
+        </ul>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

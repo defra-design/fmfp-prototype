@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find out if you need a Flood Risk Assessment (FRA) and get flood maps for a planning application
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+        <form action="{{formAction}}" method="post">
+
+     <!--   <form class="form" action="options" method="post">-->
+
+          {{ govukRadios({
+            idPrefix: "chooseptype",
+            name: "chooseptype",
+            fieldset: {
+              legend: {
+                text: "Choose product 4 section",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+          
+              {
+                value: "aep",
+                text: "AEPs",
+                conditional: {
+                  html: emailHtml
+                }
+              },
+                  {
+                value: "tidal",
+                text: "Tidal",
+                conditional: {
+                  html: phoneHtml
+                }
+              },
+                  {
+                value: "historic",
+                text: "Recorded flood outlines",
+                conditional: {
+                  html: textHtml
+                }
+              }
+            ]
+          }) }}
+
+          <button class="govuk-button" data-module="govuk-button">
+            Go to prototype options
+          </button>
+
+        </form>
+        
+    </div>          
+  </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

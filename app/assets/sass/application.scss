@@ -475,12 +475,39 @@ body.modal-open {
 
   p {
     font-size: 1rem;
-    max-width: 65ch;
+    max-width: 80ch;
+  }
+
+  li {
+    font-size: 1rem;
+    max-width: 80ch;
+  }
+
+
+}
+
+.pdf-container-landscape {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  width: 68%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  p {
+    font-size: 1rem;
+    max-width: 150ch;
   }
 
   li {
     font-size: 1rem;
   }
+
+
 }
 
 .p4-header {

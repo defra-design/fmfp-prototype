@@ -1,0 +1,28 @@
+
+{% extends "layout_p4.html" %}
+{% block pageTitle %}
+  Flood risk information
+{% endblock %}
+
+
+{% block content %}
+
+{% include "includes/AEP/content.html" %}
+
+{% if data.aep_option=="option3" %}
+{% include "includes/AEP/option3maps.html" %}
+{% endif %}
+
+{% if data.aep_option=="option2" %}
+{% include "includes/AEP/option2maps.html" %}
+{% endif %}
+
+{% if data.aep_option=="option1" %}
+{% include "includes/AEP/option1maps.html" %}
+{% endif %}
+
+{% include "includes/AEP/nodemap.html" %}
+
+{% include "includes/AEP/tables.html" %}
+
+{% endblock %}

@@ -1,0 +1,350 @@
+
+{% extends "layout_p4.html" %}
+{% block pageTitle %}
+  Flood risk information
+{% endblock %}
+
+
+{% block content %}
+
+<h2 class="govuk-heading-l">Modelled data</h2>
+
+<p>This section provides details of different scenarios we have modelled and includes the following (where available):</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>outline maps showing the area at risk from flooding in different modelled scenarios</li>
+<li>modelled node point map(s) showing the points used to get the data to model the</li>
+<li>scenarios and table(s) providing details of the flood risk for different return periods</li>
+<li>map(s) showing the approximate water levels for the return period with the largest flood extent for a scenario and table(s) of sample points providing details of the flood risk for different return periods</li>
+
+</ul>
+
+<h3 class="govuk-heading-m">Modelled scenarios</h3>
+<p>The following scenarios are included:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>defended modelled fluvial: risk of flooding from rivers where there are flood defences</li>
+<li>defences removed modelled fluvial: risk of flooding from rivers where flood defences have been removed</li>
+<li>no defences exist modelled fluvial: risk of flooding from rivers where there are no flood defences</li>
+<li>defended climate change modelled fluvial: risk of flooding from rivers where there are flood defences, including estimated impact of climate change</li>
+<li>defences removed climate change modelled fluvial: risk of flooding from rivers where flood defences have been removed, including estimated impact of climate change</li>
+<li>no defences exist climate change modelled fluvial: risk of flooding from rivers where there are no flood defences, including estimated impact of climate change</li>
+
+</ul>
+<h3 class="govuk-heading-m">Future flood risk</h3>
+<p>The modelled data includes increased peak river flows and sea level rise due to climate change. The data shows the predicted impacts on future flood risk for the following scenarios:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+    
+<li>defended (actual situation)</li>
+<li>undefended (natural floodplain with defences and assets removed)</li>
+</ul>
+
+<h3 class="govuk-heading-m">How to use the modelled climate change data</h3>
+<p>The flood modelling data provided here takes climate change into account, but may not use the latest climate change allowances. For a flood risk assessment you need to check which allowances to use, based on:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>flood zone</li>
+<li>vulnerability classification or development type</li>
+<li>development lifetime</li>
+</ul>
+
+<p>The latest guidance tells you how and when to use climate change allowances and includes surface water risk.</p>
+
+<p>Check the guidance on flood risk assessment climate change allowances.</p>
+
+<h3 class="govuk-heading-m">Get more information for your flood risk assessment</h3>
+<p>A flood model report will tell you:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>if a model was produced for a specific purpose</li>
+<li>the type of flood risk that was modelled within the model study area</li>
+<li>if you need to account for storm surge and wave heights for areas at risk of coastal flooding</li>
+<li>any limitations of a model, for example it may not show improved flood defences</li>
+
+</ul>
+
+<p>More climate scenarios may also be available for different epochs or uplifts.</p>
+
+<p>Order the flood model report and check if there are more flood scenarios available <a href="#">Inforequests.GMMC@environment-agency.gov.uk</a>.</p>
+</div>
+<div class="pdf-container-landscape">
+<h4 class="govuk-heading-s">Figure 1. Defences removed climate change modelled tidal extent from Thume and Hickling, 2018 model for 3 annual exceedance probabilities (AEPs). Climate change is given as additional millimetres uplift (+mm)</h4>
+</br>
+<img src="/public/images/climate_change_defences_removed.png" alt="Nodemap" style="max-width: 100%">
+</div>
+<div class="pdf-container-landscape">
+    <h4 class="govuk-heading-s">
+Figure 2. 2D grid sample points map for defences removed climate change modelled tidal extent and height from Thume and Hickling, 2018 model for 0.1% annual exceedance probabilities (AEP) +1110mm height data.
+</h4>
+</br>
+<img src="/public/images/climatechange_modelled_tidal.png" alt="Nodemap" style="max-width: 100%">
+</div>
+<div class="pdf-container-landscape">
+    <h4 class="govuk-heading-s">
+        Table 1. Flood depths and heights for modelled AEP percentages with climate change allowances given as additional millimetres (+mm) uplift. Thume and Hickling, 2018 model.
+        </h4>
+    </br>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid grey;
+            text-align: left;
+            font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+        }
+    
+        th, td {
+            padding: 10px;
+            border: 1px solid #C5C9CA;
+        }
+    
+        th {
+            background-color: #D3D3D3;
+            color: rgb(7, 0, 0);
+        }
+    
+    </style>
+          <table>
+            <thead>
+                <tr>
+                    <th rowspan="3">Sample points</th>
+                    <th rowspan="3">Easting</th>
+                    <th rowspan="3">Northing</th>
+                    <th colspan="2">5</th>
+                    <th colspan="2">5</th>
+                    <th colspan="2">0.5</th>
+                    <th colspan="2">0.5</th>
+                    <th colspan="2">0.1</th>
+                    <th colspan="2">0.1</th>
+                </tr>
+                <tr>
+
+                    <th colspan="2">+763mm</th>
+                    <th colspan="2">+1110mm</th>
+                    <th colspan="2">+763mm</th>
+                    <th colspan="2">+1110mm</th>
+                    <th colspan="2">+763mm</th>
+                    <th colspan="2">+1110mm</th>
+                </tr>
+                <tr>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                    <th colspan="1">Depth</th>
+                    <th colspan="1">Height</th>
+                </tr>
+
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>641583</td>
+                    <td>317531</td>
+                    <td>3.32</td>
+                    <td>2.96</td>
+                    <td>3.81</td>
+                    <td>3.45</td>
+                    <td>4.03</td>
+                    <td>3.68</td>
+                    <td>4.41</td>
+                    <td>4.05</td>
+                    <td>4.49</td>
+                    <td>4.13</td>
+                    <td>4.83</td>
+                    <td>4.48</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>641609</td>
+                    <td>317531</td>
+                    <td>3.28</td>
+                    <td>2.97</td>
+                    <td>3.77</td>
+                    <td>3.46</td>
+                    <td>4</td>
+                    <td>3.68</td>
+                    <td>4.37</td>
+                    <td>4.06</td>
+                    <td>4.45</td>
+                    <td>4.14</td>
+                    <td>4.8</td>
+                    <td>4.48</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>641635</td>
+                    <td>317531</td>
+                    <td>3.61</td>
+                    <td>2.97</td>
+                    <td>4.1</td>
+                    <td>3.47</td>
+                    <td>4.32</td>
+                    <td>3.69</td>
+                    <td>4.7</td>
+                    <td>4.06</td>
+                    <td>4.78</td>
+                    <td>4.15</td>
+                    <td>5.13</td>
+                    <td>4.49</td>
+                </tr>
+                <tr><td>4</td>
+                    <td>641661</td>
+                    <td>317531</td>
+                    <td>3.26</td>
+                    <td>2.98</td>
+                    <td>3.76</td>
+                    <td>3.47</td>
+                    <td>3.98</td>
+                    <td>3.7</td>
+                    <td>4.36</td>
+                    <td>4.07</td>
+                    <td>4.44</td>
+                    <td>4.16</td>
+                    <td>4.78</td>
+                    <td>4.5</td>
+                </tr>
+
+                <tr><td>5</td><td>641687</td><td>317531</td><td>3.23</td><td>2.99</td><td>3.72</td><td>3.48</td><td>3.95</td><td>3.7</td><td>4.32</td><td>4.08</td><td>4.41</td><td>4.17</td><td>4.75</td><td>4.51</td></tr>
+          
+          <tr>
+
+            <td>6</td><td>641583</td><td>317557</td><td>3.33</td><td>2.96</td><td>3.82</td><td>3.46</td><td>4.05</td><td>3.68</td><td>4.42</td><td>4.05</td><td>4.5</td><td>4.14</td><td>4.85</td><td>4.48</td>
+            
+          </tr>
+          
+          <td>7</td><td>641609</td><td>317557</td><td>3.38</td><td>2.97</td><td>3.87</td><td>3.46</td><td>4.09</td><td>3.69</td><td>4.47</td><td>4.06</td><td>4.55</td><td>4.14</td><td>4.89</td><td>4.49</td>
+          <tr>
+
+            <td>8</td><td>641635</td><td>317557</td><td>3.27</td><td>2.98</td><td>3.76</td><td>3.47</td><td>3.99</td><td>3.69</td><td>4.36</td><td>4.07</td><td>4.44</td><td>4.15</td><td>4.79</td><td>4.49</td>
+          </tr>
+          <td>9</td><td>641661</td><td>317557</td><td>3.2</td><td>2.98</td><td>3.69</td><td>3.48</td><td>3.92</td><td>3.7</td><td>4.29</td><td>4.08</td><td>4.38</td><td>4.16</td><td>4.72</td><td>4.51</td>
+          <tr>
+            <td>10</td><td>641687</td><td>317557</td><td>3.08</td><td>2.99</td><td>3.58</td><td>3.49</td><td>3.8</td><td>3.71</td><td>4.18</td><td>4.09</td><td>4.26</td><td>4.17</td><td>4.61</td><td>4.52</td>
+
+          </tr>
+
+          <tr>
+            <td>11</td><td>641583</td><td>317583</td><td>3.26</td><td>2.97</td><td>3.76</td><td>3.46</td><td>3.98</td><td>3.68</td><td>4.35</td><td>4.06</td><td>4.44</td><td>4.14</td><td>4.78</td><td>4.48</td>
+
+          </tr>
+          <td>12</td><td>641609</td><td>317583</td><td>3.17</td><td>2.97</td><td>3.66</td><td>3.47</td><td>3.89</td><td>3.69</td><td>4.26</td><td>4.06</td><td>4.34</td><td>4.15</td><td>4.69</td><td>4.49</td>
+          <tr>
+
+            <td>13</td><td>641635</td><td>317583</td><td>3.21</td><td>2.98</td><td>3.7</td><td>3.47</td><td>3.92</td><td>3.69</td><td>4.3</td><td>4.07</td><td>4.38</td><td>4.15</td><td>4.73</td><td>4.5</td>
+          </tr>
+
+          <tr>
+
+            <td>14</td><td>641661</td><td>317583</td><td>3.11</td><td>2.99</td><td>3.6</td><td>3.48</td><td>3.83</td><td>3.7</td><td>4.2</td><td>4.08</td><td>4.29</td><td>4.16</td><td>4.63</td><td>4.51</td>
+          </tr>
+
+          <tr>
+
+
+            <td>15</td><td>641687</td><td>317583</td><td>3.29</td><td>2.99</td><td>3.78</td><td>3.49</td><td>4.01</td><td>3.71</td><td>4.38</td><td>4.09</td><td>4.47</td><td>4.17</td><td>4.81</td><td>4.52</td>
+          </tr>
+
+          <tr>
+            <td>16</td><td>641583</td><td>317609</td><td>3.2</td><td>2.97</td><td>3.69</td><td>3.46</td><td>3.92</td><td>3.68</td><td>4.29</td><td>4.06</td><td>4.37</td><td>4.14</td><td>4.72</td><td>4.49</td>
+
+          </tr>
+
+          <tr>
+            <td>17</td><td>641609</td><td>317609</td><td>3.15</td><td>2.97</td><td>3.64</td><td>3.47</td><td>3.86</td><td>3.69</td><td>4.24</td><td>4.07</td><td>4.32</td><td>4.15</td><td>4.67</td><td>4.49</td>
+
+          </tr>
+
+          <tr>
+            <td>18</td><td>641635</td><td>317609</td><td>3.11</td><td>2.98</td><td>3.61</td><td>3.48</td><td>3.83</td><td>3.7</td><td>4.21</td><td>4.07</td><td>4.29</td><td>4.16</td><td>4.63</td><td>4.5</td>
+
+          </tr>
+
+        </tbody>
+
+    </table>
+        </div>
+
+        <div class="pdf-container-landscape">
+        <table>
+            <tbody>
+          <tr>
+
+            <td>19</td><td>641661</td><td>317609</td><td>3.11</td><td>2.99</td><td>3.61</td><td>3.48</td><td>3.83</td><td>3.71</td><td>4.21</td><td>4.08</td><td>4.29</td><td>4.17</td><td>4.64</td><td>4.51</td>
+          </tr>
+
+          <tr>
+
+            <td>20</td><td>641687</td><td>317609</td><td>3.19</td><td>3</td><td>3.68</td><td>3.49</td><td>3.91</td><td>3.71</td><td>4.28</td><td>4.09</td><td>4.37</td><td>4.18</td><td>4.71</td><td>4.52</td>
+          </tr>
+
+          <tr>
+
+            <td>21</td><td>641583</td><td>317635</td><td>3.06</td><td>2.97</td><td>3.55</td><td>3.47</td><td>3.77</td><td>3.69</td><td>4.15</td><td>4.06</td><td>4.23</td><td>4.15</td><td>4.58</td><td>4.49</td>
+          </tr>
+
+          <tr>
+            <td>22</td><td>641609</td><td>317635</td><td>3.12</td><td>2.98</td><td>3.61</td><td>3.47</td><td>3.84</td><td>3.69</td><td>4.21</td><td>4.07</td><td>4.3</td><td>4.15</td><td>4.64</td><td>4.5</td>
+
+          </tr>
+
+          <tr>
+            <td>23</td><td>641635</td><td>317635</td><td>3.18</td><td>2.99</td><td>3.67</td><td>3.48</td><td>3.9</td><td>3.7</td><td>4.27</td><td>4.08</td><td>4.36</td><td>4.16</td><td>4.7</td><td>4.51</td>
+
+          </tr>
+
+          <tr>
+            <td>24</td><td>641661</td><td>317635</td><td>3.14</td><td>2.99</td><td>3.63</td><td>3.49</td><td>3.86</td><td>3.71</td><td>4.24</td><td>4.09</td><td>4.32</td><td>4.17</td><td>4.67</td><td>4.52</td>
+
+          </tr>
+
+          <tr>
+          <td>25</td><td>641687</td><td>317635</td><td>3.11</td><td>3</td><td>3.61</td><td>3.49</td><td>3.83</td><td>3.72</td><td>4.21</td><td>4.1</td><td>4.3</td><td>4.18</td><td>4.64</td><td>4.53</td>
+
+          </tr>
+
+
+            </tbody>
+
+        </table>
+
+    <h4 class="govuk-heading-s" style="padding-top: 60px;padding-bottom: 15px;">
+    Table 2: Climate change uplift in +mm and related epoch (time frame for sea level rise). The year given is the end of each time frame.
+    </h4>
+
+
+
+    <table style="max-width:">
+        <thead>
+            <tr>
+                <th>Uplift (mm)</th>
+                <th>Epoch year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>763</td>
+                <td>2115</td>
+            </tr>
+            <tr>
+                <td>1110</td>
+                <td>2115</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+</div>
+{% endblock %}

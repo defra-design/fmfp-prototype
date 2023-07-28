@@ -481,6 +481,23 @@ body.modal-open {
     max-width: 80ch;
   }
 
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid grey;
+    text-align: left;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+th, td {
+    padding: 0.4em;
+    border: 1px solid #C5C9CA;
+}
+
+th {
+    background-color: #D3D3D3;
+    color: rgb(7, 0, 0);
+}
 
 }
 
@@ -495,6 +512,24 @@ body.modal-open {
   width: 68%;
   margin-top: 30px;
   margin-bottom: 10px;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid grey;
+    text-align: left;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+th, td {
+    padding: 0.4em;
+    border: 1px solid #C5C9CA;
+}
+
+th {
+    background-color: #D3D3D3;
+    color: rgb(7, 0, 0);
+}
 
   p {
     font-size: 1rem;

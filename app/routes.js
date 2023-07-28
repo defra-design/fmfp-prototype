@@ -6,6 +6,15 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+// CLEAR SESSION ==============================================================
+router.get('/cls', function (req, res) {
+	req.session.destroy()
+	res.render('index')
+  })
+
+
+
+
 // Area of P4 for usability testing ==============================================================
 router.get('/v1/area', function (req, res) {
     res.render('v1/area',{

@@ -47,6 +47,7 @@ router.get('/AEPs_O3', function (req, res) {
 	req.session.data = { aep_option: 'option3' }
 	res.redirect(`/v1/P4AEP`)
 })
+
 // Area of P4 for usability testing ==============================================================
 router.get('/v1/area', function (req, res) {
     res.render('v1/area',{
@@ -70,5 +71,29 @@ router.get('/v1/area', function (req, res) {
     }
   })
   
+
+// Area of P4 for usability testing ==============================================================
+router.get('/v2/area', function (req, res) {
+  res.render('v2/area',{
+      "formAction":"/v2/area-check"
+  })
+})
+
+router.post('/v2/area', function (req, res) {
+  res.render('/v2/area',{
+      "formAction":"/v2/area-check"
+  })
+})
+
+// Route to check if address or area has been selected
+router.post('/v2/area-check', function (req, res) {
+
+  if (req.body['chooseptype']=="tidal") {
+    res.redirect("tidal")
+  } else {
+    res.redirect("options")
+  }
+})
+
 
 module.exports = router

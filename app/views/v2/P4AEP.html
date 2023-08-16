@@ -8,6 +8,10 @@
 
 {% include "includes/AEP/content.html" %}
 
+{% if data.chooseptype=="aepv2" %}
+{% include "includes/AEP/AEPv2.html" %}
+{% endif %}
+
 {% if data.aep_option=="option3" %}
 {% include "includes/AEP/option3maps.html" %}
 {% endif %}

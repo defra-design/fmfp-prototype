@@ -13,6 +13,12 @@
 {% include "includes/recordedflood/blackoutline.html" %}
 {% endif %}
 
+{% if data.chooseptype=="historicv2" %}
+{% include "includes/recordedflood/pastfloodsv2.html" %}
+{% endif %}
+
+
+
 {% if data.recorded_flood=="option2" %}
 {% include "includes/recordedflood/blueoutline.html" %}
 {% endif %}

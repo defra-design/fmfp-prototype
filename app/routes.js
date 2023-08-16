@@ -37,6 +37,18 @@ router.get('/AEPs_O1', function (req, res) {
 })
 
 // set up route variable default status
+router.get('/AEPs_v2', function (req, res) {
+	req.session.data = { chooseptype: 'aepv2' }
+	res.redirect(`/v2/P4AEP`)
+})
+
+// set up route variable default status
+router.get('/rflood_v2', function (req, res) {
+	req.session.data = { chooseptype: 'historicv2' }
+	res.redirect(`/v2/recorded_flood`)
+})
+
+// set up route variable default status
 router.get('/AEPs_O2', function (req, res) {
 	req.session.data = { aep_option: 'option2' }
 	res.redirect(`/v1/P4AEP`)
@@ -65,7 +77,7 @@ router.get('/v1/area', function (req, res) {
   router.post('/v1/area-check', function (req, res) {
   
     if (req.body['chooseptype']=="tidal") {
-      res.redirect("tidal")
+      res.redirect("/v2/P4AEP")
     } else {
       res.redirect("options")
     }
@@ -88,10 +100,10 @@ router.post('/v2/area', function (req, res) {
 // Route to check if address or area has been selected
 router.post('/v2/area-check', function (req, res) {
 
-  if (req.body['chooseptype']=="tidal") {
-    res.redirect("tidal")
+  if (req.body['chooseptype']=="aepv2") {
+    res.redirect("P4AEP")
   } else {
-    res.redirect("options")
+    res.redirect("recorded_flood")
   }
 })
 

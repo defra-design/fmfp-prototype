@@ -19,11 +19,11 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <form action="confirm-location" method="post" novalidate>
+        <form autocomplete="off" action="confirm-location" id='location-form' method="post" novalidate>
 
           <div class="govuk-form-group">
 
-            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <fieldset class="govuk-fieldset">
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
@@ -31,66 +31,68 @@
                 </h1>
               </legend>
 
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios" data-module="govuk-radios">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                  <input class="govuk-radios__input" id="findby" name="findby" type="radio" value="placeOrPostcode" aria-controls="conditional-findby" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby">
                     Place or postcode
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby">
                   <div class="govuk-form-group">
-                    <label class="govuk-label visually-hidden" for="location-postcode">
-                      Postcode
+                    <label class="govuk-label visually-hidden" for="placeOrPostcode">
+                      Place or postcode
                     </label>
-                    <span class="govuk-hint govuk-hint--block">
+                    <div id="placeOrPostcode-hint" class="govuk-hint">
                      For example, Bakewell or WA4 1AB
-                    </span>
-                    <input class="govuk-input govuk-!-width-one-third" id="location-postcode" name="location-postcode" type="email" spellcheck="false">
+                    </div>
+                    <input class="govuk-input govuk-!-width-one-third" id="placeOrPostcode" name="placeOrPostcode" type="text" spellcheck="false" aria-describedby="placeOrPostcode-hint">
 
                   </div>
 
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                  <input class="govuk-radios__input" id="findby-2" name="findby" type="radio" value="nationalGridReference" aria-controls="conditional-findby-2" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby-2">
                      National Grid Reference (NGR)
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby-2">
                   <div class="govuk-form-group">
-                    <label class="govuk-label visually-hidden" for="contact-by-phone">
+                    <label class="govuk-label visually-hidden" for="nationalGridReference">
                      National Grid Reference (NGR)
                     </label>
-                    <span class="govuk-hint govuk-hint--block">
-                     For example, NY395557 (6, 8 or 12 digits)
-                    </span>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+                    <div id="nationalGridReference-hint" class="govuk-hint">
+                     For example, SJ8632197947 (10 or 12 digits)
+                    </div>
+                    <input class="govuk-input govuk-!-width-one-third" id="nationalGridReference" name="nationalGridReference" type="text" aria-describedby="nationalGridReference-hint">
                   </div>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                  <input class="govuk-radios__input" id="findby-3" name="findby" type="radio" value="eastingNorthing" aria-controls="conditional-findby-3" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby-3">
                     Easting and northing
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
-                  <span class="govuk-hint govuk-hint--block">
-                   For example, 123456 123456
-                  </span>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby-3">
+                  <div id="eastings-northings-hint" class="govuk-hint">
+                    Eastings and northings should only include numbers. For example: 123456
+                  </div>
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="contact-by-text">
+                    <label class="govuk-label" for="easting">
                      Easting
                     </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
-                    <label class="govuk-label govuk-!-margin-top-3" for="contact-by-text">
+                    <input class="govuk-input govuk-!-width-one-third" id="easting" name="easting" type="text">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-margin-top-3" for="northing">
                      Northing
                     </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+                    <input class="govuk-input govuk-!-width-one-third" id="northing" name="northing" type="text">
                   </div>
-                  </div>
+                </div>
 
             </fieldset>
             

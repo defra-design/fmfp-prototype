@@ -1,0 +1,112 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Find location  - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form autocomplete="off" action="confirm-location" id='location-form' method="post" novalidate>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Find the location
+                </h1>
+              </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="findby" name="findby" type="radio" value="placeOrPostcode" aria-controls="conditional-findby" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby">
+                    Place or postcode
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label visually-hidden" for="placeOrPostcode">
+                      Place or postcode
+                    </label>
+                    <div id="placeOrPostcode-hint" class="govuk-hint">
+                     For example, Bakewell or WA4 1AB
+                    </div>
+                    <input class="govuk-input govuk-!-width-one-third" id="placeOrPostcode" name="placeOrPostcode" type="text" spellcheck="false" aria-describedby="placeOrPostcode-hint">
+
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="findby-2" name="findby" type="radio" value="nationalGridReference" aria-controls="conditional-findby-2" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby-2">
+                     National Grid Reference (NGR)
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label visually-hidden" for="nationalGridReference">
+                     National Grid Reference (NGR)
+                    </label>
+                    <div id="nationalGridReference-hint" class="govuk-hint">
+                     For example, SJ8632197947 (10 or 12 digits)
+                    </div>
+                    <input class="govuk-input govuk-!-width-one-third" id="nationalGridReference" name="nationalGridReference" type="text" aria-describedby="nationalGridReference-hint">
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="findby-3" name="findby" type="radio" value="eastingNorthing" aria-controls="conditional-findby-3" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="findby-3">
+                    Easting and northing
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-findby-3">
+                  <div id="eastings-northings-hint" class="govuk-hint">
+                    Eastings and northings should only include numbers. For example: 123456
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="easting">
+                     Easting
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="easting" name="easting" type="text">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-margin-top-3" for="northing">
+                     Northing
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="northing" name="northing" type="text">
+                  </div>
+                </div>
+
+            </fieldset>
+            
+          </div>
+
+          <a href="confirm-location" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+            Continue
+          </a>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

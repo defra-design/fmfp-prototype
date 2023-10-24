@@ -1,0 +1,101 @@
+
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Check your details - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'contact'
+  }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your details before requesting your data
+        </h1>
+
+        <p class="govuk-body">
+          After you have submitted your request you will not be able to change it. Make sure the site location is accurate.
+        </p>
+
+        <p class="govuk-body">
+          You should receive your data within 20 working days.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['full-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--location">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <span class="govuk-visually-hidden">{{ data['location-postcode'] }}</span>
+              <img class="summary-image" src="/public/images/fzd-summary-map.png" alt="An image comfirming the location of your site">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="confirm-location">
+                Change<span class="govuk-visually-hidden"> location</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Flood Zone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Area benefitting from flood defences
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <span class="govuk-visually-hidden">You can not change your flood zone</span>
+            </dd>
+          </div>
+        </dl>
+
+        <a href="{{ data['confirmation'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 " data-module="govuk-button">
+          Request your flood risk assessment data
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

@@ -24,6 +24,19 @@
 
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#boundary-error">You need to draw the boundary of your site on the map. Click ‘How to draw a boundary' if you need help.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <p class="govuk-body">
         Your search for 'WA4 1HT' has been placed in Warrington, North West, England.
       </p>
@@ -57,7 +70,7 @@
           <p class="govuk-body">
             If you need to change the finished boundary you can:
           </p>
-          
+
           <ul class="govuk-list govuk-list--bullet">
             <li>
               click and drag the points to adjust them
@@ -81,7 +94,10 @@
 
     <div class="govuk-grid-column-full">
 
-      <figure class="map-figure map-figure--justboundary" role="application">
+      <figure class="map-figure map-figure--justboundary map-figure--error" role="application">
+
+        <p id="boundary-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> You need to draw the boundary of your site on the map. Click ‘How to draw a boundary' if you need help.</p>
 
         <figcaption class="map-figcaption govuk-visually-hidden">
           An interactive map tool to allow you to accurately locate the site you require
@@ -142,7 +158,13 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <!-- https://flood-map-for-planning-proto.herokuapp.com/current/confirm-location--error -->
+<!--<div class="govuk-warning-text govuk-!-margin-top-7">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Check your entire site is outlined before continuing.
+        </strong>
+      </div>-->
 
       <a id="continue-button" href="{{ data['results'] }}" role="button" draggable="false" class="govuk-button govuk-!-margin-top-7 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
         Continue

@@ -5,7 +5,6 @@ Flood map for planning
 {% endblock %}
 
 {% block content %}
-
 <form class="form" action="selection" method="post">
 
       <div class="govuk-grid-row">
@@ -15,7 +14,7 @@ Flood map for planning
                           <h1 class="govuk-heading-xl">
                             Flood zone risk for this location
                           </h1>
-                          
+                           
                           <h2 class="govuk-heading-s">You chose to see flood data showing:</h2>
                           
                                           <ul class="govuk-list govuk-list--bullet">
@@ -42,7 +41,7 @@ Flood map for planning
                    <img src="/public/images/test-2_8/map-flood-zones.png" alt="Nodemap" style="max-width: 102%">
 
                   </div>
-        {% include "includes/test-2_8/key.html" %}
+    {% include "includes/test-2_8/key.html" %}
 
       </div>
 
@@ -94,19 +93,19 @@ Flood map for planning
 
                           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33"   {% if data['swExtAEP'] === '33' %} checked="true"   {% endif %}>
+                                    <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33"   checked="value">
                                     <label class="govuk-label govuk-radios__label" for="swExtAEP">
                                       3.3 % AEP
                                     </label>
                                   </div>
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="1AEP" {% if data['swExtAEP'] === '1AEP' %} checked="true"   {% endif %}>
+                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="1AEP" checked="value">
                                     <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                       1% AEP
                                     </label>
                                   </div>
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01AEP" {% if data['swExtAEP'] === '01AEP' %} checked="true"   {% endif %}>
+                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01AEP" checked="value">
                                     <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                       0.1% AEP
                                     </label>
@@ -131,31 +130,31 @@ Flood map for planning
 
                                             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                                                     <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33D"   {% if data['swExtAEP'] === '33D' %} checked="true"   {% endif %}>
+                                                      <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33D"   checked="value">
                                                       <label class="govuk-label govuk-radios__label" for="swExtAEP">
                                                         3.3 % Defended
                                                       </label>
                                                     </div>
                                                     <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105D" {% if data['swExtAEP'] === '105D' %} checked="true"   {% endif %}>
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105D" checked="value">
                                                       <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                                         1% and 0.5% Defended
                                                       </label>
                                                     </div>
                                                     <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01D" {% if data['swExtAEP'] === '01D' %} checked="true"   {% endif %}>
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01D" checked="value">
                                                       <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                                         0.1% Defended
                                                       </label>
                                                     </div>
                                                     <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105U" {% if data['swExtAEP'] === '01D' %} checked="true"   {% endif %}>
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105U" checked="value">
                                                       <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                                         1% and 0.5% Undefended
                                                       </label>
                                                     </div>
                                                     <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01U" {% if data['swExtAEP'] === '01U' %} checked="true"   {% endif %}>
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01U" checked="value">
                                                       <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
                                                         0.1% Undefended
                                                       </label>
@@ -184,57 +183,56 @@ Flood map for planning
                               </div>
             {% endif %}
                         
-                      <div class="govuk-grid-column-one-third">
-                          <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                    
-                                      Flood map for planning:
-                                  
-                                  </legend>
-                                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                          <input class="govuk-checkboxes__input" id="fmfp" name="fmfp" type="checkbox" value="defences">
-                                          <label class="govuk-label govuk-checkboxes__label" for="fmfp">
-                                            Flood defences
-                                          </label>
-                                        </div>
-                                  
-                                        <div class="govuk-checkboxes__item">
-                                          <input class="govuk-checkboxes__input" id="fmfp-2" name="fmfp" type="checkbox" value="mainRivers">
-                                          <label class="govuk-label govuk-checkboxes__label" for="fmfp-2">
-                                            Main rivers
-                                          </label>
-                                        </div>
-                                  </div>
-                                </fieldset>
-                            </div>
-                      </div> 
-                         <div class="govuk-grid-column-one-third">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                    <h1 class="govuk-fieldset__heading"></br>
-                                    </h1>
-                                  </legend>
-                                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="fmfp2" name="fmfp2" type="checkbox" value="fstorage">
-                                      <label class="govuk-label govuk-checkboxes__label" for="fmfp2">
-                                        Flood storage
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="fmfp2-2" name="fmfp2" type="checkbox" value="fz23">
-                                      <label class="govuk-label govuk-checkboxes__label" for="fmfp-2">
-                                        Flood zones 2 & 3 (rivers and sea)
-                                      </label>
-                                    </div>
-                                  </div>
-                                </fieldset>
-                            </div>
+            <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Flood map for planning:
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="defences" name="fmfp" type="checkbox" value="defences" checked="value">
+                              <label class="govuk-label govuk-checkboxes__label" for="defences">
+                                  Flood defences
+                              </label>
                           </div>
-                       
+          
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="mainRivers" name="fmfp" type="checkbox" value="mainRivers" checked="value">
+                              <label class="govuk-label govuk-checkboxes__label" for="mainRivers">
+                                  Main rivers
+                              </label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div>
+          
+          <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h1 class="govuk-fieldset__heading"></h1>
+                      </br>
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fstorage" name="fmfp2" type="checkbox" value="fstorage" checked="value">
+                              <label class="govuk-label govuk-checkboxes__label" for="fstorage">
+                                  Water storage area
+                              </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fz23" name="fmfp2" type="checkbox" value="fz23" checked="value">
+                              <label class="govuk-label govuk-checkboxes__label" for="fz23">
+                                  Flood zones 2 & 3 (rivers and sea)
+                              </label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div>
+          
                         
                         
         

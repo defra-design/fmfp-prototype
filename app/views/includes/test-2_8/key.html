@@ -9,44 +9,32 @@
   </div>
 
  
-  
-
   <div class="govuk-grid-row" style="margin-top: 5px;">
-
-  <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/river.png" alt="Nodemap" style="max-width: 130%"></div>
-    
-    <div class="govuk-grid-column-two-thirds"><p>Main river</p></div>
-
+      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/river.png" alt="Nodemap" style="max-width: 130%"></div>
+      <div class="govuk-grid-column-two-thirds"><p>Main river</p></div>
   </div>
 
   <div class="govuk-grid-row" style="margin-top: 1px;">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/flood-defences.png" alt="Nodemap" style="max-width: 130%"></div>
-   
-    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Flood defences</p></div>
-   
+      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/flood-defences.png" alt="Nodemap" style="max-width: 130%"></div>
+      <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Flood defences</p></div>
   </div>
 
   <div class="govuk-grid-row" style="margin-top: 1px;">
-    <div class="govuk-grid-column-one-third govuk-!-padding-top-0 govuk-!-padding-bottom-0""><span style="margin-top: 2em;"><img src="/public/images/test-2_8/defended-areas.png" alt="Nodemap" style="max-width: 123%; padding-left: 2px"></span></div>
-   
-    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Defended areas</p></div>
-   
+      <div class="govuk-grid-column-one-third govuk-!-padding-top-0 govuk-!-padding-bottom-0"><span style="margin-top: 2em;"><img src="/public/images/test-2_8/defended-areas.png" alt="Nodemap" style="max-width: 123%; padding-left: 2px"></span></div>
+      <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Water storage area</p></div>
   </div>
+
 
   <div class="govuk-grid-row" style="margin-top: 1px;">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz2.png" alt="Nodemap" style="max-width: 130%"></div>
-   
-    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 2</p></div>
-   
+      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz2.png" alt="Nodemap" style="max-width: 130%"></div>
+      <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 2</p></div>
   </div>
-
   <div class="govuk-grid-row" style="margin-top: 1px;">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
-   
-    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 3</p></div>
-   
+      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+      <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 3</p></div>
   </div>
 
+  
   {% if data['depthExtent'] === 'depth' %}
 
   <h4 class="govuk-heading-s govuk-!-margin-top-3 govuk-!-margin-bottom-2">Depths</h4>
@@ -96,7 +84,7 @@
   </div>
  
   {% endif %}
-  {% if data['swExtAEP'] === '33' %}
+  {% if data['swExtAEP'] === '33' and data['depthExtent'] === 'extent'%}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
    
@@ -105,7 +93,7 @@
   </div>
   {% endif %}
 
-  {% if data['swExtAEP'] === '101' %}
+  {% if data['swExtAEP'] === '101' and data['depthExtent'] === 'extent'%}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
    
@@ -113,5 +101,12 @@
    
   </div>
   {% endif %}
-
+  {% if data['surfaceRivers'] === 'river' and data['depthExtent'] === 'extent' %}                     
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+   
+    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>3.3% Defended</p></div>
+   
+  </div>
+  {% endif %}
 </div>

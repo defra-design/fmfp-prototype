@@ -11,6 +11,11 @@ router.get('/cls', function (req, res) {
 	req.session.destroy()
 	res.render('index')
   })
+  // CLEAR SESSION GO TO MAP SELECT ==============================================================
+router.get('/clsmap', function (req, res) {
+	req.session.destroy()
+	res.redirect('test-2_8/maps/zones')
+  })
 
 // set up route variable default status
 router.get('/rflood_O1', function (req, res) {

@@ -8,76 +8,81 @@
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 20px;"><p>Selected area</p></div>
   </div>
 
- 
+  {% if data.mainRivers=="mainRivers" %}
   <div class="govuk-grid-row" style="margin-top: 5px;">
       <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/river.png" alt="Nodemap" style="max-width: 130%"></div>
       <div class="govuk-grid-column-two-thirds"><p>Main river</p></div>
   </div>
-
+  {% endif %}
+  
+  {% if data.fmfp=="defences" %}
   <div class="govuk-grid-row" style="margin-top: 1px;">
-      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/flood-defences.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:12px; background:#FB8649; border-color: black; border:solid black; margin-left: 1em; margin-top: 0.5em;"></div>
       <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Flood defences</p></div>
   </div>
+  {% endif %}
 
+  {% if data.fstorage=="fstorage" %} 
   <div class="govuk-grid-row" style="margin-top: 1px;">
       <div class="govuk-grid-column-one-third govuk-!-padding-top-0 govuk-!-padding-bottom-0"><span style="margin-top: 2em;"><img src="/public/images/test-2_8/defended-areas.png" alt="Nodemap" style="max-width: 123%; padding-left: 2px"></span></div>
       <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 2px;"><p>Water storage area</p></div>
   </div>
+  {% endif %}
 
-
+{% if data.fmfp2=="fz23" %}
   <div class="govuk-grid-row" style="margin-top: 1px;">
-      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz2.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#8BC8F7; border-color: black; border:solid black; margin-left: 1em;"></div>
       <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 2</p></div>
   </div>
   <div class="govuk-grid-row" style="margin-top: 1px;">
-      <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#323A77; border-color: black; border:solid black; margin-left: 1em;"></div>
       <div class="govuk-grid-column-two-thirds" style="vertical-align: centre; padding-top: 3px;"><p>Flood zone 3</p></div>
   </div>
+  {% endif %}
 
-  
   {% if data['depthExtent'] === 'depth' %}
 
   <h4 class="govuk-heading-s govuk-!-margin-top-3 govuk-!-margin-bottom-2">Depths</h4>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#33B1FF; border-color: black; border:solid black; margin-left: 1em;"></div>
    
-    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>150mm</p></div>
+    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p><150mm</p></div>
    
   </div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#1092E9; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>150-300mm</p></div>
    
   </div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#0272C0; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>300-600mm</p></div>
    
   </div>
   <div class="govuk-grid-row"">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#00549B; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>600-900mm</p></div>
    
   </div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#003A6D; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>900-1200mm</p></div>
    
   </div>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#01274A; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>1200-2300mm</p></div>
    
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third"><img src="/public/images/test-2_8/fz3.png" alt="Nodemap" style="max-width: 130%"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#051728; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>>2300mm</p></div>
    

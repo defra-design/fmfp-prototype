@@ -6,7 +6,7 @@ Flood map for planning
 
 {% block content %}
 
-<form class="form" action="selection" method="post">
+<form action="{{formAction}}" method="post">
 
       <div class="govuk-grid-row">
 
@@ -19,9 +19,9 @@ Flood map for planning
                                   <p>Flood zones are regional areas grouped by risk of flooding from rivers and sea. Flood zone 1 is low risk, Flood zone 2 is medium risk, and Flood zone 3 is high risk.</p>
 
                                   <p>All of the map is flood zone 1 unless marked as flood zone 2 or 3. 
-                                  </br><a class="govuk-link" href="/">Read more about flood zones in flood guidance</a>.</p>    
+                                  </br><a class="govuk-link" href="#">Read more about flood zones in flood guidance</a>.</p>    
 
-                                  <p><a class="govuk-link" href="/">Change location</a></p>
+                                  <p><a class="govuk-link" href="#">Change location</a></p>
             </div>
       </div>
 
@@ -33,7 +33,7 @@ Flood map for planning
             </div>
 
 
- {% include "includes/test-2_8/key.html" %}
+ {% include "includes/test-2_8/key-zones.html" %}
 
 
       </div>

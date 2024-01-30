@@ -112,5 +112,49 @@ router.post('/v2/area-check', function (req, res) {
   }
 })
 
+// From flood zones map to select options map page ==============================================================
+router.get('/test-2_8/maps/zones', function (req, res) {
+  res.render('test-2_8/maps/zones',{
+      "formAction":"/test-2_8/maps/zones-check"
+  })
+})
 
+router.post('/test-2_8/maps/zones', function (req, res) {
+  res.render('/test-2_8/maps/zones',{
+      "formAction":"/test-2_8/maps/zones-check"
+  })
+})
+
+// Route to check if there has been a selection
+router.post('/test-2_8/maps/zones-check', function (req, res) {
+
+  if (req.body['chooseptype']=="tidal") {
+    res.redirect("/test-2_8/maps/selection")
+  } else {
+    res.redirect("/test-2_8/maps/selection")
+  }
+})
+
+// From flood selection map to select options displayed ==============================================================
+router.get('/test-2_8/maps/selection', function (req, res) {
+  res.render('test-2_8/maps/selection',{
+      "formAction":"/test-2_8/maps/selection-check"
+  })
+})
+
+router.post('/test-2_8/maps/selection', function (req, res) {
+  res.render('/test-2_8/maps/selection',{
+      "formAction":"/test-2_8/maps/selection-check"
+  })
+})
+
+// Route to check if there has been a selection
+router.post('/test-2_8/maps/selection-check', function (req, res) {
+
+  if (req.body['chooseptype']=="tidal") {
+    res.redirect("/test-2_8/maps/selection")
+  } else {
+    res.redirect("/test-2_8/maps/selection")
+  }
+})
 module.exports = router

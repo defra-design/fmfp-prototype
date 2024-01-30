@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flood map for planning
+{% endblock %}
+
+{% block content %}
+
+<form action="{{formAction}}" method="post">
+
+      <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-three-quarters">
+
+                                  <h1 class="govuk-heading-xl">
+                                    Flood zone risk for this location
+                                  </h1>
+                    
+                                  <p>Flood zones are regional areas grouped by risk of flooding from rivers and sea. Flood zone 1 is low risk, Flood zone 2 is medium risk, and Flood zone 3 is high risk.</p>
+
+                                  <p>All of the map is flood zone 1 unless marked as flood zone 2 or 3. 
+                                  </br><a class="govuk-link" href="#">Read more about flood zones in flood guidance</a>.</p>    
+
+                                  <p><a class="govuk-link" href="#">Change location</a></p>
+            </div>
+      </div>
+
+      <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-three-quarters">
+                                  <img src="/public/images/test-2_8/map-flood-zones.png" alt="Nodemap" style="max-width: 102%">
+
+            </div>
+
+
+ {% include "includes/test-2_8/key-zones.html" %}
+
+
+      </div>
+
+
+      <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-three-quarters">
+
+                <div class="govuk-form-group">
+                                  <h2 style="margin-top: 1em" class="govuk-heading-m">
+                                    Update the map to see further flood information
+                                  </h2>
+
+                    <div class="govuk-grid-column-one-quarter">
+                          <div class="govuk-grid-row">
+                                <fieldset class="govuk-fieldset">
+                                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">
+                                          Climate
+                                        </h1>
+                                      </legend>
+
+                                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                            
+                                              <div class="govuk-radios__item">
+                                                  <input class="govuk-radios__input" id="PresentClimate" name="PresentClimate" type="radio" value="present">
+                                                  <label class="govuk-label govuk-radios__label" for="PresentClimate">
+                                                    Present day
+                                                  </label>
+                                                </div>
+
+                                          
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="PresentClimate-2" name="PresentClimate" type="radio" value="climate">
+                                                <label class="govuk-label govuk-radios__label" for="PresentClimate-2">
+                                                  Climate change
+                                                </label>
+                                              </div>
+
+                                        </div>
+
+                                </fieldset>
+                          </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-quarter">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              Depth or extent
+                            </h1>
+                          </legend>
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="depthExtent" name="depthExtent" type="radio" value="depth">
+                              <label class="govuk-label govuk-radios__label" for="changedName">
+                                Depth
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="depthExtent-2" name="depthExtent" type="radio" value="extent">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                Extent
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-quarter">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              Base map
+                            </h1>
+                          </legend>
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="baseMap" name="baseMap" type="radio" value="outdoor">
+                              <label class="govuk-label govuk-radios__label" for="changedName">
+                                Outdoor
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="baseMap-2" name="baseMap" type="radio" value="leisure">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                Leisure
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="baseMap-3" name="baseMap" type="radio" value="road">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                Road
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="baseMap-4" name="baseMap" type="radio" value="light">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                Light
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-quarter">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              Type of flood
+                            </h1>
+                          </legend>
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="surfaceRivers" name="surfaceRivers" type="radio" value="surface">
+                              <label class="govuk-label govuk-radios__label" for="surfaceRivers">
+                                Surface water
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="surfaceRivers-2" name="surfaceRivers" type="radio" value="river">
+                              <label class="govuk-label govuk-radios__label" for="surfaceRivers-2">
+                                Rivers and sea
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+ 
+            </div>
+
+
+      </div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Update selection
+      </button>
+    </div>
+  </div>
+</div>
+</form>
+
+{% endblock %}

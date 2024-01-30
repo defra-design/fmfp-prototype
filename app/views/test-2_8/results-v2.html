@@ -1,0 +1,153 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Flood risk information for this location - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+     
+        <h1 class="govuk-heading-xl">
+          Flood risk for your location
+        </h1>
+        <h2 class="govuk-heading-s">
+          Your location has a:
+        </h2>
+  
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              high risk of flooding from surface water
+            </li>
+            <li>
+              medium risk of flooding from coastal erosion
+            </li>
+            <li>
+              medium risk of flooding from rivers and the sea
+            </li>
+          </ul>
+        <br/>
+         
+   
+     <div class="govuk-inset-text">
+
+      <h2 class="govuk-heading-m">
+        Surface water
+      </h2>
+      <h3 class="govuk-heading-s">Medium risk</h3>
+    </div>
+      <p class="govuk-body">
+        Some of this development is at risk of flooding from surface water.
+        <br/>
+        <a href="flood-zones-explained" class="govuk-link">Find out more about your sites surface water risk</a>
+
+      </p>
+<br/>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-inset-text">
+
+<h2 class="govuk-heading-m">
+  Coastal erosion
+</h2>
+<h3 class="govuk-heading-s">Medium risk</h3>
+</div>
+<p class="govuk-body">
+  Some of this development is at risk of flooding from coastal erosion.
+  <br/>
+  <a href="flood-zones-explained" class="govuk-link">Find out more about your sites coastal erosion risk</a>
+
+</p>
+
+<br/>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-inset-text">
+
+<h2 class="govuk-heading-m">
+  Rivers and the sea
+</h2>
+<h3 class="govuk-heading-s">Medium risk</h3>
+
+</div>
+ <p class="govuk-body">
+  This location is in flood zone 2 as it has medium probability of flooding from rivers and the sea.
+</p>
+
+<p class="govuk-body">
+  You need to carry out a flood risk assessment (FRA) as part of the planning application for this development.
+</p>
+
+<p class="govuk-body">
+  Find out more about <a href="flood-zones-explained" class="govuk-link">flood zones and what they mean</a>.
+</p>
+  <p class="govuk-body">
+  <a href="flood-zones-explained" class="govuk-link">View flood zone 2 flood map for this location</a>
+</p>
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">
+  Order flood risk data for rivers and the sea
+</h2>
+
+<p class="govuk-body">
+  The flood risk data usually includes:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    detailed flood data
+  </li>
+  <li>
+    historic flood event data
+  </li>
+  <li>
+    modelled flood levels and extents
+  </li>
+  <li>
+    flood defence locations and attributes
+  </li>
+</ul>
+<p class="govuk-body">
+  We aim to email you the data within 20 working days or sooner if we can.
+</p>
+
+<a href="contact" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3 govuk-!-margin-bottom-6" data-module="govuk-button">
+  Order flood risk data
+</a>
+<br/>
+      <p class="govuk-body">
+        <a href="flood-zones-explained" class="govuk-link">Download the flood map for this location</a>
+      </p>
+    
+      <p class="govuk-body">
+        <a href="flood-zones-explained" class="govuk-link">Decide what you need for your planning application</a>
+      </p>
+      <h3 class="govuk-heading-s">
+        Change the location
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="confirm-location" class="govuk-link">Redraw the boundary of your site</a>
+        </li>
+        <li>
+          <a href="location" class="govuk-link">Search for a different location</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

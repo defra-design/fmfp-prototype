@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flood map for planning
+{% endblock %}
+
+{% block content %}
+<form action="{{formAction}}" method="post">
+
+      <div class="govuk-grid-row">
+
+                  <div class="govuk-grid-column-three-quarters">
+
+                          <h1 class="govuk-heading-xl">
+                            Flood zone risk for this location
+                          </h1>
+                           
+                          <h2 class="govuk-heading-s">You chose to see flood data showing:</h2>
+                          
+                                          <ul class="govuk-list govuk-list--bullet">
+{% if data['PresentClimate'] === 'present' %} <li>The present day</li>  {% endif %}
+{% if data['PresentClimate'] === 'climate' %} <li>Climate change scenario</li>  {% endif %}                
+{% if data['depthExtent'] === 'extent' %}     <li>The extent of flooding</li>  {% endif %}
+{% if data['depthExtent'] === 'depth' %}      <li>The depth of flooding</li>  {% endif %}
+{% if data['baseMap'] === 'outdoor' %}        <li>The Outdoor basemap</li>  {% endif %}
+{% if data['baseMap'] === 'leisure' %}        <li>The Leisure basemap</li>  {% endif %}      
+{% if data['baseMap'] === 'road' %}           <li>The road basemap</li>  {% endif %}    
+{% if data['baseMap'] === 'light' %}          <li>The light basemap</li>  {% endif %}                                      
+{% if data['surfaceRivers'] === 'surface' %}  <li>Surface water flooding</li>  {% endif %}
+{% if data['surfaceRivers'] === 'river' %}    <li>Flooding from rivers and sea</li>  {% endif %}
+
+                                          </ul>
+
+                          <p>Update below to change the flood information included within this map, or <p><a class="govuk-link" href="/clsmap">go back to change this selection</a></p>
+                      
+                  </div>
+      </div>
+
+      <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-three-quarters">
+                    {% if data['surfaceRivers'] === 'river'  and data['depthExtent'] === 'depth'%}                     
+                    {% if data.fmfp2=="fz23"%}
+                    <img src="/public/images/test-2_8/ClimateDepthRsFMFP.png" alt="Nodemap" style="max-width: 102%">
+                    {% else %}
+
+                   <img src="/public/images/test-2_8/ClimateDepthRs.png" alt="Nodemap" style="max-width: 102%">
+         {% endif %}
+         {% endif %}
+
+         {% if data['surfaceRivers'] === 'river'  and data['depthExtent'] === 'extent'%}                     
+         {% if data.fmfp2=="fz23"%}
+         <img src="/public/images/test-2_8/ClimateExtentRsFMFP.png" alt="Nodemap" style="max-width: 102%">
+
+         {% else %}
+         <img src="/public/images/test-2_8/ClimateExtentRs.png" alt="Nodemap" style="max-width: 102%">
+         {% endif %}
+         {% endif %}
+
+         {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'extent'%}                     
+         {% if data.fmfp2=="fz23"%}
+         <img src="/public/images/test-2_8/ClimateExtentSwFMFP.png" alt="Nodemap" style="max-width: 102%">
+         {% else %}
+
+         <img src="/public/images/test-2_8/ClimateExtentSw.png" alt="Nodemap" style="max-width: 102%">
+         {% endif %}
+         {% endif %}
+
+          {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'depth'%}                     
+          {% if data.fmfp2=="fz23"%}
+
+          <img src="/public/images/test-2_8/ClimateDepthSwFMFP.png" alt="Nodemap" style="max-width: 102%">
+          {% else %}
+
+          <img src="/public/images/test-2_8/ClimateDepthSw.png" alt="Nodemap" style="max-width: 102%">
+          {% endif %}
+
+          {% endif %}
+
+                  </div>
+    {% include "includes/test-2_8/key.html" %}
+
+      </div>
+
+        </br>
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+
+            {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'extent'%}                     
+                              <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                  <div class="govuk-grid-row">
+                                      <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                              <h1 class="govuk-fieldset__heading">
+                                                Surface water extents for:
+                                              </h>
+                                            </legend>
+
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33"   {% if data['swExtAEP'] === '33' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP">
+                                                        3.3 % AEP
+                                                      </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="101" {% if data['swExtAEP'] === '101' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                                        1% and 0.1% AEP
+                                                      </label>
+                                                    </div>
+                                            </div>
+                                      </fieldset>
+                                  </div>
+                                </div>
+                              </div>
+            {% endif %}
+
+            {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'depth'%}                     
+            <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                <div class="govuk-grid-row">
+                    <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              Surface water depths for:
+                            </h>
+                          </legend>
+
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33"   {% if data['swExtAEP'] === '33' %} checked="true"   {% endif %}>
+                                    <label class="govuk-label govuk-radios__label" for="swExtAEP">
+                                      3.3 % AEP
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="1AEP" {% if data['swExtAEP'] === '1AEP' %} checked="true"   {% endif %}>
+                                    <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                      1% AEP
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01AEP" {% if data['swExtAEP'] === '01AEP' %} checked="true"   {% endif %}>
+                                    <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                      0.1% AEP
+                                    </label>
+                                  </div>
+                          </div>
+                    </fieldset>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+            {% if data['surfaceRivers'] === 'river' and data['depthExtent'] === 'depth' %}                     
+                              <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                  <div class="govuk-grid-row">
+                                      <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                              <h1 class="govuk-fieldset__heading">
+                                                Rivers and sea depth for:
+                                              </h>
+                                            </legend>
+
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP" name="swExtAEP" type="radio" value="33D"   {% if data['swExtAEP'] === '33D' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP">
+                                                        3.3 % Defended
+                                                      </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105D" {% if data['swExtAEP'] === '105D' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                                        1% and 0.5% Defended
+                                                      </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01D" {% if data['swExtAEP'] === '01D' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                                        0.1% Defended
+                                                      </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="105U" {% if data['swExtAEP'] === '105U' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                                        1% and 0.5% Undefended
+                                                      </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="swExtAEP-2" name="swExtAEP" type="radio" value="01U" {% if data['swExtAEP'] === '01U' %} checked="true"   {% endif %}>
+                                                      <label class="govuk-label govuk-radios__label" for="swExtAEP-2">
+                                                        0.1% Undefended
+                                                      </label>
+                                                    </div>
+                                            </div>
+                                      </fieldset>
+                                  </div>
+                                </div>
+                              </div>
+            {% endif %}
+            {% if data['surfaceRivers'] === 'river' and data['depthExtent'] === 'extent' %}                     
+                              <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                  <div class="govuk-grid-row">
+                                      <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                              <h1 class="govuk-fieldset__heading">
+                                                Rivers and sea flood extents for:
+                                              </h>
+                                            </legend>
+                                          </br></br>
+                                          <p>3.3 % Defended</p>
+                                      </fieldset>
+                                  </div>
+                                </div>
+                              </div>
+            {% endif %}
+                       
+            <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Flood map for planning:
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fmfp" name="fmfp" type="checkbox" value="defences" {% if data.fmfp=="defences" %} checked="value" {% endif %}>
+                              <label class="govuk-label govuk-checkboxes__label" for="fmfp">
+                                  Flood defences
+                              </label>
+                          </div>
+          
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="mainRivers" name="mainRivers" type="checkbox" value="mainRivers" {% if data.mainRivers=="mainRivers" %} checked="value" {% endif %}>
+                              <label class="govuk-label govuk-checkboxes__label" for="mainRivers">
+                                  Main rivers
+                              </label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h1 class="govuk-fieldset__heading"></h1>
+                      </br>
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fstorage" name="fstorage" type="checkbox" value="fstorage" {% if data.fstorage=="fstorage" %} checked="value" {% endif %}>
+                              <label class="govuk-label govuk-checkboxes__label" for="fstorage">
+                                  Water storage area
+                              </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fmfp2" name="fmfp2" type="checkbox" value="fz23" {% if data.fmfp2=="fz23" %} checked="value" {% endif %}>
+                              <label class="govuk-label govuk-checkboxes__label" for="fmfp2">
+                                  Flood zones 2 & 3 (rivers and sea)
+                              </label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div>
+          
+                        
+                        
+        
+          </div>
+      </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Update selection
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+</form>
+{% endblock %}

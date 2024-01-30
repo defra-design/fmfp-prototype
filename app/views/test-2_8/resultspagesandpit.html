@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+<head>
+<meta charset="utf-8">
+<title>
+Flood risk information for this location - Flood map for planning - GOV.UK
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0c">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon">
+<link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/govuk-apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/assets/images/govuk-apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/govuk-apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
+<meta property="fb:app_id" content="1919931248230651"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=https://fmp-snd-alb.aws.defra.cloud/flood-zone-results?polygon=%5B%5B464061,88426%5D,%5B463745,87960%5D,%5B465092,87811%5D,%5B465175,88442%5D,%5B464061,88426%5D%5D&amp;center=%5B464460,88126%5D&amp;location=isle-of-wight/>
+<meta property="og:title" content="Flood map for planning - GOV.UK"/>
+<meta property="og:description" content="Get flood risk information and maps for planning applications and planning permission in England, including flood zones and flood risk assessment data."/>
+<meta property="keywords" content="flood,mapfor,planning,service,gov,uk"/>
+<meta property="description" content="Get flood risk information and maps for planning applications and planning permission in England, including flood zones and flood risk assessment data."/>
+<meta name="google-site-verification" content="hjukuejt64a0rbduxxtbniknb4_cz3x3hlxoxk4_ox8"/>
+<meta name="robots" content="noindex"/>
+<link href="/assets/stylesheets/application.css" rel="stylesheet"/>
+<script src="/assets/javascripts/polyfill.min.js"></script>
+<script src="/assets/javascripts/js.cookie.min.js"></script>
+<meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
+</head>
+<body class="govuk-template__body ">
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<div class="govuk-cookie-banner js-cookies-banner govuk-visually-hidden" data-nosnippet role="region" aria-label="Cookies on Flood Map For Planning">
+<div class="govuk-cookie-banner__message govuk-width-container js-question-banner"
+hidden>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on Flood Map For Planning</h2>
+<div class="govuk-cookie-banner__content"><p class="govuk-body">We use analytics cookies to help understand how users use our service.</p></div>
+</div>
+</div>
+<div class="govuk-button-group">
+<button type="button" class="govuk-button js-cookies-button-accept" data-module="govuk-button">
+Accept analytics cookies
+</button>
+<button type="button" class="govuk-button js-cookies-button-reject" data-module="govuk-button">
+Reject analytics cookies
+</button>
+<a class="govuk-link" href="cookies">View cookie preferences</a>
+</div>
+</div>
+<div class="govuk-cookie-banner__message govuk-width-container js-cookies-accepted" role="alert"
+hidden>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<div class="govuk-cookie-banner__content">
+<p>You’ve accepted analytics cookies. You can <a href="/cookies">change your cookie settings</a> at any time.</p>
+</div>
+</div>
+</div>
+<div class="govuk-button-group">
+<button class="govuk-button" data-module="govuk-button">
+Hide this message
+</button>
+</div>
+</div>
+<div class="govuk-cookie-banner__message govuk-width-container js-cookies-rejected" role="alert"
+hidden>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<div class="govuk-cookie-banner__content">
+<p>You’ve rejected analytics cookies. You can <a href="/cookies">change your cookie settings</a> at any time.</p>
+</div>
+</div>
+</div>
+<div class="govuk-button-group">
+<button class="govuk-button" data-module="govuk-button">
+Hide this message
+</button>
+</div>
+</div>
+</div>
+<a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+<header class="govuk-header " role="banner" data-module="govuk-header">
+<div class="govuk-header__container govuk-width-container">
+<div class="govuk-header__logo">
+<a href="https://www.gov.uk/" class="govuk-header__link govuk-header__link--homepage">
+<span class="govuk-header__logotype">
+<!--[if gt IE 8]><!-->
+<svg
+aria-hidden="true"
+focusable="false"
+class="govuk-header__logotype-crown"
+xmlns=http://www.w3.org/2000/svg
+viewBox="0 0 132 97"
+height="30"
+width="36"
+> 
+<path
+fill="currentColor" fill-rule="evenodd"
+d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+></path>
+</svg>
+<!--<![endif]-->
+<!--[if IE 8]>
+<img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
+<![endif]-->
+<span class="govuk-header__logotype-text">
+GOV.UK
+</span>
+</span>
+</a>
+</div>
+<div class="govuk-header__content">
+<a href="/" class="govuk-header__link govuk-header__link--service-name">
+Flood map for planning
+</a>
+</div>
+</div>
+</header>
+<div class="govuk-phase-banner govuk-width-container">
+<p class="govuk-phase-banner__content">
+<strong class="govuk-tag govuk-phase-banner__content__tag">
+beta
+</strong>
+<span class="govuk-phase-banner__text">
+This is a new service – your <a class="govuk-link" href="/feedback">feedback</a> will help us to improve it.
+</span>
+</p>
+</div>
+<div class="govuk-width-container ">
+<a href="confirm-location?easting=464460&amp;northing=88126&amp;placeOrPostcode=isle-of-wight&amp;polygon=[[464061,88426],[463745,87960],[465092,87811],[465175,88442],[464061,88426]]"
+class="govuk-back-link" style="top: 0px">
+Redraw the boundary of your site
+</a>
+<a href="location" class="search-link-right-v2">Search for a different location</a>
+<main class="govuk-main-wrapper " id="main-content" role="main">
+<script src="/assets/javascripts/stageprompt.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HE6KTWD1X3"></script>
+<script type="text/javascript">
+const analyticsAccount = 'G-HE6KTWD1X3'
+const analyticsAccepted = Boolean(document.cookie.match('GA=Accept'))
+if (analyticsAccount && analyticsAccepted) {
+// ga('create', analyticsAccount, 'auto');
+// ga('govuk_shared.require', 'linker');
+// ga('govuk_shared.linker.set', 'anonymizeIp', true);
+// ga('govuk_shared.linker:autoLink', ['www.gov.uk']);
+// ga('send', 'pageview');
+// ga('govuk_shared.send', 'pageview');
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', analyticsAccount);
+document.addEventListener("DOMContentLoaded", () => {
+GOVUK.performance.stageprompt.setupForGoogleAnalytics(document)
+})
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/assets/fonts/style.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/ol.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/summary/index.css">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<h1 class="govuk-heading-xl">This location is in flood zone
+3</h1>
+<h4 class="govuk-heading-s">Flooding risk for this location includes:</h4>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+rivers and the sea
+</li>
+<li>
+surface water
+</li>
+</ul>
+<div class="govuk-inset-text override-inset">
+Review the flood risks for your location then complete the next steps for your planning application.
+</div>
+</div>
+</div>
+<!-- Start of cards -->
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<!-- Start of HOLDING COMMENTS -->
+<!-- End of HOLDING COMMENTS -->
+<!-- Macros -->
+<!-- End of Macros -->
+<!-- Rivers -->
+<div class="govuk-summary-card" id="rivers-sea">
+<div class="govuk-summary-card__title-wrapper vlow">
+<h2 class="govuk-summary-card__title">Rivers and sea - Flood zone 3</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action">
+<a href="/flood-map?location=isle-of-wight&amp;polygon=[[464061,88426],[463745,87960],[465092,87811],[465175,88442],[464061,88426]]&amp;center=[464460,88126]">
+See this risk on a map
+<span class="govuk-visually-hidden">See the risk from rivers and the sea on a map</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+What flood zone
+3
+means
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+Land within flood zone
+3
+has a
+high
+probability of flooding from rivers and the sea.
+</p>
+<p class="govuk-body">
+You need to carry out a flood risk assessment (FRA) as part of the planning application for this
+development.
+</p>
+<p class="govuk-body">
+Find out more about
+<a href="https://www.gov.uk/guidance/flood-risk-and-coastal-change#para77" class="govuk-link">
+flood zones
+</a>and what they mean.
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Predicted likelihood of flooding by the year 2125
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+By 2125, if this location flooded, the water could be up to 60cm deep.
+</p>
+<p class="govuk-body">
+<a href="https://www.gov.uk/guidance/flood-risk-assessments-climate-change-allowances" class="govuk-link">
+Find out more about climate change allowances
+</a>
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current depth of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+If this location flooded now, the water could be up to 30cm deep.
+</p>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+<!-- Floodplain -->
+<div class="govuk-summary-card" id="floodplain">
+<div class="govuk-summary-card__title-wrapper vlow">
+<h2 class="govuk-summary-card__title">Functional floodplain</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action">
+<a href="https://www.gov.uk/guidance/flood-risk-and-coastal-change#para79">
+More details
+<span class="govuk-visually-hidden">of the risk of functional floodplain</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Predicted likelihood of flooding by the year 2125
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+By 2125, if this location flooded, the water could be up to 120cm deep.
+</p>
+<p class="govuk-body">
+<a href="https://www.gov.uk/guidance/flood-risk-assessments-climate-change-allowances" class="govuk-link">
+Find out more about climate change allowances
+</a>
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current likelihood of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+This location has a 3.3% or greater annual probability of flooding each year.
+</p>
+<p class="govuk-body">
+This location is only suitable for:
+<ul class="govuk-list govuk-list--bullet">
+<li>water compatible developments
+</li>
+<li>essential infrastructure that has passed the Exception Test</li>
+</ul>
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current depth of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+If this location flooded now, the water could be up to 90cm deep.
+</p>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+<!-- surface water-->
+<div class="govuk-summary-card govuk-!-margin-top-3" id="surface-water">
+<div class="govuk-summary-card__title-wrapper vlow">
+<h2 class="govuk-summary-card__title">Surface water</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action">
+<a class="govuk-link" href="results-full-sw.html">
+More details<span class="govuk-visually-hidden">about surface water flood risk</span>
+</a>
+</li>
+<li class="govuk-summary-card__action">
+<a class="govuk-link" href="see-your-risk-map-sw.html?&results=surface-water?marker=true&scenario=4">
+See this risk on a map<span class="govuk-visually-hidden">of the risk of surface water flooding</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Predicted likelihood of flooding by the year 2061
+</dt>
+<dd class="govuk-summary-list__value">
+By 2061, the chance of surface water flooding at this location is more than 3.3% each year. If this
+location flooded, the water could be up to 60cm deep.
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current likelihood of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+High risk of surface water (or flash) flooding. The chance of surface water (or flash) flooding at this
+location is more than 3.3% each year.
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current depth of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+If this location flooded, the water would most likely be less than 30cm deep.
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Current flow speed (velocity) of flooding
+</dt>
+<dd class="govuk-summary-list__value">
+If this location flooded now, the velocity could be less than 0.5 metre per second
+</dd>
+</div>
+</dl>
+</div>
+</div>
+<!-- Next steps-->
+<div class="govuk-summary-card govuk-!-margin-top-3" id="next-steps">
+<div class="govuk-summary-card__title-wrapper vlow">
+<h2 class="govuk-summary-card__title">Next steps for your planning application
+</h2>
+</div>
+<div class="govuk-summary-card__content">
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Decide what you need for your planning application
+</dt>
+<dd class="govuk-summary-list__value">
+<p>Contact your local planning authority to check their planning requirements.</p>
+<p>Get a Flood Risk Assessment (FRA). You will normally need to pay a flood risk specialist to carry it
+out.</p>
+<p>
+For developments in flood zone
+3
+your FRA should include and assessment of all sources of flooding and
+<a href="#">take into account climate change allowances</a>.
+</p>
+<p>Find out
+<a href="#">how to do an assessment</a>.
+</p>
+<p>
+To find out about other factors that might affect the flood risk of this location, you should also
+check:
+</p>
+<ul class="govuk-list--bullet">
+<li>
+<a href="#" class="govuk-link">surface water, groundwater and reservoir flood risk</a>
+</li>
+<li>Warrington planning authority's strategic flood risk assessment (SFRA), which includes future flood
+risk
+</li>
+</ul>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Other data you may need
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+You will also need to assess
+<a href="https://www.gov.uk/guidance/flood-risk-and-coastal-change#para41"
+data-journey-click="Flood-Zone-Results:External-Link:Residual-Breach-Risk" class="govuk-link">
+residual risk
+</a>
+from flood defence breach in this location. If available, we will provide breach hazard mapping data to
+help you do this.
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Get help
+</dt>
+<dd class="govuk-summary-list__value">
+<p>For help in deciding what flood risk information you need, email the Environment Agency team in
+Yorkshire at neyorkshire@environment-agency.gov.uk
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Order flood risk data for rivers and the sea
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+The flood risk data usually includes:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+detailed flood data
+</li>
+<li>
+historic flood event data
+</li>
+<li>
+modelled flood levels and extents
+</li>
+<li>
+flood defence locations and attributes
+</li>
+</ul>
+<p class="govuk-body">
+We aim to email you the data within 20 working days or sooner.
+</p>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Download rivers and sea flood map for this location
+</dt>
+<dd class="govuk-summary-list__value">
+<p class="govuk-body">
+The flood map is suitable for a local planning authority to use when checking a planning application to
+see if a development is:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+in flood zone 1, 2 or 3
+</li>
+<li>
+within 20 meters of a main river or a flood defence
+</li>
+<li>
+in a water storage area
+</li>
+</ul>
+<details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+Add a reference to the flood map and set the scale
+</span>
+</summary>
+<div class="govuk-details__text">
+<form class="form" method="POST" action="pdf">
+<input name="id" type="hidden">
+<input name="zone" type="hidden" value="FZ1">
+<input name="polygon" type="hidden" value="">
+<input name="center" type="hidden" value="[362105,387218]">
+<div class="govuk-form-group">
+<h3 class="govuk-label-wrapper">
+<label class="govuk-label--m" for="reference">
+Add a reference
+</label>
+<span class="govuk-hint govuk-hint--block">
+Optional. This is chosen by you to help you find the report later and should be less than 25
+characters.
+</span>
+</h3>
+<input class="govuk-input form-control govuk-input--width-20" id="reference" name="reference"
+type="text" maxlength="13">
+</div>
+<div class="govuk-form-group">
+<h3 class="govuk-label-wrapper">
+<label class="govuk-label--m" for="scale">
+Scale
+</label>
+<span class="govuk-hint govuk-hint--block">
+Select the scale of the map shown in the report
+</span>
+</h3>
+<select class="govuk-select" id="scale" name="scale">
+<option value="2500">1:2500</option>
+<option value="10000">1:10000</option>
+<option value="25000">1:25000</option>
+<option value="50000">1:50000</option>
+</select>
+</div>
+</form>
+</div>
+</details>
+<br />
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Download flood map for this location (PDF)
+</button>
+</dd>
+</div>
+</div>
+</div>
+</div>
+<h3 class="govuk-heading-s">Change the location</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+<a href="confirm-location?easting=464460&amp;northing=88126&amp;placeOrPostcode=isle-of-wight&amp;polygon=[[464061,88426],[463745,87960],[465092,87811],[465175,88442],[464061,88426]]" class="govuk-link">
+Redraw the boundary of your site
+</a>
+</li>
+<li>
+<a href="location" class="govuk-link">Search for a different location</a>
+</li>
+</ul>
+</div>
+<script src="/assets/javascripts/jquery.min.js"></script>
+<script src="/assets/javascripts/summary.js"></script>
+<script>
+$(function () {
+var page = new FMP.SummaryPage({ polygon: [[464061,88426],[463745,87960],[465092,87811],[465175,88442],[464061,88426]]})
+})
+</script>
+</main>
+</div>
+<footer class="govuk-footer " role="contentinfo">
+<div class="govuk-width-container ">
+<div class="govuk-footer__meta">
+<div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+<h2 class="govuk-visually-hidden">Support links</h2>
+<ul class="govuk-footer__inline-list">
+<li class="govuk-footer__inline-list-item">
+<a class="govuk-footer__link" href="/cookies">
+Cookies
+</a>
+</li>
+<li class="govuk-footer__inline-list-item">
+<a class="govuk-footer__link" href="/accessibility-statement">
+Accessibility
+</a>
+</li>
+<li class="govuk-footer__inline-list-item">
+<a class="govuk-footer__link" href="/terms-and-conditions">
+Terms and conditions
+</a>
+</li>
+<li class="govuk-footer__inline-list-item">
+<a class="govuk-footer__link" href="/privacy-notice">
+Privacy notice
+</a>
+</li>
+</ul>
+<div class="govuk-footer__meta-custom">
+<p class="govuk-body-s">Built by the <a href="https://www.gov.uk/government/organisations/environment-agency">Environment Agency</a></p><p class="govuk-body-s" style="max-width: 70ch;">© Crown copyright and database rights 2021 <a href = "https://www.ordnancesurvey.co.uk/">Ordnance Survey(OS)</a> 100024198. Use of the address and mapping data is subject to the <a href="os-terms">Ordnance Survey terms and conditions</a>.</p>
+</div>
+<svg
+aria-hidden="true"
+focusable="false"
+class="govuk-footer__licence-logo"
+xmlns=http://www.w3.org/2000/svg
+viewBox="0 0 483.2 195.7"
+height="17"
+width="41"
+> 
+<path
+fill="currentColor"
+d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+/>
+</svg>
+<span class="govuk-footer__licence-description">
+All content is available under the
+<a
+class="govuk-footer__link"
+href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+rel="license"
+>Open Government Licence v3.0</a>, except where otherwise stated
+</span>
+</div>
+<div class="govuk-footer__meta-item">
+<a
+class="govuk-footer__link govuk-footer__copyright-logo"
+href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+>© Crown copyright</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="/assets/all.js"></script>
+<script src="/assets/javascripts/core.js"></script>
+<script>
+window
+.GOVUKFrontend
+.initAll()
+</script>
+</body>
+</html>
+ 

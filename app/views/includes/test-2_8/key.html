@@ -89,18 +89,32 @@
   </div>
  
   {% endif %}
-  {% if data['swExtAEP'] === '33' and data['depthExtent'] === 'extent'%}
+
+  {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'extent'%}       
+  {% if data['baseMap'] === 'outdoor' or data['baseMap'] === 'leisure' or data['baseMap'] === 'road' or data['baseMap'] === 'light' %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#007D7A; border-color: black; border:solid black; margin-left: 1em; margin-top: 0.5em;"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#007D7A; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>3.3% AEP</p></div>
    
   </div>
+
+  {% endif %}
+  {% endif %}
+
+  {% if data['swExtAEP'] === '33' and data['depthExtent'] === 'extent'%}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#007D7A; border-color: black; border:solid black; margin-left: 1em;"></div>
+   
+    <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>3.3% AEP</p></div>
+   
+  </div>
+
   {% endif %}
 
   {% if data['swExtAEP'] === '101' and data['depthExtent'] === 'extent'%}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#007D7A; border-color: black; border:solid black; margin-left: 1em; margin-top: 0.5em;"></div>
+    <div class="govuk-grid-column-one-third" style="width:60px; height:25px; background:#007D7A; border-color: black; border:solid black; margin-left: 1em;"></div>
    
     <div class="govuk-grid-column-two-thirds" style="vertical-align: centre;"><p>1% and 0.1% AEP</p></div>
    

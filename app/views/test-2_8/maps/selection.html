@@ -44,38 +44,39 @@ Flood map for planning
                   <div class="govuk-grid-column-three-quarters">
                     {% if data['surfaceRivers'] === 'river'  and data['depthExtent'] === 'depth'%}                     
                     {% if data.fmfp2=="fz23"%}
-                    <img src="/public/images/test-2_8/ClimateDepthRsFMFP.png" alt="Nodemap" style="max-width: 102%">
+                    <img src="/public/images/test-2_8/RSdepthFMFP.png" alt="Nodemap" style="max-width: 102%">
                     {% else %}
 
-                   <img src="/public/images/test-2_8/ClimateDepthRs.png" alt="Nodemap" style="max-width: 102%">
+                    <img src="/public/images/test-2_8/RSdepth.png" alt="Nodemap" style="max-width: 102%">
          {% endif %}
          {% endif %}
 
          {% if data['surfaceRivers'] === 'river'  and data['depthExtent'] === 'extent'%}                     
          {% if data.fmfp2=="fz23"%}
-         <img src="/public/images/test-2_8/ClimateExtentRsFMFP.png" alt="Nodemap" style="max-width: 102%">
+         <img src="/public/images/test-2_8/RSextFMFPopt.png" alt="Nodemap" style="max-width: 102%">
 
          {% else %}
-         <img src="/public/images/test-2_8/ClimateExtentRs.png" alt="Nodemap" style="max-width: 102%">
+         <img src="/public/images/test-2_8/RSextopt.png" alt="Nodemap" style="max-width: 102%">
          {% endif %}
          {% endif %}
 
+        
          {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'extent'%}                     
          {% if data.fmfp2=="fz23"%}
-         <img src="/public/images/test-2_8/ClimateExtentSwFMFP.png" alt="Nodemap" style="max-width: 102%">
+         <img src="/public/images/test-2_8/SWextentFMFP.png" alt="Nodemap" style="max-width: 102%">
          {% else %}
 
-         <img src="/public/images/test-2_8/ClimateExtentSw.png" alt="Nodemap" style="max-width: 102%">
+         <img src="/public/images/test-2_8/SWextent.png" alt="Nodemap" style="max-width: 102%">
          {% endif %}
          {% endif %}
 
           {% if data['surfaceRivers'] === 'surface'  and data['depthExtent'] === 'depth'%}                     
           {% if data.fmfp2=="fz23"%}
 
-          <img src="/public/images/test-2_8/ClimateDepthSwFMFP1.png" alt="Nodemap" style="max-width: 102%">
+          <img src="/public/images/test-2_8/SWdepthFMFP.png" alt="Nodemap" style="max-width: 102%">
           {% else %}
 
-          <img src="/public/images/test-2_8/ClimateDepthSw1.png" alt="Nodemap" style="max-width: 102%">
+          <img src="/public/images/test-2_8/SWdepth.png" alt="Nodemap" style="max-width: 102%">
           {% endif %}
 
           {% endif %}

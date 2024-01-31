@@ -127,13 +127,9 @@ router.post('/test-2_8/maps/zones', function (req, res) {
 
 // Route to check if there has been a selection
 router.post('/test-2_8/maps/zones-check', function (req, res) {
-
-  if (req.body['chooseptype']=="tidal") {
-    res.redirect("/test-2_8/maps/selection")
-  } else {
-    res.redirect("/test-2_8/maps/selection")
-  }
+  res.redirect("/test-2_8/maps/selection");
 })
+
 
 // From flood selection map to select options displayed ==============================================================
 router.get('/test-2_8/maps/selection', function (req, res) {
@@ -157,4 +153,5 @@ router.post('/test-2_8/maps/selection-check', function (req, res) {
     res.redirect("/test-2_8/maps/selection")
   }
 })
+
 module.exports = router

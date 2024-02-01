@@ -16,7 +16,7 @@ Flood map for planning
                   <div class="govuk-grid-column-three-quarters">
 
                           <h1 class="govuk-heading-xl">
-                            Flood zone risk for this location
+                            Flood risk for this location
                           </h1>
                            
                           <h2 class="govuk-heading-s">You chose to see flood data showing:</h2>
@@ -26,7 +26,7 @@ Flood map for planning
 {% if data['PresentClimate'] === 'climate' %} <li>Climate change scenario</li>  {% endif %}                
 {% if data['depthExtent'] === 'extent' %}     <li>The extent of flooding</li>  {% endif %}
 {% if data['depthExtent'] === 'depth' %}      <li>The depth of flooding</li>  {% endif %}
-{% if data['baseMap'] === 'outdoor' %}        <li>The Outdoor basemap</li>  {% endif %}
+                                              <li>Outdoor basemap</li>
 {% if data['baseMap'] === 'leisure' %}        <li>The Leisure basemap</li>  {% endif %}      
 {% if data['baseMap'] === 'road' %}           <li>The road basemap</li>  {% endif %}    
 {% if data['baseMap'] === 'light' %}          <li>The light basemap</li>  {% endif %}                                      
